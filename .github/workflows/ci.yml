@@ -84,8 +84,15 @@ jobs:
         run: php -v
       - name: Update dependencies with composer
         run: composer update --no-interaction --no-ansi --no-progress
+      - name: Load PHPStan Cache
+        uses: actions/cache@3624ceb22c1c5a301c8db4169662070a689d9ea8 # v4.1.1
+        with:
+          path: /tmp/phpstan
+          key: ${{ runner.os }}-phpstan-${{ github.run_id }}
+          restore-keys: ${{ runner.os }}-phpstan-
+      - run: mkdir -p /tmp/phpstan
       - name: Run PHPStan
-        run: ./vendor/bin/phpstan analyse --configuration phpstan.neon
+        run: ./vendor/bin/phpstan analyze --configuration phpstan.neon
 
   unit-tests:
     name: Unit tests

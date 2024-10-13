@@ -3,9 +3,10 @@ parameters:
     treatPhpDocTypesAsCertain: false
     inferPrivatePropertyTypeFromConstructor: true
     reportUnmatchedIgnoredErrors: true # Could be set to false if necessary during PHPStan update
-    tmpDir: ./var/cache/phpstan
     paths:
         - src
+        - tests
+    tmpDir: /tmp/phpstan
         
     excludePaths:
         - src/Service/WebhookAuthenticator.php

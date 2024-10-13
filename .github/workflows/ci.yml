@@ -49,6 +49,13 @@ jobs:
         run: php -v
       - name: Update dependencies with composer
         run: composer update --no-interaction --no-ansi --no-progress
+      - name: Load Rector Cache
+        uses: actions/cache@3624ceb22c1c5a301c8db4169662070a689d9ea8 # v4.1.1
+        with:
+          path: /tmp/rector
+          key: ${{ runner.os }}-rector-${{ github.run_id }}
+          restore-keys: ${{ runner.os }}-rector-
+      - run: mkdir -p /tmp/rector
       - name: Run Rector
         run: ./vendor/bin/rector --config=rector.php process --dry-run
 

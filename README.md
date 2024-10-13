@@ -22,6 +22,7 @@ composer require it-bens/shopware-sdk
 - Admin API
   - CRUD API
   - [Admin Search API][admin-search-api-class-link] (read-equivalent to the Sync API)
+  - [Document API][document-api-class-link] + [Document Generator API][document-generator-api-class-link]
   - [Info API][info-api-class-link]
   - [Mail Send API][mail-send-api-class-link]
   - [Media API][media-api-class-link]
@@ -180,6 +181,8 @@ Special thanks goes to the original author of the package, [vienthuong][link-aut
 [shopware-criteria-documentation]: https://developer.shopware.com/docs/guides/integrations-api/general-concepts/search-criteria.html
 
 [admin-search-api-class-link]: https://github.com/shopware/administration/blob/trunk/Controller/AdminSearchController.php
+[document-api-class-link]: https://github.com/shopware/core/blob/trunk/Checkout/Document/Controller/DocumentController.php
+[document-generator-api-class-link]: https://github.com/shopware/core/blob/trunk/Checkout/Document/DocumentGeneratorController.php
 [info-api-class-link]: https://github.com/shopware/core/blob/trunk/Framework/Api/Controller/InfoController.php
 [mail-send-api-class-link]: https://github.com/shopware/core/blob/trunk/Content/MailTemplate/Api/MailActionController.php
 [media-api-class-link]: https://github.com/shopware/core/blob/trunk/Content/Media/Api/MediaUploadController.php

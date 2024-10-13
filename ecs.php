@@ -78,4 +78,6 @@ return static function (ECSConfig $ecsConfig): void {
         PhpdocSummaryFixer::class,
         SelfAccessorFixer::class,
     ]);
+
+    $ecsConfig->cacheDirectory('/tmp/ecs');
 };

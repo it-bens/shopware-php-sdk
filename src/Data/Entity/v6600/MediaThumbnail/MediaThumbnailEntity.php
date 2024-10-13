@@ -15,9 +15,14 @@ use Vin\ShopwareSdk\Data\Entity\v6600\Media\MediaEntity;
 class MediaThumbnailEntity extends Entity
 {
     public ?string $mediaId = null;
+
     public ?int $width = null;
+
     public ?int $height = null;
+
     public ?string $url = null;
+
     public ?string $path = null;
+
     public ?MediaEntity $media = null;
 }

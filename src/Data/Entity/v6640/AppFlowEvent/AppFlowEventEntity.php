@@ -16,8 +16,12 @@ use Vin\ShopwareSdk\Data\Entity\v6640\Flow\FlowCollection;
 class AppFlowEventEntity extends Entity
 {
     public ?string $appId = null;
+
     public ?string $name = null;
+
     public ?array $aware = null;
+
     public ?AppEntity $app = null;
+
     public ?FlowCollection $flows = null;
 }

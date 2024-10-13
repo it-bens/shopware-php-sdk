@@ -17,12 +17,20 @@ use Vin\ShopwareSdk\Data\Entity\v6640\StateMachineState\StateMachineStateEntity;
 class OrderTransactionCaptureRefundEntity extends Entity
 {
     public ?string $captureId = null;
+
     public ?string $captureVersionId = null;
+
     public ?string $stateId = null;
+
     public ?StateMachineStateEntity $stateMachineState = null;
+
     public ?OrderTransactionCaptureEntity $transactionCapture = null;
+
     public ?OrderTransactionCaptureRefundPositionCollection $positions = null;
+
     public ?string $externalReference = null;
+
     public ?string $reason = null;
+
     public ?array $amount = null;
 }

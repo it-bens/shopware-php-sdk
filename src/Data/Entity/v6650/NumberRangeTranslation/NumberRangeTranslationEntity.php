@@ -16,9 +16,14 @@ use Vin\ShopwareSdk\Data\Entity\v6650\NumberRange\NumberRangeEntity;
 class NumberRangeTranslationEntity extends Entity
 {
     public ?string $name = null;
+
     public ?string $description = null;
+
     public ?string $numberRangeId = null;
+
     public ?string $languageId = null;
+
     public ?NumberRangeEntity $numberRange = null;
+
     public ?LanguageEntity $language = null;
 }

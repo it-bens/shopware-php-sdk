@@ -15,9 +15,14 @@ use Vin\ShopwareSdk\Data\Entity\v6660\ImportExportLog\ImportExportLogEntity;
 class ImportExportFileEntity extends Entity
 {
     public ?string $originalName = null;
+
     public ?string $path = null;
+
     public ?\DateTimeInterface $expireDate = null;
+
     public ?int $size = null;
+
     public ?ImportExportLogEntity $log = null;
+
     public ?string $accessToken = null;
 }

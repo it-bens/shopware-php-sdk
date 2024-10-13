@@ -16,7 +16,10 @@ use Vin\ShopwareSdk\Data\Entity\v6630\User\UserEntity;
 class AclUserRoleEntity extends Entity
 {
     public ?string $userId = null;
+
     public ?string $aclRoleId = null;
+
     public ?UserEntity $user = null;
+
     public ?AclRoleEntity $aclRole = null;
 }

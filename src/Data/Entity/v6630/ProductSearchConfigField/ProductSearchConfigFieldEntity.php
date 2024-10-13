@@ -16,11 +16,18 @@ use Vin\ShopwareSdk\Data\Entity\v6630\ProductSearchConfig\ProductSearchConfigEnt
 class ProductSearchConfigFieldEntity extends Entity
 {
     public ?string $searchConfigId = null;
+
     public ?string $customFieldId = null;
+
     public ?string $field = null;
+
     public ?bool $tokenize = null;
+
     public ?bool $searchable = null;
+
     public ?int $ranking = null;
+
     public ?ProductSearchConfigEntity $searchConfig = null;
+
     public ?CustomFieldEntity $customField = null;
 }

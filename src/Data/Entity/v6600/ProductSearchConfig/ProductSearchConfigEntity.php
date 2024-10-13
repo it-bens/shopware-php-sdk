@@ -16,9 +16,14 @@ use Vin\ShopwareSdk\Data\Entity\v6600\ProductSearchConfigField\ProductSearchConf
 class ProductSearchConfigEntity extends Entity
 {
     public ?string $languageId = null;
+
     public ?bool $andLogic = null;
+
     public ?int $minSearchLength = null;
+
     public ?array $excludedTerms = null;
+
     public ?LanguageEntity $language = null;
+
     public ?ProductSearchConfigFieldCollection $configFields = null;
 }

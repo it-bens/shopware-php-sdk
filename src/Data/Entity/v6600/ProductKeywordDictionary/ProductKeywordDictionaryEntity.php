@@ -15,7 +15,10 @@ use Vin\ShopwareSdk\Data\Entity\v6600\Language\LanguageEntity;
 class ProductKeywordDictionaryEntity extends Entity
 {
     public ?string $languageId = null;
+
     public ?string $keyword = null;
+
     public ?string $reversed = null;
+
     public ?LanguageEntity $language = null;
 }

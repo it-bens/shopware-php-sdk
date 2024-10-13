@@ -15,8 +15,12 @@ use Vin\ShopwareSdk\Data\Entity\v6650\App\AppEntity;
 class AppTemplateEntity extends Entity
 {
     public ?string $template = null;
+
     public ?string $path = null;
+
     public ?bool $active = null;
+
     public ?string $appId = null;
+
     public ?AppEntity $app = null;
 }

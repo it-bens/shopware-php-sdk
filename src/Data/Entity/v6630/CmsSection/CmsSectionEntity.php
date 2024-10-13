@@ -17,19 +17,34 @@ use Vin\ShopwareSdk\Data\Entity\v6630\Media\MediaEntity;
 class CmsSectionEntity extends Entity
 {
     public ?int $position = null;
+
     public ?string $type = null;
+
     public ?bool $locked = null;
+
     public ?string $name = null;
+
     public ?string $sizingMode = null;
+
     public ?string $mobileBehavior = null;
+
     public ?string $backgroundColor = null;
+
     public ?string $backgroundMediaId = null;
+
     public ?string $backgroundMediaMode = null;
+
     public ?string $cssClass = null;
+
     public ?string $pageId = null;
+
     public ?array $visibility = null;
+
     public ?CmsPageEntity $page = null;
+
     public ?MediaEntity $backgroundMedia = null;
+
     public ?CmsBlockCollection $blocks = null;
+
     public ?string $cmsPageVersionId = null;
 }

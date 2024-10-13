@@ -18,10 +18,16 @@ use Vin\ShopwareSdk\Data\Entity\v6640\StateMachineTranslation\StateMachineTransl
 class StateMachineEntity extends Entity
 {
     public ?string $technicalName = null;
+
     public ?string $name = null;
+
     public ?StateMachineStateCollection $states = null;
+
     public ?StateMachineTransitionCollection $transitions = null;
+
     public ?string $initialStateId = null;
+
     public ?StateMachineTranslationCollection $translations = null;
+
     public ?StateMachineHistoryCollection $historyEntries = null;
 }

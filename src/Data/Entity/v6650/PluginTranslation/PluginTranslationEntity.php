@@ -16,11 +16,18 @@ use Vin\ShopwareSdk\Data\Entity\v6650\Plugin\PluginEntity;
 class PluginTranslationEntity extends Entity
 {
     public ?string $label = null;
+
     public ?string $description = null;
+
     public ?string $manufacturerLink = null;
+
     public ?string $supportLink = null;
+
     public ?string $pluginId = null;
+
     public ?string $languageId = null;
+
     public ?PluginEntity $plugin = null;
+
     public ?LanguageEntity $language = null;
 }

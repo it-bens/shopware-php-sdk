@@ -15,14 +15,24 @@ use Vin\ShopwareSdk\Data\Entity\v6650\ProductStream\ProductStreamEntity;
 class ProductStreamFilterEntity extends Entity
 {
     public ?string $productStreamId = null;
+
     public ?string $parentId = null;
+
     public ?string $type = null;
+
     public ?string $field = null;
+
     public ?string $operator = null;
+
     public ?string $value = null;
+
     public ?array $parameters = null;
+
     public ?int $position = null;
+
     public ?ProductStreamEntity $productStream = null;
+
     public ?ProductStreamFilterEntity $parent = null;
+
     public ?ProductStreamFilterCollection $queries = null;
 }

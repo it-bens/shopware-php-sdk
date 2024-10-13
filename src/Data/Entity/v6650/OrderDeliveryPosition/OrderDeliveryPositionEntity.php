@@ -16,13 +16,22 @@ use Vin\ShopwareSdk\Data\Entity\v6650\OrderLineItem\OrderLineItemEntity;
 class OrderDeliveryPositionEntity extends Entity
 {
     public ?string $orderDeliveryId = null;
+
     public ?string $orderDeliveryVersionId = null;
+
     public ?string $orderLineItemId = null;
+
     public ?string $orderLineItemVersionId = null;
+
     public ?array $price = null;
+
     public ?float $unitPrice = null;
+
     public ?float $totalPrice = null;
+
     public ?int $quantity = null;
+
     public ?OrderDeliveryEntity $orderDelivery = null;
+
     public ?OrderLineItemEntity $orderLineItem = null;
 }

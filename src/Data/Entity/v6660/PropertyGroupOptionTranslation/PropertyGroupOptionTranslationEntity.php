@@ -16,9 +16,14 @@ use Vin\ShopwareSdk\Data\Entity\v6660\PropertyGroupOption\PropertyGroupOptionEnt
 class PropertyGroupOptionTranslationEntity extends Entity
 {
     public ?string $name = null;
+
     public ?int $position = null;
+
     public ?string $propertyGroupOptionId = null;
+
     public ?string $languageId = null;
+
     public ?PropertyGroupOptionEntity $propertyGroupOption = null;
+
     public ?LanguageEntity $language = null;
 }

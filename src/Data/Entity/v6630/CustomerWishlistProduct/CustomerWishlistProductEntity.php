@@ -16,8 +16,12 @@ use Vin\ShopwareSdk\Data\Entity\v6630\Product\ProductEntity;
 class CustomerWishlistProductEntity extends Entity
 {
     public ?string $productId = null;
+
     public ?string $productVersionId = null;
+
     public ?string $wishlistId = null;
+
     public ?CustomerWishlistEntity $wishlist = null;
+
     public ?ProductEntity $product = null;
 }

@@ -16,9 +16,14 @@ use Vin\ShopwareSdk\Data\Entity\v6600\Language\LanguageEntity;
 class CurrencyTranslationEntity extends Entity
 {
     public ?string $shortName = null;
+
     public ?string $name = null;
+
     public ?string $currencyId = null;
+
     public ?string $languageId = null;
+
     public ?CurrencyEntity $currency = null;
+
     public ?LanguageEntity $language = null;
 }

@@ -17,10 +17,16 @@ use Vin\ShopwareSdk\Data\Entity\v6640\Product\ProductEntity;
 class ProductMediaEntity extends Entity
 {
     public ?string $productId = null;
+
     public ?string $productVersionId = null;
+
     public ?string $mediaId = null;
+
     public ?int $position = null;
+
     public ?ProductEntity $product = null;
+
     public ?MediaEntity $media = null;
+
     public ?ProductCollection $coverProducts = null;
 }

@@ -16,7 +16,10 @@ use Vin\ShopwareSdk\Data\Entity\v6650\SalesChannel\SalesChannelEntity;
 class SalesChannelCurrencyEntity extends Entity
 {
     public ?string $salesChannelId = null;
+
     public ?string $currencyId = null;
+
     public ?SalesChannelEntity $salesChannel = null;
+
     public ?CurrencyEntity $currency = null;
 }

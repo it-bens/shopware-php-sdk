@@ -17,13 +17,22 @@ use Vin\ShopwareSdk\Data\Entity\v6600\TaxProviderTranslation\TaxProviderTranslat
 class TaxProviderEntity extends Entity
 {
     public ?string $identifier = null;
+
     public ?bool $active = null;
+
     public ?string $name = null;
+
     public ?int $priority = null;
+
     public ?string $processUrl = null;
+
     public ?string $availabilityRuleId = null;
+
     public ?string $appId = null;
+
     public ?TaxProviderTranslationCollection $translations = null;
+
     public ?RuleEntity $availabilityRule = null;
+
     public ?AppEntity $app = null;
 }

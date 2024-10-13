@@ -16,7 +16,10 @@ use Vin\ShopwareSdk\Data\Entity\v6640\SalesChannel\SalesChannelEntity;
 class CustomerGroupRegistrationSalesChannelsEntity extends Entity
 {
     public ?string $customerGroupId = null;
+
     public ?string $salesChannelId = null;
+
     public ?CustomerGroupEntity $customerGroup = null;
+
     public ?SalesChannelEntity $salesChannel = null;
 }

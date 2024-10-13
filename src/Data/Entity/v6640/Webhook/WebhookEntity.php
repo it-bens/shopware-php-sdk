@@ -15,11 +15,18 @@ use Vin\ShopwareSdk\Data\Entity\v6640\App\AppEntity;
 class WebhookEntity extends Entity
 {
     public ?string $name = null;
+
     public ?string $eventName = null;
+
     public ?string $url = null;
+
     public ?bool $onlyLiveVersion = null;
+
     public ?int $errorCount = null;
+
     public ?bool $active = null;
+
     public ?string $appId = null;
+
     public ?AppEntity $app = null;
 }

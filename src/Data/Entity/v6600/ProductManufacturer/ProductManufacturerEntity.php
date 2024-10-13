@@ -17,10 +17,16 @@ use Vin\ShopwareSdk\Data\Entity\v6600\ProductManufacturerTranslation\ProductManu
 class ProductManufacturerEntity extends Entity
 {
     public ?string $mediaId = null;
+
     public ?string $link = null;
+
     public ?string $name = null;
+
     public ?string $description = null;
+
     public ?MediaEntity $media = null;
+
     public ?ProductCollection $products = null;
+
     public ?ProductManufacturerTranslationCollection $translations = null;
 }

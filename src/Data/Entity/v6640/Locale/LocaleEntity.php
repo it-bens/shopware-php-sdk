@@ -17,9 +17,14 @@ use Vin\ShopwareSdk\Data\Entity\v6640\User\UserCollection;
 class LocaleEntity extends Entity
 {
     public ?string $code = null;
+
     public ?string $name = null;
+
     public ?string $territory = null;
+
     public ?LanguageCollection $languages = null;
+
     public ?LocaleTranslationCollection $translations = null;
+
     public ?UserCollection $users = null;
 }

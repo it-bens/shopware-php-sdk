@@ -15,6 +15,8 @@ use Vin\ShopwareSdk\Data\Entity\v6630\NumberRange\NumberRangeEntity;
 class NumberRangeStateEntity extends Entity
 {
     public ?string $numberRangeId = null;
+
     public ?int $lastValue = null;
+
     public ?NumberRangeEntity $numberRange = null;
 }

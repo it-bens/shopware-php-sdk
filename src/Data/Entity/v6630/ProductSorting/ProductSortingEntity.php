@@ -15,10 +15,16 @@ use Vin\ShopwareSdk\Data\Entity\v6630\ProductSortingTranslation\ProductSortingTr
 class ProductSortingEntity extends Entity
 {
     public ?bool $locked = null;
+
     public ?string $key = null;
+
     public ?int $priority = null;
+
     public ?bool $active = null;
+
     public ?array $fields = null;
+
     public ?string $label = null;
+
     public ?ProductSortingTranslationCollection $translations = null;
 }

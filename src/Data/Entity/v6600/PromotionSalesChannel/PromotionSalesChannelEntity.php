@@ -16,8 +16,12 @@ use Vin\ShopwareSdk\Data\Entity\v6600\SalesChannel\SalesChannelEntity;
 class PromotionSalesChannelEntity extends Entity
 {
     public ?string $promotionId = null;
+
     public ?string $salesChannelId = null;
+
     public ?int $priority = null;
+
     public ?PromotionEntity $promotion = null;
+
     public ?SalesChannelEntity $salesChannel = null;
 }

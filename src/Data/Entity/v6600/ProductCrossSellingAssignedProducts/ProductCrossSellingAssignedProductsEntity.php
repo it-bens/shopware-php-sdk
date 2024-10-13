@@ -16,9 +16,14 @@ use Vin\ShopwareSdk\Data\Entity\v6600\ProductCrossSelling\ProductCrossSellingEnt
 class ProductCrossSellingAssignedProductsEntity extends Entity
 {
     public ?string $crossSellingId = null;
+
     public ?string $productId = null;
+
     public ?string $productVersionId = null;
+
     public ?ProductEntity $product = null;
+
     public ?ProductCrossSellingEntity $crossSelling = null;
+
     public ?int $position = null;
 }

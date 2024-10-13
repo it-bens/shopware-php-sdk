@@ -16,8 +16,12 @@ use Vin\ShopwareSdk\Data\Entity\v6600\Language\LanguageEntity;
 class AppScriptConditionTranslationEntity extends Entity
 {
     public ?string $name = null;
+
     public ?string $appScriptConditionId = null;
+
     public ?string $languageId = null;
+
     public ?AppScriptConditionEntity $appScriptCondition = null;
+
     public ?LanguageEntity $language = null;
 }

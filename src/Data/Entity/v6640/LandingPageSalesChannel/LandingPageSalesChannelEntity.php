@@ -16,8 +16,12 @@ use Vin\ShopwareSdk\Data\Entity\v6640\SalesChannel\SalesChannelEntity;
 class LandingPageSalesChannelEntity extends Entity
 {
     public ?string $landingPageId = null;
+
     public ?string $landingPageVersionId = null;
+
     public ?string $salesChannelId = null;
+
     public ?LandingPageEntity $landingPage = null;
+
     public ?SalesChannelEntity $salesChannel = null;
 }

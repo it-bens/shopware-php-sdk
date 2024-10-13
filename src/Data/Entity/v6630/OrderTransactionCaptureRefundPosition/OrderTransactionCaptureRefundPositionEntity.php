@@ -16,13 +16,22 @@ use Vin\ShopwareSdk\Data\Entity\v6630\OrderTransactionCaptureRefund\OrderTransac
 class OrderTransactionCaptureRefundPositionEntity extends Entity
 {
     public ?string $refundId = null;
+
     public ?string $refundVersionId = null;
+
     public ?string $orderLineItemId = null;
+
     public ?string $orderLineItemVersionId = null;
+
     public ?OrderLineItemEntity $orderLineItem = null;
+
     public ?OrderTransactionCaptureRefundEntity $orderTransactionCaptureRefund = null;
+
     public ?string $externalReference = null;
+
     public ?string $reason = null;
+
     public ?int $quantity = null;
+
     public ?array $amount = null;
 }

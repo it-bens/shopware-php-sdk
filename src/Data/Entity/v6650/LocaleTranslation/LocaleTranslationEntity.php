@@ -16,9 +16,14 @@ use Vin\ShopwareSdk\Data\Entity\v6650\Locale\LocaleEntity;
 class LocaleTranslationEntity extends Entity
 {
     public ?string $name = null;
+
     public ?string $territory = null;
+
     public ?string $localeId = null;
+
     public ?string $languageId = null;
+
     public ?LocaleEntity $locale = null;
+
     public ?LanguageEntity $language = null;
 }

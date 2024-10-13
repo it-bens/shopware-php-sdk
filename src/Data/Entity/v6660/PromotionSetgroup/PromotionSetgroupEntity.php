@@ -16,9 +16,14 @@ use Vin\ShopwareSdk\Data\Entity\v6660\Rule\RuleCollection;
 class PromotionSetgroupEntity extends Entity
 {
     public ?string $promotionId = null;
+
     public ?string $packagerKey = null;
+
     public ?string $sorterKey = null;
+
     public ?float $value = null;
+
     public ?PromotionEntity $promotion = null;
+
     public ?RuleCollection $setGroupRules = null;
 }

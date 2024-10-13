@@ -15,6 +15,8 @@ use Vin\ShopwareSdk\Data\Entity\v6600\User\UserEntity;
 class UserRecoveryEntity extends Entity
 {
     public ?string $hash = null;
+
     public ?string $userId = null;
+
     public ?UserEntity $user = null;
 }

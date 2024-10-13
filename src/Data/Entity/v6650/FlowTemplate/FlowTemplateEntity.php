@@ -14,5 +14,6 @@ use Vin\ShopwareSdk\Data\Entity\Entity;
 class FlowTemplateEntity extends Entity
 {
     public ?string $name = null;
+
     public ?array $config = null;
 }

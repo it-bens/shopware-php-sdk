@@ -17,14 +17,24 @@ use Vin\ShopwareSdk\Data\Entity\v6630\SalesChannel\SalesChannelCollection;
 class CustomerGroupEntity extends Entity
 {
     public ?string $name = null;
+
     public ?bool $displayGross = null;
+
     public ?bool $registrationActive = null;
+
     public ?string $registrationTitle = null;
+
     public ?string $registrationIntroduction = null;
+
     public ?bool $registrationOnlyCompanyRegistration = null;
+
     public ?string $registrationSeoMetaDescription = null;
+
     public ?CustomerCollection $customers = null;
+
     public ?SalesChannelCollection $salesChannels = null;
+
     public ?CustomerGroupTranslationCollection $translations = null;
+
     public ?SalesChannelCollection $registrationSalesChannels = null;
 }

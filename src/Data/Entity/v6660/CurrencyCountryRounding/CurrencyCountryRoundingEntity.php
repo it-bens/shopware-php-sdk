@@ -16,9 +16,14 @@ use Vin\ShopwareSdk\Data\Entity\v6660\Currency\CurrencyEntity;
 class CurrencyCountryRoundingEntity extends Entity
 {
     public ?string $currencyId = null;
+
     public ?string $countryId = null;
+
     public ?array $itemRounding = null;
+
     public ?array $totalRounding = null;
+
     public ?CurrencyEntity $currency = null;
+
     public ?CountryEntity $country = null;
 }

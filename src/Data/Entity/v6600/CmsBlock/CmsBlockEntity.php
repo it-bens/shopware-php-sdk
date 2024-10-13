@@ -17,22 +17,40 @@ use Vin\ShopwareSdk\Data\Entity\v6600\Media\MediaEntity;
 class CmsBlockEntity extends Entity
 {
     public ?int $position = null;
+
     public ?string $type = null;
+
     public ?bool $locked = null;
+
     public ?string $name = null;
+
     public ?string $sectionPosition = null;
+
     public ?string $marginTop = null;
+
     public ?string $marginBottom = null;
+
     public ?string $marginLeft = null;
+
     public ?string $marginRight = null;
+
     public ?string $backgroundColor = null;
+
     public ?string $backgroundMediaId = null;
+
     public ?string $backgroundMediaMode = null;
+
     public ?string $cssClass = null;
+
     public ?array $visibility = null;
+
     public ?string $sectionId = null;
+
     public ?CmsSectionEntity $section = null;
+
     public ?MediaEntity $backgroundMedia = null;
+
     public ?CmsSlotCollection $slots = null;
+
     public ?string $cmsSectionVersionId = null;
 }

@@ -16,9 +16,14 @@ use Vin\ShopwareSdk\Data\Entity\v6600\Language\LanguageEntity;
 class CountryTranslationEntity extends Entity
 {
     public ?string $name = null;
+
     public ?array $addressFormat = null;
+
     public ?string $countryId = null;
+
     public ?string $languageId = null;
+
     public ?CountryEntity $country = null;
+
     public ?LanguageEntity $language = null;
 }

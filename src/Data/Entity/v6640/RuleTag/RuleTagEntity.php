@@ -16,7 +16,10 @@ use Vin\ShopwareSdk\Data\Entity\v6640\Tag\TagEntity;
 class RuleTagEntity extends Entity
 {
     public ?string $ruleId = null;
+
     public ?string $tagId = null;
+
     public ?RuleEntity $rule = null;
+
     public ?TagEntity $tag = null;
 }

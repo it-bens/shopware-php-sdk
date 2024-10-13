@@ -16,8 +16,12 @@ use Vin\ShopwareSdk\Data\Entity\v6650\PromotionDiscount\PromotionDiscountEntity;
 class PromotionDiscountPricesEntity extends Entity
 {
     public ?string $discountId = null;
+
     public ?string $currencyId = null;
+
     public ?float $price = null;
+
     public ?PromotionDiscountEntity $promotionDiscount = null;
+
     public ?CurrencyEntity $currency = null;
 }

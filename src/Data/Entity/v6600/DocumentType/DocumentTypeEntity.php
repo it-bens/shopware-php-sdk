@@ -18,9 +18,14 @@ use Vin\ShopwareSdk\Data\Entity\v6600\DocumentTypeTranslation\DocumentTypeTransl
 class DocumentTypeEntity extends Entity
 {
     public ?string $name = null;
+
     public ?string $technicalName = null;
+
     public ?DocumentTypeTranslationCollection $translations = null;
+
     public ?DocumentCollection $documents = null;
+
     public ?DocumentBaseConfigCollection $documentBaseConfigs = null;
+
     public ?DocumentBaseConfigSalesChannelCollection $documentBaseConfigSalesChannels = null;
 }

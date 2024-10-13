@@ -15,9 +15,14 @@ use Vin\ShopwareSdk\Data\Entity\v6630\App\AppEntity;
 class ScriptEntity extends Entity
 {
     public ?string $script = null;
+
     public ?string $hook = null;
+
     public ?string $name = null;
+
     public ?bool $active = null;
+
     public ?string $appId = null;
+
     public ?AppEntity $app = null;
 }

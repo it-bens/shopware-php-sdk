@@ -19,12 +19,20 @@ use Vin\ShopwareSdk\Data\Entity\v6660\ProductStreamTranslation\ProductStreamTran
 class ProductStreamEntity extends Entity
 {
     public ?array $apiFilter = null;
+
     public ?bool $invalid = null;
+
     public ?string $name = null;
+
     public ?string $description = null;
+
     public ?ProductStreamTranslationCollection $translations = null;
+
     public ?ProductStreamFilterCollection $filters = null;
+
     public ?ProductCrossSellingCollection $productCrossSellings = null;
+
     public ?ProductExportCollection $productExports = null;
+
     public ?CategoryCollection $categories = null;
 }

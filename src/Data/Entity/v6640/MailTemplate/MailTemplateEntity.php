@@ -17,13 +17,22 @@ use Vin\ShopwareSdk\Data\Entity\v6640\MailTemplateType\MailTemplateTypeEntity;
 class MailTemplateEntity extends Entity
 {
     public ?string $mailTemplateTypeId = null;
+
     public ?bool $systemDefault = null;
+
     public ?string $senderName = null;
+
     public ?string $description = null;
+
     public ?string $subject = null;
+
     public ?string $contentHtml = null;
+
     public ?string $contentPlain = null;
+
     public ?MailTemplateTranslationCollection $translations = null;
+
     public ?MailTemplateTypeEntity $mailTemplateType = null;
+
     public ?MailTemplateMediaCollection $media = null;
 }

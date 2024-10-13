@@ -16,10 +16,16 @@ use Vin\ShopwareSdk\Data\Entity\v6640\Product\ProductEntity;
 class ProductSearchKeywordEntity extends Entity
 {
     public ?string $languageId = null;
+
     public ?string $productId = null;
+
     public ?string $productVersionId = null;
+
     public ?string $keyword = null;
+
     public ?float $ranking = null;
+
     public ?ProductEntity $product = null;
+
     public ?LanguageEntity $language = null;
 }

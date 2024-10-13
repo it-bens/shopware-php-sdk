@@ -16,16 +16,28 @@ use Vin\ShopwareSdk\Data\Entity\v6600\SalesChannel\SalesChannelEntity;
 class SeoUrlEntity extends Entity
 {
     public ?string $salesChannelId = null;
+
     public ?string $languageId = null;
+
     public ?string $foreignKey = null;
+
     public ?string $routeName = null;
+
     public ?string $pathInfo = null;
+
     public ?string $seoPathInfo = null;
+
     public ?bool $isCanonical = null;
+
     public ?bool $isModified = null;
+
     public ?bool $isDeleted = null;
+
     public ?string $error = null;
+
     public ?string $url = null;
+
     public ?LanguageEntity $language = null;
+
     public ?SalesChannelEntity $salesChannel = null;
 }

@@ -16,13 +16,22 @@ use Vin\ShopwareSdk\Data\Entity\v6660\ShippingMethod\ShippingMethodEntity;
 class ShippingMethodPriceEntity extends Entity
 {
     public ?string $shippingMethodId = null;
+
     public ?string $ruleId = null;
+
     public ?int $calculation = null;
+
     public ?string $calculationRuleId = null;
+
     public ?float $quantityStart = null;
+
     public ?float $quantityEnd = null;
+
     public ?array $currencyPrice = null;
+
     public ?ShippingMethodEntity $shippingMethod = null;
+
     public ?RuleEntity $rule = null;
+
     public ?RuleEntity $calculationRule = null;
 }

@@ -16,8 +16,12 @@ use Vin\ShopwareSdk\Data\Entity\v6650\Tag\TagEntity;
 class OrderTagEntity extends Entity
 {
     public ?string $orderId = null;
+
     public ?string $orderVersionId = null;
+
     public ?string $tagId = null;
+
     public ?OrderEntity $order = null;
+
     public ?TagEntity $tag = null;
 }

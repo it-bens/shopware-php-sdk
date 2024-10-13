@@ -16,9 +16,14 @@ use Vin\ShopwareSdk\Data\Entity\v6640\Salutation\SalutationEntity;
 class SalutationTranslationEntity extends Entity
 {
     public ?string $displayName = null;
+
     public ?string $letterName = null;
+
     public ?string $salutationId = null;
+
     public ?string $languageId = null;
+
     public ?SalutationEntity $salutation = null;
+
     public ?LanguageEntity $language = null;
 }

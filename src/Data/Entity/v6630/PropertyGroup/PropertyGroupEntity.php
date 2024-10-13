@@ -16,12 +16,20 @@ use Vin\ShopwareSdk\Data\Entity\v6630\PropertyGroupTranslation\PropertyGroupTran
 class PropertyGroupEntity extends Entity
 {
     public ?string $name = null;
+
     public ?string $description = null;
+
     public ?string $displayType = null;
+
     public ?string $sortingType = null;
+
     public ?bool $filterable = null;
+
     public ?bool $visibleOnProductDetailPage = null;
+
     public ?int $position = null;
+
     public ?PropertyGroupOptionCollection $options = null;
+
     public ?PropertyGroupTranslationCollection $translations = null;
 }

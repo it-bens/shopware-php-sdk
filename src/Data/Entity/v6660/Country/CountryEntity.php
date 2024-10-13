@@ -21,31 +21,58 @@ use Vin\ShopwareSdk\Data\Entity\v6660\TaxRule\TaxRuleCollection;
 class CountryEntity extends Entity
 {
     public ?string $name = null;
+
     public ?string $iso = null;
+
     public ?int $position = null;
+
     public ?bool $active = null;
+
     public ?bool $shippingAvailable = null;
+
     public ?string $iso3 = null;
+
     public ?bool $displayStateInRegistration = null;
+
     public ?bool $forceStateInRegistration = null;
+
     public ?bool $checkVatIdPattern = null;
+
     public ?bool $vatIdRequired = null;
+
     public ?string $vatIdPattern = null;
+
     public ?array $customerTax = null;
+
     public ?array $companyTax = null;
+
     public ?bool $postalCodeRequired = null;
+
     public ?bool $checkPostalCodePattern = null;
+
     public ?bool $checkAdvancedPostalCodePattern = null;
+
     public ?string $advancedPostalCodePattern = null;
+
     public ?array $addressFormat = null;
+
     public ?string $defaultPostalCodePattern = null;
+
     public ?bool $isEu = null;
+
     public ?CountryStateCollection $states = null;
+
     public ?CountryTranslationCollection $translations = null;
+
     public ?CustomerAddressCollection $customerAddresses = null;
+
     public ?OrderAddressCollection $orderAddresses = null;
+
     public ?SalesChannelCollection $salesChannelDefaultAssignments = null;
+
     public ?SalesChannelCollection $salesChannels = null;
+
     public ?TaxRuleCollection $taxRules = null;
+
     public ?CurrencyCountryRoundingCollection $currencyCountryRoundings = null;
 }

@@ -23,13 +23,22 @@ use Vin\ShopwareSdk\Data\Entity\v6630\ShippingMethod\ShippingMethodCollection;
 class TagEntity extends Entity
 {
     public ?string $name = null;
+
     public ?ProductCollection $products = null;
+
     public ?MediaCollection $media = null;
+
     public ?CategoryCollection $categories = null;
+
     public ?CustomerCollection $customers = null;
+
     public ?OrderCollection $orders = null;
+
     public ?ShippingMethodCollection $shippingMethods = null;
+
     public ?NewsletterRecipientCollection $newsletterRecipients = null;
+
     public ?LandingPageCollection $landingPages = null;
+
     public ?RuleCollection $rules = null;
 }

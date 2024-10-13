@@ -16,11 +16,18 @@ use Vin\ShopwareSdk\Data\Entity\v6650\MediaThumbnailSize\MediaThumbnailSizeColle
 class MediaFolderConfigurationEntity extends Entity
 {
     public ?bool $createThumbnails = null;
+
     public ?bool $keepAspectRatio = null;
+
     public ?int $thumbnailQuality = null;
+
     public ?bool $private = null;
+
     public ?bool $noAssociation = null;
+
     public ?MediaFolderCollection $mediaFolders = null;
+
     public ?MediaThumbnailSizeCollection $mediaThumbnailSizes = null;
+
     public ?string $mediaThumbnailSizesRo = null;
 }

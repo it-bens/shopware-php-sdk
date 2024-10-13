@@ -15,12 +15,20 @@ use Vin\ShopwareSdk\Data\Entity\v6660\VersionCommit\VersionCommitEntity;
 class VersionCommitDataEntity extends Entity
 {
     public ?string $versionCommitId = null;
+
     public ?VersionCommitEntity $commit = null;
+
     public ?string $userId = null;
+
     public ?string $integrationId = null;
+
     public ?int $autoIncrement = null;
+
     public ?string $entityName = null;
+
     public ?array $entityId = null;
+
     public ?string $action = null;
+
     public ?array $payload = null;
 }

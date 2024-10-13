@@ -16,11 +16,18 @@ use Vin\ShopwareSdk\Data\Entity\v6650\AppActionButtonTranslation\AppActionButton
 class AppActionButtonEntity extends Entity
 {
     public ?string $entity = null;
+
     public ?string $view = null;
+
     public ?string $url = null;
+
     public ?string $action = null;
+
     public ?string $label = null;
+
     public ?AppActionButtonTranslationCollection $translations = null;
+
     public ?string $appId = null;
+
     public ?AppEntity $app = null;
 }

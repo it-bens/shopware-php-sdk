@@ -17,14 +17,24 @@ use Vin\ShopwareSdk\Data\Entity\v6660\RuleCondition\RuleConditionCollection;
 class AppScriptConditionEntity extends Entity
 {
     public ?string $identifier = null;
+
     public ?string $name = null;
+
     public ?bool $active = null;
+
     public ?string $group = null;
+
     public ?string $script = null;
+
     public ?string $constraints = null;
+
     public ?array $config = null;
+
     public ?string $appId = null;
+
     public ?AppEntity $app = null;
+
     public ?RuleConditionCollection $ruleConditions = null;
+
     public ?AppScriptConditionTranslationCollection $translations = null;
 }

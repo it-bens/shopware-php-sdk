@@ -15,8 +15,12 @@ use Vin\ShopwareSdk\Data\Entity\v6600\User\UserEntity;
 class UserAccessKeyEntity extends Entity
 {
     public ?string $userId = null;
+
     public ?string $accessKey = null;
+
     public ?string $secretAccessKey = null;
+
     public ?\DateTimeInterface $lastUsageAt = null;
+
     public ?UserEntity $user = null;
 }

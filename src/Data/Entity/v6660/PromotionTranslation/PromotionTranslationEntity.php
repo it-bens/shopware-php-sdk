@@ -16,8 +16,12 @@ use Vin\ShopwareSdk\Data\Entity\v6660\Promotion\PromotionEntity;
 class PromotionTranslationEntity extends Entity
 {
     public ?string $name = null;
+
     public ?string $promotionId = null;
+
     public ?string $languageId = null;
+
     public ?PromotionEntity $promotion = null;
+
     public ?LanguageEntity $language = null;
 }

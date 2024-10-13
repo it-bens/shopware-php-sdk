@@ -17,10 +17,16 @@ use Vin\ShopwareSdk\Data\Entity\v6600\ShippingMethod\ShippingMethodCollection;
 class DeliveryTimeEntity extends Entity
 {
     public ?string $name = null;
+
     public ?int $min = null;
+
     public ?int $max = null;
+
     public ?string $unit = null;
+
     public ?ShippingMethodCollection $shippingMethods = null;
+
     public ?ProductCollection $products = null;
+
     public ?DeliveryTimeTranslationCollection $translations = null;
 }

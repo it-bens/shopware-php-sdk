@@ -16,8 +16,12 @@ use Vin\ShopwareSdk\Data\Entity\v6630\Language\LanguageEntity;
 class ImportExportProfileTranslationEntity extends Entity
 {
     public ?string $label = null;
+
     public ?string $importExportProfileId = null;
+
     public ?string $languageId = null;
+
     public ?ImportExportProfileEntity $importExportProfile = null;
+
     public ?LanguageEntity $language = null;
 }

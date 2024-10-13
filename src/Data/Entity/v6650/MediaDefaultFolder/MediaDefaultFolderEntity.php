@@ -15,5 +15,6 @@ use Vin\ShopwareSdk\Data\Entity\v6650\MediaFolder\MediaFolderEntity;
 class MediaDefaultFolderEntity extends Entity
 {
     public ?string $entity = null;
+
     public ?MediaFolderEntity $folder = null;
 }

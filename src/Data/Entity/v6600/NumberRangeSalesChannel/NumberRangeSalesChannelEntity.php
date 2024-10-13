@@ -17,9 +17,14 @@ use Vin\ShopwareSdk\Data\Entity\v6600\SalesChannel\SalesChannelEntity;
 class NumberRangeSalesChannelEntity extends Entity
 {
     public ?string $numberRangeId = null;
+
     public ?string $salesChannelId = null;
+
     public ?string $numberRangeTypeId = null;
+
     public ?NumberRangeEntity $numberRange = null;
+
     public ?SalesChannelEntity $salesChannel = null;
+
     public ?NumberRangeTypeEntity $numberRangeType = null;
 }

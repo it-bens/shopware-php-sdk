@@ -16,9 +16,14 @@ use Vin\ShopwareSdk\Data\Entity\v6650\SalesChannel\SalesChannelEntity;
 class ProductVisibilityEntity extends Entity
 {
     public ?string $productId = null;
+
     public ?string $productVersionId = null;
+
     public ?string $salesChannelId = null;
+
     public ?int $visibility = null;
+
     public ?SalesChannelEntity $salesChannel = null;
+
     public ?ProductEntity $product = null;
 }

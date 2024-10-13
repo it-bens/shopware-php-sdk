@@ -21,17 +21,30 @@ use Vin\ShopwareSdk\Data\Entity\v6600\SalesChannel\SalesChannelCollection;
 class CmsPageEntity extends Entity
 {
     public ?string $name = null;
+
     public ?string $type = null;
+
     public ?string $entity = null;
+
     public ?string $cssClass = null;
+
     public ?array $config = null;
+
     public ?string $previewMediaId = null;
+
     public ?bool $locked = null;
+
     public ?CmsSectionCollection $sections = null;
+
     public ?CmsPageTranslationCollection $translations = null;
+
     public ?MediaEntity $previewMedia = null;
+
     public ?CategoryCollection $categories = null;
+
     public ?LandingPageCollection $landingPages = null;
+
     public ?SalesChannelCollection $homeSalesChannels = null;
+
     public ?ProductCollection $products = null;
 }

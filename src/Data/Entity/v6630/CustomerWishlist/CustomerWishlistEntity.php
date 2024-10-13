@@ -17,8 +17,12 @@ use Vin\ShopwareSdk\Data\Entity\v6630\SalesChannel\SalesChannelEntity;
 class CustomerWishlistEntity extends Entity
 {
     public ?string $customerId = null;
+
     public ?string $salesChannelId = null;
+
     public ?CustomerWishlistProductCollection $products = null;
+
     public ?CustomerEntity $customer = null;
+
     public ?SalesChannelEntity $salesChannel = null;
 }

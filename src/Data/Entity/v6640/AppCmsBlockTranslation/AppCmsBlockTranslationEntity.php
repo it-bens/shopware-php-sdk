@@ -16,8 +16,12 @@ use Vin\ShopwareSdk\Data\Entity\v6640\Language\LanguageEntity;
 class AppCmsBlockTranslationEntity extends Entity
 {
     public ?string $label = null;
+
     public ?string $appCmsBlockId = null;
+
     public ?string $languageId = null;
+
     public ?AppCmsBlockEntity $appCmsBlock = null;
+
     public ?LanguageEntity $language = null;
 }

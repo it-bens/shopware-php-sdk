@@ -16,10 +16,16 @@ use Vin\ShopwareSdk\Data\Entity\v6630\ShippingMethod\ShippingMethodEntity;
 class ShippingMethodTranslationEntity extends Entity
 {
     public ?string $name = null;
+
     public ?string $description = null;
+
     public ?string $trackingUrl = null;
+
     public ?string $shippingMethodId = null;
+
     public ?string $languageId = null;
+
     public ?ShippingMethodEntity $shippingMethod = null;
+
     public ?LanguageEntity $language = null;
 }

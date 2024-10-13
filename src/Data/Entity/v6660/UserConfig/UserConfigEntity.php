@@ -15,7 +15,10 @@ use Vin\ShopwareSdk\Data\Entity\v6660\User\UserEntity;
 class UserConfigEntity extends Entity
 {
     public ?string $userId = null;
+
     public ?string $key = null;
+
     public ?array $value = null;
+
     public ?UserEntity $user = null;
 }

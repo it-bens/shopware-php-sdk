@@ -16,7 +16,10 @@ use Vin\ShopwareSdk\Data\Entity\v6650\Tag\TagEntity;
 class CustomerTagEntity extends Entity
 {
     public ?string $customerId = null;
+
     public ?string $tagId = null;
+
     public ?CustomerEntity $customer = null;
+
     public ?TagEntity $tag = null;
 }

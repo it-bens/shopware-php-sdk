@@ -16,8 +16,12 @@ use Vin\ShopwareSdk\Data\Entity\v6640\PropertyGroupOption\PropertyGroupOptionEnt
 class ProductOptionEntity extends Entity
 {
     public ?string $productId = null;
+
     public ?string $productVersionId = null;
+
     public ?string $optionId = null;
+
     public ?ProductEntity $product = null;
+
     public ?PropertyGroupOptionEntity $option = null;
 }

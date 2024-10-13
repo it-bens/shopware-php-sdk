@@ -16,14 +16,24 @@ use Vin\ShopwareSdk\Data\Entity\v6600\SalesChannel\SalesChannelEntity;
 class SalesChannelTranslationEntity extends Entity
 {
     public ?string $name = null;
+
     public ?array $homeSlotConfig = null;
+
     public ?bool $homeEnabled = null;
+
     public ?string $homeName = null;
+
     public ?string $homeMetaTitle = null;
+
     public ?string $homeMetaDescription = null;
+
     public ?string $homeKeywords = null;
+
     public ?string $salesChannelId = null;
+
     public ?string $languageId = null;
+
     public ?SalesChannelEntity $salesChannel = null;
+
     public ?LanguageEntity $language = null;
 }

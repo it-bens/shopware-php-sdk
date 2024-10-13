@@ -16,7 +16,10 @@ use Vin\ShopwareSdk\Data\Entity\v6600\SalesChannel\SalesChannelEntity;
 class SalesChannelPaymentMethodEntity extends Entity
 {
     public ?string $salesChannelId = null;
+
     public ?string $paymentMethodId = null;
+
     public ?SalesChannelEntity $salesChannel = null;
+
     public ?PaymentMethodEntity $paymentMethod = null;
 }

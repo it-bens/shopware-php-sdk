@@ -16,12 +16,20 @@ use Vin\ShopwareSdk\Data\Entity\v6600\Language\LanguageEntity;
 class CustomerGroupTranslationEntity extends Entity
 {
     public ?string $name = null;
+
     public ?string $registrationTitle = null;
+
     public ?string $registrationIntroduction = null;
+
     public ?bool $registrationOnlyCompanyRegistration = null;
+
     public ?string $registrationSeoMetaDescription = null;
+
     public ?string $customerGroupId = null;
+
     public ?string $languageId = null;
+
     public ?CustomerGroupEntity $customerGroup = null;
+
     public ?LanguageEntity $language = null;
 }

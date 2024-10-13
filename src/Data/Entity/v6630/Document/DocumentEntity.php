@@ -17,19 +17,34 @@ use Vin\ShopwareSdk\Data\Entity\v6630\Order\OrderEntity;
 class DocumentEntity extends Entity
 {
     public ?string $documentTypeId = null;
+
     public ?string $fileType = null;
+
     public ?string $referencedDocumentId = null;
+
     public ?string $orderId = null;
+
     public ?string $documentMediaFileId = null;
+
     public ?string $orderVersionId = null;
+
     public ?array $config = null;
+
     public ?bool $sent = null;
+
     public ?bool $static = null;
+
     public ?string $deepLinkCode = null;
+
     public ?string $documentNumber = null;
+
     public ?DocumentTypeEntity $documentType = null;
+
     public ?OrderEntity $order = null;
+
     public ?DocumentEntity $referencedDocument = null;
+
     public ?DocumentCollection $dependentDocuments = null;
+
     public ?MediaEntity $documentMediaFile = null;
 }

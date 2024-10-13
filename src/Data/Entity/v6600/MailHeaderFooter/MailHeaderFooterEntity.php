@@ -16,12 +16,20 @@ use Vin\ShopwareSdk\Data\Entity\v6600\SalesChannel\SalesChannelCollection;
 class MailHeaderFooterEntity extends Entity
 {
     public ?bool $systemDefault = null;
+
     public ?string $name = null;
+
     public ?string $description = null;
+
     public ?string $headerHtml = null;
+
     public ?string $headerPlain = null;
+
     public ?string $footerHtml = null;
+
     public ?string $footerPlain = null;
+
     public ?MailHeaderFooterTranslationCollection $translations = null;
+
     public ?SalesChannelCollection $salesChannels = null;
 }

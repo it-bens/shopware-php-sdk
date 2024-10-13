@@ -19,15 +19,26 @@ use Vin\ShopwareSdk\Data\Entity\v6660\SnippetSet\SnippetSetEntity;
 class SalesChannelDomainEntity extends Entity
 {
     public ?string $url = null;
+
     public ?string $salesChannelId = null;
+
     public ?string $languageId = null;
+
     public ?string $currencyId = null;
+
     public ?string $snippetSetId = null;
+
     public ?SalesChannelEntity $salesChannel = null;
+
     public ?LanguageEntity $language = null;
+
     public ?CurrencyEntity $currency = null;
+
     public ?SnippetSetEntity $snippetSet = null;
+
     public ?SalesChannelEntity $salesChannelDefaultHreflang = null;
+
     public ?ProductExportCollection $productExports = null;
+
     public ?bool $hreflangUseOnlyLocale = null;
 }

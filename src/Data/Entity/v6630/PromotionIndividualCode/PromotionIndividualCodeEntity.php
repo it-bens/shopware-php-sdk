@@ -15,7 +15,10 @@ use Vin\ShopwareSdk\Data\Entity\v6630\Promotion\PromotionEntity;
 class PromotionIndividualCodeEntity extends Entity
 {
     public ?string $promotionId = null;
+
     public ?string $code = null;
+
     public ?array $payload = null;
+
     public ?PromotionEntity $promotion = null;
 }

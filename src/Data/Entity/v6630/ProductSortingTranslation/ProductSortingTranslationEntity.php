@@ -16,8 +16,12 @@ use Vin\ShopwareSdk\Data\Entity\v6630\ProductSorting\ProductSortingEntity;
 class ProductSortingTranslationEntity extends Entity
 {
     public ?string $label = null;
+
     public ?string $productSortingId = null;
+
     public ?string $languageId = null;
+
     public ?ProductSortingEntity $productSorting = null;
+
     public ?LanguageEntity $language = null;
 }

@@ -16,11 +16,18 @@ use Vin\ShopwareSdk\Data\Entity\v6650\Rule\RuleEntity;
 class ProductPriceEntity extends Entity
 {
     public ?string $productId = null;
+
     public ?string $productVersionId = null;
+
     public ?string $ruleId = null;
+
     public ?array $price = null;
+
     public ?int $quantityStart = null;
+
     public ?int $quantityEnd = null;
+
     public ?ProductEntity $product = null;
+
     public ?RuleEntity $rule = null;
 }

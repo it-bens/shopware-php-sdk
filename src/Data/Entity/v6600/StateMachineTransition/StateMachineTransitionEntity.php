@@ -16,10 +16,16 @@ use Vin\ShopwareSdk\Data\Entity\v6600\StateMachineState\StateMachineStateEntity;
 class StateMachineTransitionEntity extends Entity
 {
     public ?string $actionName = null;
+
     public ?string $stateMachineId = null;
+
     public ?StateMachineEntity $stateMachine = null;
+
     public ?string $fromStateId = null;
+
     public ?StateMachineStateEntity $fromStateMachineState = null;
+
     public ?string $toStateId = null;
+
     public ?StateMachineStateEntity $toStateMachineState = null;
 }

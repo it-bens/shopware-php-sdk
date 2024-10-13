@@ -16,7 +16,10 @@ use Vin\ShopwareSdk\Data\Entity\v6630\Rule\RuleEntity;
 class PromotionDiscountRuleEntity extends Entity
 {
     public ?string $discountId = null;
+
     public ?string $ruleId = null;
+
     public ?PromotionDiscountEntity $discount = null;
+
     public ?RuleEntity $rule = null;
 }

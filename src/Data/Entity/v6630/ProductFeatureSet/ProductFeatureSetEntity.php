@@ -16,8 +16,12 @@ use Vin\ShopwareSdk\Data\Entity\v6630\ProductFeatureSetTranslation\ProductFeatur
 class ProductFeatureSetEntity extends Entity
 {
     public ?string $name = null;
+
     public ?string $description = null;
+
     public ?array $features = null;
+
     public ?ProductCollection $products = null;
+
     public ?ProductFeatureSetTranslationCollection $translations = null;
 }

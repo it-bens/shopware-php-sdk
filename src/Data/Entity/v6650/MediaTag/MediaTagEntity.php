@@ -16,7 +16,10 @@ use Vin\ShopwareSdk\Data\Entity\v6650\Tag\TagEntity;
 class MediaTagEntity extends Entity
 {
     public ?string $mediaId = null;
+
     public ?string $tagId = null;
+
     public ?MediaEntity $media = null;
+
     public ?TagEntity $tag = null;
 }

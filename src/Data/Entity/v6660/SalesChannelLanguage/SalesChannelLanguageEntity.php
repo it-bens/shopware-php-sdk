@@ -16,7 +16,10 @@ use Vin\ShopwareSdk\Data\Entity\v6660\SalesChannel\SalesChannelEntity;
 class SalesChannelLanguageEntity extends Entity
 {
     public ?string $salesChannelId = null;
+
     public ?string $languageId = null;
+
     public ?SalesChannelEntity $salesChannel = null;
+
     public ?LanguageEntity $language = null;
 }

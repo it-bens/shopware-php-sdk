@@ -16,7 +16,10 @@ use Vin\ShopwareSdk\Data\Entity\v6640\Tag\TagEntity;
 class ShippingMethodTagEntity extends Entity
 {
     public ?string $shippingMethodId = null;
+
     public ?string $tagId = null;
+
     public ?ShippingMethodEntity $shippingMethod = null;
+
     public ?TagEntity $tag = null;
 }

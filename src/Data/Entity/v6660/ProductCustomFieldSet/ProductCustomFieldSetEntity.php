@@ -16,8 +16,12 @@ use Vin\ShopwareSdk\Data\Entity\v6660\Product\ProductEntity;
 class ProductCustomFieldSetEntity extends Entity
 {
     public ?string $productId = null;
+
     public ?string $customFieldSetId = null;
+
     public ?string $productVersionId = null;
+
     public ?ProductEntity $product = null;
+
     public ?CustomFieldSetEntity $customFieldSet = null;
 }

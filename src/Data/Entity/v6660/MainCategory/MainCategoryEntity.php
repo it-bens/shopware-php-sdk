@@ -17,11 +17,18 @@ use Vin\ShopwareSdk\Data\Entity\v6660\SalesChannel\SalesChannelEntity;
 class MainCategoryEntity extends Entity
 {
     public ?string $productId = null;
+
     public ?string $productVersionId = null;
+
     public ?string $categoryId = null;
+
     public ?string $categoryVersionId = null;
+
     public ?string $salesChannelId = null;
+
     public ?ProductEntity $product = null;
+
     public ?CategoryEntity $category = null;
+
     public ?SalesChannelEntity $salesChannel = null;
 }

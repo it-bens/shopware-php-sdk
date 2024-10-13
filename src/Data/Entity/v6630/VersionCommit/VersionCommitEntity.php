@@ -16,10 +16,16 @@ use Vin\ShopwareSdk\Data\Entity\v6630\VersionCommitData\VersionCommitDataCollect
 class VersionCommitEntity extends Entity
 {
     public ?string $userId = null;
+
     public ?string $integrationId = null;
+
     public ?int $autoIncrement = null;
+
     public ?bool $isMerge = null;
+
     public ?string $message = null;
+
     public ?VersionCommitDataCollection $data = null;
+
     public ?VersionEntity $version = null;
 }

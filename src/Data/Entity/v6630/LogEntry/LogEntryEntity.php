@@ -14,8 +14,12 @@ use Vin\ShopwareSdk\Data\Entity\Entity;
 class LogEntryEntity extends Entity
 {
     public ?string $message = null;
+
     public ?int $level = null;
+
     public ?string $channel = null;
+
     public ?array $context = null;
+
     public ?array $extra = null;
 }

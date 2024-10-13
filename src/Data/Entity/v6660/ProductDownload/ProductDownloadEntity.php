@@ -16,9 +16,14 @@ use Vin\ShopwareSdk\Data\Entity\v6660\Product\ProductEntity;
 class ProductDownloadEntity extends Entity
 {
     public ?string $productId = null;
+
     public ?string $productVersionId = null;
+
     public ?string $mediaId = null;
+
     public ?int $position = null;
+
     public ?ProductEntity $product = null;
+
     public ?MediaEntity $media = null;
 }

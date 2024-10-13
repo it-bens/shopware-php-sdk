@@ -16,10 +16,16 @@ use Vin\ShopwareSdk\Data\Entity\v6630\OrderLineItem\OrderLineItemEntity;
 class OrderLineItemDownloadEntity extends Entity
 {
     public ?string $orderLineItemId = null;
+
     public ?string $orderLineItemVersionId = null;
+
     public ?string $mediaId = null;
+
     public ?int $position = null;
+
     public ?bool $accessGranted = null;
+
     public ?OrderLineItemEntity $orderLineItem = null;
+
     public ?MediaEntity $media = null;
 }

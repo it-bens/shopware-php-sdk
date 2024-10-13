@@ -14,10 +14,16 @@ use Vin\ShopwareSdk\Data\Entity\Entity;
 class ScheduledTaskEntity extends Entity
 {
     public ?string $name = null;
+
     public ?string $scheduledTaskClass = null;
+
     public ?int $runInterval = null;
+
     public ?int $defaultRunInterval = null;
+
     public ?string $status = null;
+
     public ?\DateTimeInterface $lastExecutionTime = null;
+
     public ?\DateTimeInterface $nextExecutionTime = null;
 }

@@ -18,17 +18,30 @@ use Vin\ShopwareSdk\Data\Entity\v6600\ProductStream\ProductStreamEntity;
 class ProductCrossSellingEntity extends Entity
 {
     public ?string $name = null;
+
     public ?int $position = null;
+
     public ?string $sortBy = null;
+
     public ?string $sortDirection = null;
+
     public ?string $type = null;
+
     public ?bool $active = null;
+
     public ?int $limit = null;
+
     public ?string $productId = null;
+
     public ?string $productVersionId = null;
+
     public ?ProductEntity $product = null;
+
     public ?string $productStreamId = null;
+
     public ?ProductStreamEntity $productStream = null;
+
     public ?ProductCrossSellingAssignedProductsCollection $assignedProducts = null;
+
     public ?ProductCrossSellingTranslationCollection $translations = null;
 }

@@ -17,12 +17,20 @@ use Vin\ShopwareSdk\Data\Entity\v6650\Product\ProductCollection;
 class CustomFieldSetEntity extends Entity
 {
     public ?string $name = null;
+
     public ?array $config = null;
+
     public ?bool $active = null;
+
     public ?bool $global = null;
+
     public ?int $position = null;
+
     public ?string $appId = null;
+
     public ?CustomFieldSetRelationCollection $relations = null;
+
     public ?ProductCollection $products = null;
+
     public ?AppEntity $app = null;
 }

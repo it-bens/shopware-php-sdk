@@ -15,8 +15,12 @@ use Vin\ShopwareSdk\Data\Entity\v6650\SnippetSet\SnippetSetEntity;
 class SnippetEntity extends Entity
 {
     public ?string $setId = null;
+
     public ?string $translationKey = null;
+
     public ?string $value = null;
+
     public ?string $author = null;
+
     public ?SnippetSetEntity $set = null;
 }

@@ -17,12 +17,20 @@ use Vin\ShopwareSdk\Data\Entity\v6630\TaxRuleType\TaxRuleTypeEntity;
 class TaxRuleEntity extends Entity
 {
     public ?string $taxRuleTypeId = null;
+
     public ?string $countryId = null;
+
     public ?float $taxRate = null;
+
     public ?array $data = null;
+
     public ?string $taxId = null;
+
     public ?\DateTimeInterface $activeFrom = null;
+
     public ?TaxRuleTypeEntity $type = null;
+
     public ?CountryEntity $country = null;
+
     public ?TaxEntity $tax = null;
 }

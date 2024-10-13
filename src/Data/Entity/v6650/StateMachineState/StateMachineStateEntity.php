@@ -23,17 +23,30 @@ use Vin\ShopwareSdk\Data\Entity\v6650\StateMachineTransition\StateMachineTransit
 class StateMachineStateEntity extends Entity
 {
     public ?string $technicalName = null;
+
     public ?string $name = null;
+
     public ?string $stateMachineId = null;
+
     public ?StateMachineEntity $stateMachine = null;
+
     public ?StateMachineTransitionCollection $fromStateMachineTransitions = null;
+
     public ?StateMachineTransitionCollection $toStateMachineTransitions = null;
+
     public ?StateMachineStateTranslationCollection $translations = null;
+
     public ?OrderTransactionCollection $orderTransactions = null;
+
     public ?OrderDeliveryCollection $orderDeliveries = null;
+
     public ?OrderCollection $orders = null;
+
     public ?OrderTransactionCaptureCollection $orderTransactionCaptures = null;
+
     public ?OrderTransactionCaptureRefundCollection $orderTransactionCaptureRefunds = null;
+
     public ?StateMachineHistoryCollection $toStateMachineHistoryEntries = null;
+
     public ?StateMachineHistoryCollection $fromStateMachineHistoryEntries = null;
 }

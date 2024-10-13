@@ -15,6 +15,8 @@ use Vin\ShopwareSdk\Data\Entity\v6640\Customer\CustomerEntity;
 class CustomerRecoveryEntity extends Entity
 {
     public ?string $hash = null;
+
     public ?string $customerId = null;
+
     public ?CustomerEntity $customer = null;
 }

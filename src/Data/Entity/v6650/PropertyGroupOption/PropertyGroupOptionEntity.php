@@ -19,14 +19,24 @@ use Vin\ShopwareSdk\Data\Entity\v6650\PropertyGroupOptionTranslation\PropertyGro
 class PropertyGroupOptionEntity extends Entity
 {
     public ?string $groupId = null;
+
     public ?string $name = null;
+
     public ?int $position = null;
+
     public ?string $colorHexCode = null;
+
     public ?string $mediaId = null;
+
     public ?MediaEntity $media = null;
+
     public ?PropertyGroupEntity $group = null;
+
     public ?PropertyGroupOptionTranslationCollection $translations = null;
+
     public ?ProductConfiguratorSettingCollection $productConfiguratorSettings = null;
+
     public ?ProductCollection $productProperties = null;
+
     public ?ProductCollection $productOptions = null;
 }

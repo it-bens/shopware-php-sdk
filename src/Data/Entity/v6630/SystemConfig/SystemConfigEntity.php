@@ -15,7 +15,10 @@ use Vin\ShopwareSdk\Data\Entity\v6630\SalesChannel\SalesChannelEntity;
 class SystemConfigEntity extends Entity
 {
     public ?string $configurationKey = null;
+
     public ?array $configurationValue = null;
+
     public ?string $salesChannelId = null;
+
     public ?SalesChannelEntity $salesChannel = null;
 }

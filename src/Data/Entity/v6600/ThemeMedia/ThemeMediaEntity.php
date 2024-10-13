@@ -16,7 +16,10 @@ use Vin\ShopwareSdk\Data\Entity\v6600\Theme\ThemeEntity;
 class ThemeMediaEntity extends Entity
 {
     public ?string $themeId = null;
+
     public ?string $mediaId = null;
+
     public ?ThemeEntity $theme = null;
+
     public ?MediaEntity $media = null;
 }

@@ -15,5 +15,6 @@ use Vin\ShopwareSdk\Data\Entity\v6630\VersionCommit\VersionCommitCollection;
 class VersionEntity extends Entity
 {
     public ?string $name = null;
+
     public ?VersionCommitCollection $commits = null;
 }

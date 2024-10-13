@@ -24,25 +24,46 @@ use Vin\ShopwareSdk\Data\Entity\v6640\Tax\TaxEntity;
 class ShippingMethodEntity extends Entity
 {
     public ?string $name = null;
+
     public ?bool $active = null;
+
     public ?int $position = null;
+
     public ?string $availabilityRuleId = null;
+
     public ?string $mediaId = null;
+
     public ?string $deliveryTimeId = null;
+
     public ?string $taxType = null;
+
     public ?string $taxId = null;
+
     public ?DeliveryTimeEntity $deliveryTime = null;
+
     public ?string $description = null;
+
     public ?string $trackingUrl = null;
+
     public ?ShippingMethodTranslationCollection $translations = null;
+
     public ?RuleEntity $availabilityRule = null;
+
     public ?ShippingMethodPriceCollection $prices = null;
+
     public ?MediaEntity $media = null;
+
     public ?TagCollection $tags = null;
+
     public ?OrderDeliveryCollection $orderDeliveries = null;
+
     public ?SalesChannelCollection $salesChannels = null;
+
     public ?SalesChannelCollection $salesChannelDefaultAssignments = null;
+
     public ?TaxEntity $tax = null;
+
     public ?AppShippingMethodEntity $appShippingMethod = null;
+
     public ?string $technicalName = null;
 }

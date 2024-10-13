@@ -16,8 +16,12 @@ use Vin\ShopwareSdk\Data\Entity\v6630\Language\LanguageEntity;
 class DeliveryTimeTranslationEntity extends Entity
 {
     public ?string $name = null;
+
     public ?string $deliveryTimeId = null;
+
     public ?string $languageId = null;
+
     public ?DeliveryTimeEntity $deliveryTime = null;
+
     public ?LanguageEntity $language = null;
 }

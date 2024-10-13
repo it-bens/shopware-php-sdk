@@ -16,8 +16,12 @@ use Vin\ShopwareSdk\Data\Entity\v6640\Snippet\SnippetCollection;
 class SnippetSetEntity extends Entity
 {
     public ?string $name = null;
+
     public ?string $baseFile = null;
+
     public ?string $iso = null;
+
     public ?SnippetCollection $snippets = null;
+
     public ?SalesChannelDomainCollection $salesChannelDomains = null;
 }

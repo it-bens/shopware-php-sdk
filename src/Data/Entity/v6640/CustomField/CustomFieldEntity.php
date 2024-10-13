@@ -16,12 +16,20 @@ use Vin\ShopwareSdk\Data\Entity\v6640\ProductSearchConfigField\ProductSearchConf
 class CustomFieldEntity extends Entity
 {
     public ?string $name = null;
+
     public ?string $type = null;
+
     public ?array $config = null;
+
     public ?bool $active = null;
+
     public ?string $customFieldSetId = null;
+
     public ?bool $allowCustomerWrite = null;
+
     public ?bool $allowCartExpose = null;
+
     public ?CustomFieldSetEntity $customFieldSet = null;
+
     public ?ProductSearchConfigFieldCollection $productSearchConfigFields = null;
 }

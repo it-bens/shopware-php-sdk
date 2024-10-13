@@ -16,7 +16,10 @@ use Vin\ShopwareSdk\Data\Entity\v6660\Theme\ThemeEntity;
 class ThemeSalesChannelEntity extends Entity
 {
     public ?string $salesChannelId = null;
+
     public ?string $themeId = null;
+
     public ?ThemeEntity $theme = null;
+
     public ?SalesChannelEntity $salesChannel = null;
 }

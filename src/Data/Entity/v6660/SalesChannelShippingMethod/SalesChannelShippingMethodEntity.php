@@ -16,7 +16,10 @@ use Vin\ShopwareSdk\Data\Entity\v6660\ShippingMethod\ShippingMethodEntity;
 class SalesChannelShippingMethodEntity extends Entity
 {
     public ?string $salesChannelId = null;
+
     public ?string $shippingMethodId = null;
+
     public ?SalesChannelEntity $salesChannel = null;
+
     public ?ShippingMethodEntity $shippingMethod = null;
 }

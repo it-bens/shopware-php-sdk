@@ -15,6 +15,8 @@ use Vin\ShopwareSdk\Data\Entity\v6660\MediaFolderConfiguration\MediaFolderConfig
 class MediaThumbnailSizeEntity extends Entity
 {
     public ?int $width = null;
+
     public ?int $height = null;
+
     public ?MediaFolderConfigurationCollection $mediaFolderConfigurations = null;
 }

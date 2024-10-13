@@ -14,6 +14,8 @@ use Vin\ShopwareSdk\Data\Entity\Entity;
 class AppAdministrationSnippetEntity extends Entity
 {
     public ?string $value = null;
+
     public ?string $appId = null;
+
     public ?string $localeId = null;
 }

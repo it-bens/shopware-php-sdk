@@ -17,11 +17,18 @@ use Vin\ShopwareSdk\Data\Entity\v6660\ShippingMethod\ShippingMethodEntity;
 class AppShippingMethodEntity extends Entity
 {
     public ?string $appName = null;
+
     public ?string $identifier = null;
+
     public ?string $appId = null;
+
     public ?AppEntity $app = null;
+
     public ?string $shippingMethodId = null;
+
     public ?ShippingMethodEntity $shippingMethod = null;
+
     public ?string $originalMediaId = null;
+
     public ?MediaEntity $originalMedia = null;
 }

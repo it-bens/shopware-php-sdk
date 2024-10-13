@@ -16,9 +16,14 @@ use Vin\ShopwareSdk\Data\Entity\v6660\Unit\UnitEntity;
 class UnitTranslationEntity extends Entity
 {
     public ?string $shortCode = null;
+
     public ?string $name = null;
+
     public ?string $unitId = null;
+
     public ?string $languageId = null;
+
     public ?UnitEntity $unit = null;
+
     public ?LanguageEntity $language = null;
 }

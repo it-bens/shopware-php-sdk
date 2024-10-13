@@ -16,8 +16,12 @@ use Vin\ShopwareSdk\Data\Entity\v6660\Language\LanguageEntity;
 class DocumentTypeTranslationEntity extends Entity
 {
     public ?string $name = null;
+
     public ?string $documentTypeId = null;
+
     public ?string $languageId = null;
+
     public ?DocumentTypeEntity $documentType = null;
+
     public ?LanguageEntity $language = null;
 }

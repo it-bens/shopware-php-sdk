@@ -16,8 +16,12 @@ use Vin\ShopwareSdk\Data\Entity\v6630\Tag\TagEntity;
 class LandingPageTagEntity extends Entity
 {
     public ?string $landingPageId = null;
+
     public ?string $landingPageVersionId = null;
+
     public ?string $tagId = null;
+
     public ?LandingPageEntity $landingPage = null;
+
     public ?TagEntity $tag = null;
 }

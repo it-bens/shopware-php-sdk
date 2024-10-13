@@ -18,20 +18,36 @@ use Vin\ShopwareSdk\Data\Entity\v6630\Tag\TagCollection;
 class NewsletterRecipientEntity extends Entity
 {
     public ?string $email = null;
+
     public ?string $title = null;
+
     public ?string $firstName = null;
+
     public ?string $lastName = null;
+
     public ?string $zipCode = null;
+
     public ?string $city = null;
+
     public ?string $street = null;
+
     public ?string $status = null;
+
     public ?string $hash = null;
+
     public ?\DateTimeInterface $confirmedAt = null;
+
     public ?TagCollection $tags = null;
+
     public ?string $salutationId = null;
+
     public ?SalutationEntity $salutation = null;
+
     public ?string $languageId = null;
+
     public ?LanguageEntity $language = null;
+
     public ?string $salesChannelId = null;
+
     public ?SalesChannelEntity $salesChannel = null;
 }

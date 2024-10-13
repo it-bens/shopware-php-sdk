@@ -15,7 +15,10 @@ use Vin\ShopwareSdk\Data\Entity\v6660\Theme\ThemeEntity;
 class ThemeChildEntity extends Entity
 {
     public ?string $parentId = null;
+
     public ?string $childId = null;
+
     public ?ThemeEntity $parentTheme = null;
+
     public ?ThemeEntity $childTheme = null;
 }

@@ -16,9 +16,14 @@ use Vin\ShopwareSdk\Data\Entity\v6640\Language\LanguageEntity;
 class CmsPageTranslationEntity extends Entity
 {
     public ?string $name = null;
+
     public ?string $cmsPageId = null;
+
     public ?string $languageId = null;
+
     public ?CmsPageEntity $cmsPage = null;
+
     public ?LanguageEntity $language = null;
+
     public ?string $cmsPageVersionId = null;
 }

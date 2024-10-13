@@ -16,8 +16,12 @@ use Vin\ShopwareSdk\Data\Entity\v6660\TaxProvider\TaxProviderEntity;
 class TaxProviderTranslationEntity extends Entity
 {
     public ?string $name = null;
+
     public ?string $taxProviderId = null;
+
     public ?string $languageId = null;
+
     public ?TaxProviderEntity $taxProvider = null;
+
     public ?LanguageEntity $language = null;
 }

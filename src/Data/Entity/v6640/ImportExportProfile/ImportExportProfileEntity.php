@@ -16,17 +16,30 @@ use Vin\ShopwareSdk\Data\Entity\v6640\ImportExportProfileTranslation\ImportExpor
 class ImportExportProfileEntity extends Entity
 {
     public ?string $label = null;
+
     public ?string $type = null;
+
     public ?bool $systemDefault = null;
+
     public ?string $sourceEntity = null;
+
     public ?string $fileType = null;
+
     public ?string $delimiter = null;
+
     public ?string $enclosure = null;
+
     public ?array $mapping = null;
+
     public ?array $updateBy = null;
+
     public ?array $config = null;
+
     public ?ImportExportLogCollection $importExportLogs = null;
+
     public ?ImportExportProfileTranslationCollection $translations = null;
+
     public ?string $technicalName = null;
+
     public ?string $name = null;
 }

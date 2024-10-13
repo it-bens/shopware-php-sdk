@@ -16,13 +16,22 @@ use Vin\ShopwareSdk\Data\Entity\v6630\FlowSequence\FlowSequenceCollection;
 class FlowEntity extends Entity
 {
     public ?string $name = null;
+
     public ?string $eventName = null;
+
     public ?int $priority = null;
+
     public ?string $payload = null;
+
     public ?bool $invalid = null;
+
     public ?bool $active = null;
+
     public ?string $description = null;
+
     public ?FlowSequenceCollection $sequences = null;
+
     public ?string $appFlowEventId = null;
+
     public ?AppFlowEventEntity $appFlowEvent = null;
 }

@@ -16,7 +16,10 @@ use Vin\ShopwareSdk\Data\Entity\v6630\Integration\IntegrationEntity;
 class IntegrationRoleEntity extends Entity
 {
     public ?string $integrationId = null;
+
     public ?string $aclRoleId = null;
+
     public ?IntegrationEntity $integration = null;
+
     public ?AclRoleEntity $role = null;
 }

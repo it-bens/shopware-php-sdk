@@ -16,8 +16,12 @@ use Vin\ShopwareSdk\Data\Entity\v6630\Language\LanguageEntity;
 class AppActionButtonTranslationEntity extends Entity
 {
     public ?string $label = null;
+
     public ?string $appActionButtonId = null;
+
     public ?string $languageId = null;
+
     public ?AppActionButtonEntity $appActionButton = null;
+
     public ?LanguageEntity $language = null;
 }

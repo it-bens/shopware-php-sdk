@@ -15,8 +15,12 @@ use Vin\ShopwareSdk\Data\Entity\v6640\SalesChannel\SalesChannelEntity;
 class SalesChannelAnalyticsEntity extends Entity
 {
     public ?string $trackingId = null;
+
     public ?bool $active = null;
+
     public ?bool $trackOrders = null;
+
     public ?bool $anonymizeIp = null;
+
     public ?SalesChannelEntity $salesChannel = null;
 }

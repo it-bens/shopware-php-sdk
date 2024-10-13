@@ -20,12 +20,20 @@ use Vin\ShopwareSdk\Data\Entity\v6630\SalutationTranslation\SalutationTranslatio
 class SalutationEntity extends Entity
 {
     public ?string $salutationKey = null;
+
     public ?string $displayName = null;
+
     public ?string $letterName = null;
+
     public ?SalutationTranslationCollection $translations = null;
+
     public ?CustomerCollection $customers = null;
+
     public ?CustomerAddressCollection $customerAddresses = null;
+
     public ?OrderCustomerCollection $orderCustomers = null;
+
     public ?OrderAddressCollection $orderAddresses = null;
+
     public ?NewsletterRecipientCollection $newsletterRecipients = null;
 }

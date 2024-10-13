@@ -17,12 +17,20 @@ use Vin\ShopwareSdk\Service\Struct\NotificationCollection;
 class IntegrationEntity extends Entity
 {
     public ?string $label = null;
+
     public ?string $accessKey = null;
+
     public ?string $secretAccessKey = null;
+
     public ?\DateTimeInterface $lastUsageAt = null;
+
     public ?bool $admin = null;
+
     public ?\DateTimeInterface $deletedAt = null;
+
     public ?AppEntity $app = null;
+
     public ?AclRoleCollection $aclRoles = null;
+
     public ?NotificationCollection $createdNotifications = null;
 }

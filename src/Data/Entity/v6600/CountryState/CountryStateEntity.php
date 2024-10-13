@@ -18,12 +18,20 @@ use Vin\ShopwareSdk\Data\Entity\v6600\OrderAddress\OrderAddressCollection;
 class CountryStateEntity extends Entity
 {
     public ?string $countryId = null;
+
     public ?string $shortCode = null;
+
     public ?string $name = null;
+
     public ?int $position = null;
+
     public ?bool $active = null;
+
     public ?CountryEntity $country = null;
+
     public ?CountryStateTranslationCollection $translations = null;
+
     public ?CustomerAddressCollection $customerAddresses = null;
+
     public ?OrderAddressCollection $orderAddresses = null;
 }

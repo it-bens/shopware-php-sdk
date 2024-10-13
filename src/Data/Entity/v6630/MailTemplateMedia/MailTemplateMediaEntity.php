@@ -16,9 +16,14 @@ use Vin\ShopwareSdk\Data\Entity\v6630\Media\MediaEntity;
 class MailTemplateMediaEntity extends Entity
 {
     public ?string $mailTemplateId = null;
+
     public ?string $languageId = null;
+
     public ?string $mediaId = null;
+
     public ?int $position = null;
+
     public ?MailTemplateEntity $mailTemplate = null;
+
     public ?MediaEntity $media = null;
 }

@@ -16,10 +16,16 @@ use Vin\ShopwareSdk\Data\Entity\v6640\Language\LanguageEntity;
 class AppTranslationEntity extends Entity
 {
     public ?string $label = null;
+
     public ?string $description = null;
+
     public ?string $privacyPolicyExtensions = null;
+
     public ?string $appId = null;
+
     public ?string $languageId = null;
+
     public ?AppEntity $app = null;
+
     public ?LanguageEntity $language = null;
 }

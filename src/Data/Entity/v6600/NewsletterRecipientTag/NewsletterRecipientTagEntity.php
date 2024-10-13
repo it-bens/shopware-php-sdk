@@ -16,7 +16,10 @@ use Vin\ShopwareSdk\Data\Entity\v6600\Tag\TagEntity;
 class NewsletterRecipientTagEntity extends Entity
 {
     public ?string $newsletterRecipientId = null;
+
     public ?string $tagId = null;
+
     public ?NewsletterRecipientEntity $newsletterRecipient = null;
+
     public ?TagEntity $tag = null;
 }

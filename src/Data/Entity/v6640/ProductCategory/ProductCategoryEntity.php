@@ -16,9 +16,14 @@ use Vin\ShopwareSdk\Data\Entity\v6640\Product\ProductEntity;
 class ProductCategoryEntity extends Entity
 {
     public ?string $productId = null;
+
     public ?string $productVersionId = null;
+
     public ?string $categoryId = null;
+
     public ?string $categoryVersionId = null;
+
     public ?ProductEntity $product = null;
+
     public ?CategoryEntity $category = null;
 }

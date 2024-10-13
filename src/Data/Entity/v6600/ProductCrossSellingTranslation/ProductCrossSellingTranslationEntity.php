@@ -16,8 +16,12 @@ use Vin\ShopwareSdk\Data\Entity\v6600\ProductCrossSelling\ProductCrossSellingEnt
 class ProductCrossSellingTranslationEntity extends Entity
 {
     public ?string $name = null;
+
     public ?string $productCrossSellingId = null;
+
     public ?string $languageId = null;
+
     public ?ProductCrossSellingEntity $productCrossSelling = null;
+
     public ?LanguageEntity $language = null;
 }

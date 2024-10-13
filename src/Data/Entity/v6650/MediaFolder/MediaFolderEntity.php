@@ -17,15 +17,26 @@ use Vin\ShopwareSdk\Data\Entity\v6650\MediaFolderConfiguration\MediaFolderConfig
 class MediaFolderEntity extends Entity
 {
     public ?bool $useParentConfiguration = null;
+
     public ?string $configurationId = null;
+
     public ?string $defaultFolderId = null;
+
     public ?string $parentId = null;
+
     public ?MediaFolderEntity $parent = null;
+
     public ?MediaFolderCollection $children = null;
+
     public ?int $childCount = null;
+
     public ?string $path = null;
+
     public ?MediaCollection $media = null;
+
     public ?MediaDefaultFolderEntity $defaultFolder = null;
+
     public ?MediaFolderConfigurationEntity $configuration = null;
+
     public ?string $name = null;
 }

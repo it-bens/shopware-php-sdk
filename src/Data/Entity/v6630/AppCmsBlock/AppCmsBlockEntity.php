@@ -16,11 +16,18 @@ use Vin\ShopwareSdk\Data\Entity\v6630\AppCmsBlockTranslation\AppCmsBlockTranslat
 class AppCmsBlockEntity extends Entity
 {
     public ?string $name = null;
+
     public ?array $block = null;
+
     public ?string $template = null;
+
     public ?string $styles = null;
+
     public ?string $label = null;
+
     public ?AppCmsBlockTranslationCollection $translations = null;
+
     public ?string $appId = null;
+
     public ?AppEntity $app = null;
 }

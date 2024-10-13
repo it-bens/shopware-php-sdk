@@ -16,8 +16,12 @@ use Vin\ShopwareSdk\Data\Entity\v6600\TaxRuleTypeTranslation\TaxRuleTypeTranslat
 class TaxRuleTypeEntity extends Entity
 {
     public ?string $technicalName = null;
+
     public ?int $position = null;
+
     public ?string $typeName = null;
+
     public ?TaxRuleCollection $rules = null;
+
     public ?TaxRuleTypeTranslationCollection $translations = null;
 }

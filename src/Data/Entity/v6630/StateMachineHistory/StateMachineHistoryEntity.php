@@ -17,15 +17,26 @@ use Vin\ShopwareSdk\Data\Entity\v6630\User\UserEntity;
 class StateMachineHistoryEntity extends Entity
 {
     public ?string $referencedId = null;
+
     public ?string $referencedVersionId = null;
+
     public ?string $stateMachineId = null;
+
     public ?StateMachineEntity $stateMachine = null;
+
     public ?string $entityName = null;
+
     public ?string $fromStateId = null;
+
     public ?StateMachineStateEntity $fromStateMachineState = null;
+
     public ?string $toStateId = null;
+
     public ?StateMachineStateEntity $toStateMachineState = null;
+
     public ?string $transitionActionName = null;
+
     public ?string $userId = null;
+
     public ?UserEntity $user = null;
 }

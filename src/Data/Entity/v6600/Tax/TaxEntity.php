@@ -17,9 +17,14 @@ use Vin\ShopwareSdk\Data\Entity\v6600\TaxRule\TaxRuleCollection;
 class TaxEntity extends Entity
 {
     public ?float $taxRate = null;
+
     public ?string $name = null;
+
     public ?int $position = null;
+
     public ?ProductCollection $products = null;
+
     public ?TaxRuleCollection $rules = null;
+
     public ?ShippingMethodCollection $shippingMethods = null;
 }

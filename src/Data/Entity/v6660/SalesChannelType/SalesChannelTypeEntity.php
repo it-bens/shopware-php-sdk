@@ -16,12 +16,20 @@ use Vin\ShopwareSdk\Data\Entity\v6660\SalesChannelTypeTranslation\SalesChannelTy
 class SalesChannelTypeEntity extends Entity
 {
     public ?string $coverUrl = null;
+
     public ?string $iconName = null;
+
     public ?array $screenshotUrls = null;
+
     public ?string $name = null;
+
     public ?string $manufacturer = null;
+
     public ?string $description = null;
+
     public ?string $descriptionLong = null;
+
     public ?SalesChannelTypeTranslationCollection $translations = null;
+
     public ?SalesChannelCollection $salesChannels = null;
 }

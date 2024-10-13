@@ -16,10 +16,16 @@ use Vin\ShopwareSdk\Data\Entity\v6630\Theme\ThemeEntity;
 class ThemeTranslationEntity extends Entity
 {
     public ?string $description = null;
+
     public ?array $labels = null;
+
     public ?array $helpTexts = null;
+
     public ?string $themeId = null;
+
     public ?string $languageId = null;
+
     public ?ThemeEntity $theme = null;
+
     public ?LanguageEntity $language = null;
 }

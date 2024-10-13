@@ -18,12 +18,20 @@ use Vin\ShopwareSdk\Data\Entity\v6640\StateMachineState\StateMachineStateEntity;
 class OrderTransactionEntity extends Entity
 {
     public ?string $orderId = null;
+
     public ?string $orderVersionId = null;
+
     public ?string $paymentMethodId = null;
+
     public ?array $amount = null;
+
     public ?string $stateId = null;
+
     public ?StateMachineStateEntity $stateMachineState = null;
+
     public ?OrderEntity $order = null;
+
     public ?PaymentMethodEntity $paymentMethod = null;
+
     public ?OrderTransactionCaptureCollection $captures = null;
 }

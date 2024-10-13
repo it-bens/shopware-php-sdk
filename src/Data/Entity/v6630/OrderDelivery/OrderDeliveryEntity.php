@@ -19,18 +19,32 @@ use Vin\ShopwareSdk\Data\Entity\v6630\StateMachineState\StateMachineStateEntity;
 class OrderDeliveryEntity extends Entity
 {
     public ?string $orderId = null;
+
     public ?string $orderVersionId = null;
+
     public ?string $shippingOrderAddressId = null;
+
     public ?string $shippingOrderAddressVersionId = null;
+
     public ?string $shippingMethodId = null;
+
     public ?string $stateId = null;
+
     public ?StateMachineStateEntity $stateMachineState = null;
+
     public ?array $trackingCodes = null;
+
     public ?\DateTimeInterface $shippingDateEarliest = null;
+
     public ?\DateTimeInterface $shippingDateLatest = null;
+
     public ?array $shippingCosts = null;
+
     public ?OrderEntity $order = null;
+
     public ?OrderAddressEntity $shippingOrderAddress = null;
+
     public ?ShippingMethodEntity $shippingMethod = null;
+
     public ?OrderDeliveryPositionCollection $positions = null;
 }

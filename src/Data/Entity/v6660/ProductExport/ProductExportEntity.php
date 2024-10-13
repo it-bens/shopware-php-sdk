@@ -18,26 +18,48 @@ use Vin\ShopwareSdk\Data\Entity\v6660\SalesChannelDomain\SalesChannelDomainEntit
 class ProductExportEntity extends Entity
 {
     public ?string $productStreamId = null;
+
     public ?string $storefrontSalesChannelId = null;
+
     public ?string $salesChannelId = null;
+
     public ?string $salesChannelDomainId = null;
+
     public ?string $currencyId = null;
+
     public ?string $fileName = null;
+
     public ?string $accessKey = null;
+
     public ?string $encoding = null;
+
     public ?string $fileFormat = null;
+
     public ?bool $includeVariants = null;
+
     public ?bool $generateByCronjob = null;
+
     public ?\DateTimeInterface $generatedAt = null;
+
     public ?int $interval = null;
+
     public ?string $headerTemplate = null;
+
     public ?string $bodyTemplate = null;
+
     public ?string $footerTemplate = null;
+
     public ?bool $pausedSchedule = null;
+
     public ?bool $isRunning = null;
+
     public ?ProductStreamEntity $productStream = null;
+
     public ?SalesChannelEntity $storefrontSalesChannel = null;
+
     public ?SalesChannelEntity $salesChannel = null;
+
     public ?SalesChannelDomainEntity $salesChannelDomain = null;
+
     public ?CurrencyEntity $currency = null;
 }

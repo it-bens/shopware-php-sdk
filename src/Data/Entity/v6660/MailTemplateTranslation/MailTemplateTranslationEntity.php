@@ -16,12 +16,20 @@ use Vin\ShopwareSdk\Data\Entity\v6660\MailTemplate\MailTemplateEntity;
 class MailTemplateTranslationEntity extends Entity
 {
     public ?string $senderName = null;
+
     public ?string $description = null;
+
     public ?string $subject = null;
+
     public ?string $contentHtml = null;
+
     public ?string $contentPlain = null;
+
     public ?string $mailTemplateId = null;
+
     public ?string $languageId = null;
+
     public ?MailTemplateEntity $mailTemplate = null;
+
     public ?LanguageEntity $language = null;
 }

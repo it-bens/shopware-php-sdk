@@ -16,8 +16,12 @@ use Vin\ShopwareSdk\Data\Entity\v6600\ProductStream\ProductStreamEntity;
 class ProductStreamMappingEntity extends Entity
 {
     public ?string $productId = null;
+
     public ?string $productVersionId = null;
+
     public ?string $productStreamId = null;
+
     public ?ProductEntity $product = null;
+
     public ?ProductStreamEntity $productStream = null;
 }

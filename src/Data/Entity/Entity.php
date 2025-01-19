@@ -154,7 +154,7 @@ class Entity extends Struct
     public function assignProperties(array $options): self
     {
         foreach ($options as $key => $value) {
-            if ($key === 'id' && property_exists($this, 'id')) {
+            if ($key === 'id') {
                 $this->id = $value;
 
                 continue;

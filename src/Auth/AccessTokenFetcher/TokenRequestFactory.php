@@ -20,6 +20,7 @@ final readonly class TokenRequestFactory implements TokenRequestFactoryInterface
     public function createRequest(string $uri, array $data): RequestInterface
     {
         /** @var string $data */
+        /** @phpstan-ignore-next-line */
         $data = json_encode($data);
         $body = $this->streamFactory->createStream($data);
 

@@ -382,9 +382,7 @@ class Criteria implements ParseAware
             $params['fields'] = $this->fields;
         }
 
-        if ($this->totalCountMode !== null) {
-            $params['total-count-mode'] = $this->totalCountMode;
-        }
+        $params['total-count-mode'] = $this->totalCountMode;
 
         return $params;
     }

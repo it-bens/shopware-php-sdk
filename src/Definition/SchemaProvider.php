@@ -8,12 +8,12 @@ use Vin\ShopwareSdk\Data\Schema\Schema;
 use Vin\ShopwareSdk\Exception\DefinitionNotFoundException;
 use Vin\ShopwareSdk\Exception\SchemaNotFoundException;
 
-final class SchemaProvider implements SchemaProviderInterface
+final readonly class SchemaProvider implements SchemaProviderInterface
 {
-    private readonly SchemaCollection $schemaCollection;
+    private SchemaCollection $schemaCollection;
 
     public function __construct(
-        private readonly DefinitionProviderInterface $entityDefinitionProvider
+        private DefinitionProviderInterface $entityDefinitionProvider
     ) {
         $this->schemaCollection = new SchemaCollection();
     }

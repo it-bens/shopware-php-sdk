@@ -7,10 +7,10 @@ namespace Vin\ShopwareSdk\Hydrate\Service;
 use Vin\ShopwareSdk\Data\Entity\Entity;
 use Vin\ShopwareSdk\Definition\SchemaProviderInterface;
 
-final class AttributeHydrator implements AttributeHydratorInterface
+final readonly class AttributeHydrator implements AttributeHydratorInterface
 {
     public function __construct(
-        private readonly SchemaProviderInterface $schemaProvider
+        private SchemaProviderInterface $schemaProvider
     ) {
     }
 

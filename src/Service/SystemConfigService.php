@@ -9,7 +9,7 @@ use Vin\ShopwareSdk\Http\Struct\ApiResponse;
 use Vin\ShopwareSdk\Service\Struct\Config;
 use Vin\ShopwareSdk\Service\Struct\ConfigCollection;
 
-final class SystemConfigService implements SystemConfigServiceInterface
+final readonly class SystemConfigService implements SystemConfigServiceInterface
 {
     public const SYSTEM_CONFIG_CHECK_ENDPOINT = '/api/_action/system-config/check';
 
@@ -22,7 +22,7 @@ final class SystemConfigService implements SystemConfigServiceInterface
     public const SYSTEM_CONFIG_SAVE_BATCH_ENDPOINT = '/api/_action/system-config/batch';
 
     public function __construct(
-        private readonly ApiServiceInterface $apiService,
+        private ApiServiceInterface $apiService,
     ) {
     }
 

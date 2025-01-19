@@ -13,13 +13,13 @@ use Vin\ShopwareSdk\Repository\Struct\EntitySearchResultCollection;
 use Vin\ShopwareSdk\Repository\Struct\SearchResultMeta;
 use Vin\ShopwareSdk\Service\Api\ApiServiceInterface;
 
-final class AdminSearchService implements AdminSearchServiceInterface
+final readonly class AdminSearchService implements AdminSearchServiceInterface
 {
     private const ADMIN_SEARCH_ENDPOINT = '/api/_admin/search';
 
     public function __construct(
-        private readonly ApiServiceInterface $apiService,
-        private readonly HydratorInterface $hydrator,
+        private ApiServiceInterface $apiService,
+        private HydratorInterface $hydrator,
     ) {
     }
 

@@ -11,12 +11,12 @@ use Vin\ShopwareSdk\Exception\ShopwareRequestException;
 use Vin\ShopwareSdk\Http\Struct\ApiResponse;
 use Vin\ShopwareSdk\Http\Struct\MediaType;
 
-final class HttpClient implements HttpClientInterface
+final readonly class HttpClient implements HttpClientInterface
 {
     public function __construct(
-        private readonly RequestFactoryInterface $requestFactory,
-        private readonly ResponseParserInterface $responseParser,
-        private readonly ClientInterface $psr18HttpClient,
+        private RequestFactoryInterface $requestFactory,
+        private ResponseParserInterface $responseParser,
+        private ClientInterface $psr18HttpClient,
     ) {
     }
 

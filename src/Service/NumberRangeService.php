@@ -7,10 +7,10 @@ namespace Vin\ShopwareSdk\Service;
 use Vin\ShopwareSdk\Service\Api\ApiServiceInterface;
 use Vin\ShopwareSdk\Http\Struct\ApiResponse;
 
-final class NumberRangeService implements NumberRangeServiceInterface
+final readonly class NumberRangeService implements NumberRangeServiceInterface
 {
     public function __construct(
-        private readonly ApiServiceInterface $apiService,
+        private ApiServiceInterface $apiService,
     ) {
     }
 

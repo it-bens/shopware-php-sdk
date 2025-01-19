@@ -11,17 +11,17 @@ use Vin\ShopwareSdk\Hydrate\Service\AttributeHydratorInterface;
 use Vin\ShopwareSdk\Hydrate\Service\ExtensionParserInterface;
 use Vin\ShopwareSdk\Hydrate\Service\RelationshipsParserInterface;
 
-final class SearchResult
+final readonly class SearchResult
 {
-    private readonly EntityResultCache $entityResultCache;
+    private EntityResultCache $entityResultCache;
 
     /**
      * @param array{type: string, id: string, attributes: array<string, mixed>, relationships?: array<string, mixed>}[] $datasets
      * @param array{type: string, id: string, attributes: array<string, mixed>, relationships?: array<string, mixed>}[] $included
      */
     public function __construct(
-        private readonly array $datasets,
-        private readonly array $included,
+        private array $datasets,
+        private array $included,
     ) {
         $this->entityResultCache = new EntityResultCache();
     }

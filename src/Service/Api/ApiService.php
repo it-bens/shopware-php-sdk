@@ -14,11 +14,11 @@ use Vin\ShopwareSdk\Http\Struct\ApiResponse;
 /**
  * @phpstan-import-type Headers from Context
  */
-final class ApiService implements ApiServiceInterface
+final readonly class ApiService implements ApiServiceInterface
 {
     public function __construct(
-        private readonly ContextBuilderFactoryInterface $contextBuilderFactory,
-        private readonly HttpClientInterface $httpClient,
+        private ContextBuilderFactoryInterface $contextBuilderFactory,
+        private HttpClientInterface $httpClient,
     ) {
     }
 

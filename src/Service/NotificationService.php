@@ -9,14 +9,14 @@ use Vin\ShopwareSdk\Http\Struct\ApiResponse;
 use Vin\ShopwareSdk\Service\Struct\Notification;
 use Vin\ShopwareSdk\Service\Struct\NotificationCollection;
 
-final class NotificationService implements NotificationServiceInterface
+final readonly class NotificationService implements NotificationServiceInterface
 {
     private const NOTIFICATION_MESSAGE_ENDPOINT = '/api/notification/message';
 
     private const NOTIFICATION_ENDPOINT = '/api/notification';
 
     public function __construct(
-        private readonly ApiServiceInterface $apiService,
+        private ApiServiceInterface $apiService,
     ) {
     }
 

@@ -10,14 +10,14 @@ use Vin\ShopwareSdk\Auth\GrantType;
 use Vin\ShopwareSdk\Auth\GrantType\ClientCredentialsGrantType;
 use Vin\ShopwareSdk\Data\AccessToken;
 
-final class WithClientCredentials implements AccessTokenProvider
+final readonly class WithClientCredentials implements AccessTokenProvider
 {
-    private readonly GrantType $grantType;
+    private GrantType $grantType;
 
     public function __construct(
         string $clientId,
         string $clientSecret,
-        private readonly AccessTokenFetcher $accessTokenFetcher
+        private AccessTokenFetcher $accessTokenFetcher
     ) {
         $this->grantType = new ClientCredentialsGrantType($clientId, $clientSecret);
     }

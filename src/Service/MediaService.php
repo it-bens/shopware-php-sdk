@@ -7,7 +7,7 @@ namespace Vin\ShopwareSdk\Service;
 use Vin\ShopwareSdk\Service\Api\ApiServiceInterface;
 use Vin\ShopwareSdk\Http\Struct\ApiResponse;
 
-final class MediaService implements MediaServiceInterface
+final readonly class MediaService implements MediaServiceInterface
 {
     private const PROVIDE_NAME_ENDPOINT = '/api/_action/media/provide-name';
 
@@ -16,7 +16,7 @@ final class MediaService implements MediaServiceInterface
     private const UPLOAD_ENDPOINT = '/api/_action/media/%s/upload';
 
     public function __construct(
-        private readonly ApiServiceInterface $apiService,
+        private ApiServiceInterface $apiService,
     ) {
     }
 

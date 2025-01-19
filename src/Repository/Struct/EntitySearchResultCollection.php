@@ -29,12 +29,6 @@ class EntitySearchResultCollection extends Collection
         throw new \RuntimeException('EntitySearchResults have to be added with an entity name. Use `set` method instead.');
     }
 
-    #[\Override]
-    public function getExpectedClass(): string
-    {
-        return EntitySearchResult::class;
-    }
-
     /**
      * @param string $key
      * @param EntitySearchResult $element
@@ -47,5 +41,11 @@ class EntitySearchResultCollection extends Collection
         }
 
         parent::set($key, $element);
+    }
+
+    #[\Override]
+    protected function getExpectedClass(): string
+    {
+        return EntitySearchResult::class;
     }
 }

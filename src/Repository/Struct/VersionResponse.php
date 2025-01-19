@@ -8,11 +8,11 @@ use Vin\ShopwareSdk\Data\Struct;
 
 class VersionResponse extends Struct
 {
+    public string $id;
+
     protected string $versionId;
 
     protected ?string $versionName;
-
-    protected string $id;
 
     protected string $entity;
 

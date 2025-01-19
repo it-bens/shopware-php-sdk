@@ -74,7 +74,7 @@ final class EntityRepositoryTest extends TestCase
         $httpClient->expects($this->once())
             ->method('post')
             ->willReturnCallback(function (string $path, MediaType $contentTypeHeader, MediaType $acceptHeader, array $data, Context $context) use ($expectedPath, $expectedData, $expectedNewId): ApiResponse {
-                $this->assertEquals($expectedPath, $path);
+                $this->assertSame($expectedPath, $path);
                 $this->assertEquals(MediaType::APPLICATION_JSON, $contentTypeHeader);
                 $this->assertEquals(MediaType::APPLICATION_JSON_API, $acceptHeader);
                 $this->assertEquals($expectedData, $data);
@@ -91,7 +91,7 @@ final class EntityRepositoryTest extends TestCase
 
         $entityRepository = new EntityRepository($entityDefinition, $contextBuilderFactory, $httpClient, $hydrator);
 
-        $this->assertEquals($expectedNewId, $entityRepository->clone($id, $cloneBehaviour));
+        $this->assertSame($expectedNewId, $entityRepository->clone($id, $cloneBehaviour));
     }
 
     public static function createProvider(): \Generator
@@ -122,7 +122,7 @@ final class EntityRepositoryTest extends TestCase
         $httpClient->expects($this->once())
             ->method('post')
             ->willReturnCallback(function (string $path, MediaType $contentTypeHeader, MediaType $acceptHeader, array $data, Context $context) use ($expectedPath, $expectedData): ApiResponse {
-                $this->assertEquals($expectedPath, $path);
+                $this->assertSame($expectedPath, $path);
                 $this->assertEquals(MediaType::APPLICATION_JSON, $contentTypeHeader);
                 $this->assertEquals(MediaType::APPLICATION_JSON_API, $acceptHeader);
                 $this->assertEquals($expectedData, $data);
@@ -161,7 +161,7 @@ final class EntityRepositoryTest extends TestCase
             ->getEntityClass();
 
         $this->assertInstanceOf($expectedEntityClass, $entity);
-        $this->assertEquals($entityRepository->getDefinition()->getEntityName(), $entity->getEntityName());
+        $this->assertSame($entityRepository->getDefinition()->getEntityName(), $entity->getEntityName());
     }
 
     public static function createVersionProvider(): \Generator
@@ -224,15 +224,16 @@ final class EntityRepositoryTest extends TestCase
         $httpClient->expects($this->once())
             ->method('post')
             ->willReturnCallback(function (string $path, MediaType $contentTypeHeader, MediaType $acceptHeader, array $data, Context $context) use ($expectedPath, $versionId, $versionName, $expectedData): ApiResponse {
-                $this->assertEquals($expectedPath, $path);
+                $this->assertSame($expectedPath, $path);
                 $this->assertEquals(MediaType::APPLICATION_JSON, $contentTypeHeader);
                 $this->assertEquals(MediaType::APPLICATION_JSON_API, $acceptHeader);
 
                 if ($versionId !== null) {
-                    $this->assertEquals($versionId, $data['versionId']);
+                    $this->assertSame($versionId, $data['versionId']);
                 }
+
                 if ($versionName !== null) {
-                    $this->assertEquals($versionName, $data['versionName']);
+                    $this->assertSame($versionName, $data['versionName']);
                 }
 
                 $this->assertInstanceOf(Context::class, $context);
@@ -275,7 +276,7 @@ final class EntityRepositoryTest extends TestCase
         $httpClient->expects($this->once())
             ->method('delete')
             ->willReturnCallback(function (string $path, MediaType $contentTypeHeader, MediaType $acceptHeader, Context $context) use ($expectedPath): ApiResponse {
-                $this->assertEquals($expectedPath, $path);
+                $this->assertSame($expectedPath, $path);
                 $this->assertEquals(MediaType::APPLICATION_JSON, $contentTypeHeader);
                 $this->assertEquals(MediaType::APPLICATION_JSON_API, $acceptHeader);
                 $this->assertInstanceOf(Context::class, $context);
@@ -315,7 +316,7 @@ final class EntityRepositoryTest extends TestCase
         $httpClient->expects($this->once())
             ->method('post')
             ->willReturnCallback(function (string $path, MediaType $contentTypeHeader, MediaType $acceptHeader, array $data, Context $context) use ($expectedPath): ApiResponse {
-                $this->assertEquals($expectedPath, $path);
+                $this->assertSame($expectedPath, $path);
                 $this->assertEquals(MediaType::APPLICATION_JSON, $contentTypeHeader);
                 $this->assertEquals(MediaType::APPLICATION_JSON_API, $acceptHeader);
                 $this->assertEmpty($data);
@@ -351,10 +352,10 @@ final class EntityRepositoryTest extends TestCase
         $httpClient->expects($this->once())
             ->method('post')
             ->willReturnCallback(function (string $path, MediaType $contentTypeHeader, MediaType $acceptHeader, array $criteria, Context $context) use ($expectedPath, $id): ApiResponse {
-                $this->assertEquals($expectedPath, $path);
+                $this->assertSame($expectedPath, $path);
                 $this->assertEquals(MediaType::APPLICATION_JSON, $contentTypeHeader);
                 $this->assertEquals(MediaType::APPLICATION_JSON_API, $acceptHeader);
-                $this->assertEquals($id, $criteria['ids']);
+                $this->assertSame($id, $criteria['ids']);
                 $this->assertInstanceOf(Context::class, $context);
 
                 $response = $this->createStub(ApiResponse::class);
@@ -428,11 +429,11 @@ final class EntityRepositoryTest extends TestCase
         $httpClient->expects($this->once())
             ->method('post')
             ->willReturnCallback(function (string $path, MediaType $contentTypeHeader, MediaType $acceptHeader, array $data, Context $context) use ($versionId, $expectedPath): ApiResponse {
-                $this->assertEquals($expectedPath, $path);
+                $this->assertSame($expectedPath, $path);
                 $this->assertEquals(MediaType::APPLICATION_JSON, $contentTypeHeader);
                 $this->assertEquals(MediaType::APPLICATION_JSON_API, $acceptHeader);
                 $this->assertEmpty($data);
-                $this->assertEquals($versionId, $context->additionalHeaders['sw-version-id']);
+                $this->assertSame($versionId, $context->additionalHeaders['sw-version-id']);
 
                 return $this->createStub(ApiResponse::class);
             });
@@ -467,7 +468,7 @@ final class EntityRepositoryTest extends TestCase
         $httpClient->expects($this->once())
             ->method('post')
             ->willReturnCallback(function (string $path, MediaType $contentTypeHeader, MediaType $acceptHeader, array $data, Context $context) use ($criteria, $expectedPath): ApiResponse {
-                $this->assertEquals($expectedPath, $path);
+                $this->assertSame($expectedPath, $path);
                 $this->assertEquals(MediaType::APPLICATION_JSON, $contentTypeHeader);
                 $this->assertEquals(MediaType::APPLICATION_JSON_API, $acceptHeader);
                 $this->assertEquals($criteria->parse(), $data);
@@ -517,7 +518,7 @@ final class EntityRepositoryTest extends TestCase
         $httpClient->expects($this->once())
             ->method('post')
             ->willReturnCallback(function (string $path, MediaType $contentTypeHeader, MediaType $acceptHeader, array $data, Context $context) use ($criteria, $expectedPath): ApiResponse {
-                $this->assertEquals($expectedPath, $path);
+                $this->assertSame($expectedPath, $path);
                 $this->assertEquals(MediaType::APPLICATION_JSON, $contentTypeHeader);
                 $this->assertEquals(MediaType::APPLICATION_JSON_API, $acceptHeader);
                 $this->assertEquals($criteria->parse(), $data);
@@ -567,7 +568,7 @@ final class EntityRepositoryTest extends TestCase
         $httpClient->expects($this->once())
             ->method('patch')
             ->willReturnCallback(function (string $path, MediaType $contentTypeHeader, MediaType $acceptHeader, array $data, Context $context) use ($expectedPath, $expectedData): ApiResponse {
-                $this->assertEquals($expectedPath, $path);
+                $this->assertSame($expectedPath, $path);
                 $this->assertEquals(MediaType::APPLICATION_JSON, $contentTypeHeader);
                 $this->assertEquals(MediaType::APPLICATION_JSON_API, $acceptHeader);
                 $this->assertEquals($expectedData, $data);

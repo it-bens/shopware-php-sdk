@@ -201,6 +201,7 @@ final class RequestFactoryTest extends TestCase
         if (is_string($data)) {
             $this->addCreateStreamMethodToStreamFactory($streamFactory, $data, $stream);
         }
+
         if (is_resource($data)) {
             $this->addCreateStreamFromResourceMethodToStreamFactory($streamFactory, $data, $stream);
         }
@@ -274,8 +275,8 @@ final class RequestFactoryTest extends TestCase
     {
         $psrRequestFactory->expects($this->once())
             ->method('createRequest')
-            ->willReturnCallback(function ($passedMethod, $passedUri) use ($method, $endpoint, $request) {
-                $this->assertEquals($method, $passedMethod);
+            ->willReturnCallback(function ($passedMethod, $passedUri) use ($method, $endpoint, $request): RequestInterface {
+                $this->assertSame($method, $passedMethod);
                 /** @phpstan-ignore-next-line */
                 $this->assertStringEndsWith($endpoint, $passedUri);
 
@@ -287,8 +288,8 @@ final class RequestFactoryTest extends TestCase
     {
         $streamFactory->expects($this->once())
             ->method('createStream')
-            ->willReturnCallback(function ($passedData) use ($data, $stream) {
-                $this->assertEquals($data, $passedData);
+            ->willReturnCallback(function ($passedData) use ($data, $stream): StreamInterface {
+                $this->assertSame($data, $passedData);
 
                 return $stream;
             });
@@ -301,7 +302,7 @@ final class RequestFactoryTest extends TestCase
     {
         $streamFactory->expects($this->once())
             ->method('createStreamFromResource')
-            ->willReturnCallback(function ($passedData) use ($data, $stream) {
+            ->willReturnCallback(function ($passedData) use ($data, $stream): StreamInterface {
                 $this->assertEquals($data, $passedData);
 
                 return $stream;
@@ -312,7 +313,7 @@ final class RequestFactoryTest extends TestCase
     {
         $request->expects($this->once())
             ->method('withBody')
-            ->willReturnCallback(function ($passedStream) use ($expectedStream, $request) {
+            ->willReturnCallback(function ($passedStream) use ($expectedStream, $request): MockObject {
                 $this->assertEquals($expectedStream, $passedStream);
 
                 return $request;
@@ -324,7 +325,7 @@ final class RequestFactoryTest extends TestCase
         $withHeaderMethodCall = 0;
         $request->expects($this->exactly(8))
             ->method('withHeader')
-            ->willReturnCallback(function (string $name, $value) use ($expectedHeaders, &$withHeaderMethodCall, $request) {
+            ->willReturnCallback(function (string $name, $value) use ($expectedHeaders, &$withHeaderMethodCall, $request): MockObject {
                 $this->assertEquals($expectedHeaders[$withHeaderMethodCall], [
                     $name => $value,
                 ]);

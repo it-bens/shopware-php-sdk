@@ -46,7 +46,7 @@ final class ClientCredentialsGrantTypeTest extends TestCase
     {
         $grantType = new ClientCredentialsGrantType($clientId, $clientSecret);
         $this->assertInstanceOf(ClientCredentialsGrantType::class, $grantType);
-        $this->assertEquals($clientId, $grantType->clientId);
-        $this->assertEquals($clientSecret, $grantType->clientSecret);
+        $this->assertSame($clientId, $grantType->clientId);
+        $this->assertSame($clientSecret, $grantType->clientSecret);
     }
 }

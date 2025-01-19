@@ -82,6 +82,7 @@ class CriteriaTest extends TestCase
         $criteria->addFilter(new PrefixFilter('title', 'awesome'));
         $criteria->addFilter(new SuffixFilter('description', 'bronze'));
         $criteria->setTotalCountMode(Criteria::TOTAL_COUNT_MODE_EXACT);
+
         $parsed = $criteria->parse();
 
         $expectedParsed = [
@@ -267,6 +268,6 @@ class CriteriaTest extends TestCase
             'total-count-mode' => 1,
         ];
 
-        static::assertEquals($parsed, $expectedParsed);
+        $this->assertEquals($parsed, $expectedParsed);
     }
 }

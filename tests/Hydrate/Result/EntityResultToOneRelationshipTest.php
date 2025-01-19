@@ -81,6 +81,6 @@ final class EntityResultToOneRelationshipTest extends TestCase
         );
 
         $this->assertInstanceOf(ProductManufacturerEntity::class, $entity->manufacturer);
-        $this->assertEquals($expectedProductManufacturerId, $entity->manufacturer->id);
+        $this->assertSame($expectedProductManufacturerId, $entity->manufacturer->id);
     }
 }

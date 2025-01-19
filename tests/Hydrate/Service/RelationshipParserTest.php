@@ -47,7 +47,7 @@ final class RelationshipParserTest extends TestCase
         ];
 
         $relationshipDatasets = array_merge($relationshipDatasets);
-        foreach ($relationshipDatasets as $key => $relationshipDataset) {
+        foreach (array_keys($relationshipDatasets) as $key) {
             $relationshipDatasets[$key]['data'] = null;
         }
 

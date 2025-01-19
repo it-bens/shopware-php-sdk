@@ -30,7 +30,7 @@ final class EntityExtensionResultTest extends TestCase
     {
         $jsonData = self::parseStub('product');
         $productId = $jsonData['data'][0]['id'];
-        $data = $jsonData['included'][array_search($productId, array_column($jsonData['included'], 'id'))];
+        $data = $jsonData['included'][array_search($productId, array_column($jsonData['included'], 'id'), true)];
 
         yield [
             $data,
@@ -75,7 +75,7 @@ final class EntityExtensionResultTest extends TestCase
     ): void {
         /** @phpstan-ignore-next-line */
         $entityResult = EntityExtensionResult::fromData($data);
-        $this->assertEquals($expectedId, $entityResult->id);
+        $this->assertSame($expectedId, $entityResult->id);
     }
 
     #[DataProvider('hydrateExtensionProvider')]
@@ -93,6 +93,6 @@ final class EntityExtensionResultTest extends TestCase
         $this->assertInstanceOf(ProductMediaCollection::class, $entity->getExtension('additionalMedia'));
         /** @var ProductMediaCollection $additionalMedia */
         $additionalMedia = $entity->getExtension('additionalMedia');
-        $this->assertEquals(1, $additionalMedia->count());
+        $this->assertCount(1, $additionalMedia);
     }
 }

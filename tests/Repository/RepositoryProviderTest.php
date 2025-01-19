@@ -35,8 +35,8 @@ final class RepositoryProviderTest extends TestCase
         $definitionProvider = $this->createMock(DefinitionProviderInterface::class);
         $definitionProvider->expects($this->once())
             ->method('getDefinition')
-            ->willReturnCallback(function (string $entityName) {
-                $this->assertEquals(ProductDefinition::ENTITY_NAME, $entityName);
+            ->willReturnCallback(function (string $entityName): ProductDefinition {
+                $this->assertSame(ProductDefinition::ENTITY_NAME, $entityName);
 
                 return new ProductDefinition();
             });
@@ -44,7 +44,7 @@ final class RepositoryProviderTest extends TestCase
         $repositoryProvider = new RepositoryProvider($definitionProvider, $contextBuilderFactory, $httpClient, $entityHydrator);
 
         $entityRepository = $repositoryProvider->getRepository($entityName);
-        $this->assertEquals($entityName, $entityRepository->getDefinition()->getEntityName());
+        $this->assertSame($entityName, $entityRepository->getDefinition()->getEntityName());
 
         $alreadyInitializedEntityRepository = $repositoryProvider->getRepository($entityName);
         $this->assertSame($entityRepository, $alreadyInitializedEntityRepository);

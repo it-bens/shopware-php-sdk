@@ -41,10 +41,10 @@ final class WithClientCredentialsTest extends TestCase
         $accessTokenFetcher->expects($this->once())
             ->method('fetchAccessToken')
             ->with($this->isInstanceOf(ClientCredentialsGrantType::class))
-            ->willReturnCallback(function ($grantType) use ($clientId, $clientSecret) {
+            ->willReturnCallback(function ($grantType) use ($clientId, $clientSecret): AccessToken {
                 $this->assertInstanceOf(ClientCredentialsGrantType::class, $grantType);
-                $this->assertEquals($clientId, $grantType->clientId);
-                $this->assertEquals($clientSecret, $grantType->clientSecret);
+                $this->assertSame($clientId, $grantType->clientId);
+                $this->assertSame($clientSecret, $grantType->clientSecret);
 
                 return new AccessToken('ABC123');
             });

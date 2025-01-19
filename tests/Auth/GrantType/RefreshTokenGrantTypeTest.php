@@ -45,6 +45,6 @@ final class RefreshTokenGrantTypeTest extends TestCase
     {
         $grantType = new RefreshTokenGrantType($refreshToken);
         $this->assertInstanceOf(RefreshTokenGrantType::class, $grantType);
-        $this->assertEquals($refreshToken, $grantType->refreshToken);
+        $this->assertSame($refreshToken, $grantType->refreshToken);
     }
 }

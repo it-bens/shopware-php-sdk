@@ -53,8 +53,8 @@ final class EntityResultRelationshipTest extends TestCase
     ): void {
         $entityResultRelationship = $entityResultRelationshipClassName::fromDataAndPropertyName($data, $propertyName);
         $this->assertInstanceOf($entityResultRelationshipClassName, $entityResultRelationship);
-        $this->assertEquals($propertyName, $entityResultRelationship->propertyNameInEntity);
-        $this->assertEquals($expectedRelatedEntityName, $entityResultRelationship->relatedEntityName);
-        $this->assertEquals($expectedRelatedEntityId, $entityResultRelationship->relatedEntityId);
+        $this->assertSame($propertyName, $entityResultRelationship->propertyNameInEntity);
+        $this->assertSame($expectedRelatedEntityName, $entityResultRelationship->relatedEntityName);
+        $this->assertSame($expectedRelatedEntityId, $entityResultRelationship->relatedEntityId);
     }
 }

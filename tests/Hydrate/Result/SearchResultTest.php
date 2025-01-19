@@ -63,13 +63,13 @@ final class SearchResultTest extends TestCase
             $productManufacturerId = $data['relationships']['manufacturer']['data']['id'] ?? null;
             $productManufacturer = null;
             if (is_string($productManufacturerId)) {
-                $productManufacturer = $jsonData['included'][array_search($productManufacturerId, array_column($jsonData['included'], 'id'))] ?? null;
+                $productManufacturer = $jsonData['included'][array_search($productManufacturerId, array_column($jsonData['included'], 'id'), true)] ?? null;
             }
 
             $taxId = $data['relationships']['tax']['data']['id'] ?? null;
             $tax = null;
             if (is_string($taxId)) {
-                $tax = $jsonData['included'][array_search($taxId, array_column($jsonData['included'], 'id'))] ?? null;
+                $tax = $jsonData['included'][array_search($taxId, array_column($jsonData['included'], 'id'), true)] ?? null;
             }
 
             yield 'product ' . $data['id'] => [
@@ -106,9 +106,7 @@ final class SearchResultTest extends TestCase
         );
 
         $this->assertCount($expectedEntityCount, $entities);
-        foreach ($entities as $entity) {
-            $this->assertInstanceOf(Entity::class, $entity);
-        }
+        $this->assertContainsOnlyInstancesOf(Entity::class, $entities);
 
         foreach ($expectedIds as $expectedId) {
             $this->assertArrayHasKey($expectedId, $entities);
@@ -142,8 +140,8 @@ final class SearchResultTest extends TestCase
         $entity = array_pop($entities);
 
         $this->assertInstanceOf(Entity::class, $entity);
-        $this->assertEquals($expectedId, $entity->id);
-        $this->assertEquals($expectedProductNumber, $entity->productNumber);
+        $this->assertSame($expectedId, $entity->id);
+        $this->assertSame($expectedProductNumber, $entity->productNumber);
 
         $this->assertEquals($expectedManufacturerId, $entity->manufacturerId);
         $this->assertEquals($expectedManufacturerName, $entity->manufacturer?->name);

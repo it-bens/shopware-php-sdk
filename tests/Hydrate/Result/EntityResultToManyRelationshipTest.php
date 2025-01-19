@@ -81,7 +81,7 @@ final class EntityResultToManyRelationshipTest extends TestCase
         );
 
         $this->assertInstanceOf(ProductMediaCollection::class, $entity->media);
-        $this->assertEquals(1, $entity->media->count());
-        $this->assertEquals($expectedProductMediaId, $entity->media->first()?->id);
+        $this->assertSame(1, $entity->media->count());
+        $this->assertSame($expectedProductMediaId, $entity->media->first()?->id);
     }
 }

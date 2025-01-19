@@ -71,7 +71,7 @@ final class InfoService implements InfoServiceInterface
             return $this->cache[$entity];
         }
 
-        if ($this->schema !== null) {
+        if ($this->schema instanceof SchemaCollection) {
             return $this->schema->get($entity);
         }
 
@@ -81,6 +81,7 @@ final class InfoService implements InfoServiceInterface
         if (is_bool($localSchema) && $localSchema === false) {
             $this->schema = $this->refreshSchema();
         }
+
         if (is_string($localSchema)) {
             $decodedResponse = \json_decode($localSchema, true) ?? [];
             $this->schema = $this->parseSchema($decodedResponse);

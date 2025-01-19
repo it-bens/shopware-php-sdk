@@ -11,7 +11,7 @@ use Vin\ShopwareSdk\Data\Response\RegistrationResponse;
 use Vin\ShopwareSdk\Data\Webhook\Shop;
 use Vin\ShopwareSdk\Data\Webhook\ShopRegistrationResult;
 
-#[CoversClass(\Vin\ShopwareSdk\Data\Response\RegistrationResponse::class)]
+#[CoversClass(RegistrationResponse::class)]
 class RegistrationResponseTest extends TestCase
 {
     public function testResponse(): void

@@ -14,7 +14,7 @@ use Vin\ShopwareSdk\Data\Response\OpenModalResponse;
 use Vin\ShopwareSdk\Data\Response\OpenNewTabResponse;
 use Vin\ShopwareSdk\Data\Response\ReloadDataResponse;
 
-#[CoversClass(\Vin\ShopwareSdk\Data\Response\ActionButtonResponse::class)]
+#[CoversClass(ActionButtonResponse::class)]
 class ActionButtonResponseTest extends TestCase
 {
     public function testEmptyResponsestEmptyResponse(): void

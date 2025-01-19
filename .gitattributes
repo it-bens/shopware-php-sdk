@@ -1,0 +1,10 @@
+.github/ export-ignore
+tests/ export-ignore
+.gitattributes export-ignore
+captainhook.json export-ignore
+ecs.php export-ignore
+phpcs.xml.dist export-ignore
+phpstan.neon export-ignore
+phpunit.xml export-ignore
+rector.php export-ignore
+renovate.json export-ignore

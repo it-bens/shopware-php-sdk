@@ -11,7 +11,7 @@ return RectorConfig::configure()
         __DIR__ . '/src',
         __DIR__ . '/tests',
     ])
-    ->withSets([LevelSetList::UP_TO_PHP_81])
+    ->withSets([LevelSetList::UP_TO_PHP_82])
     ->withCache(
         cacheDirectory: '/tmp/rector',
         cacheClass: FileCacheStorage::class

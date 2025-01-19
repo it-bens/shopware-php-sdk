@@ -6,11 +6,11 @@ namespace Vin\ShopwareSdk\Context;
 
 use Vin\ShopwareSdk\Auth\AccessTokenProvider;
 
-final class ContextBuilderFactory implements ContextBuilderFactoryInterface
+final readonly class ContextBuilderFactory implements ContextBuilderFactoryInterface
 {
     public function __construct(
-        private readonly string $shopUrl,
-        private readonly AccessTokenProvider $accessTokenProvider
+        private string $shopUrl,
+        private AccessTokenProvider $accessTokenProvider
     ) {
     }
 

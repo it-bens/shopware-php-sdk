@@ -22,13 +22,13 @@ use Vin\ShopwareSdk\Repository\Struct\IdSearchResult;
 use Vin\ShopwareSdk\Repository\Struct\SearchResultMeta;
 use Vin\ShopwareSdk\Repository\Struct\VersionResponse;
 
-final class EntityRepository implements RepositoryInterface
+final readonly class EntityRepository implements RepositoryInterface
 {
     public function __construct(
-        private readonly EntityDefinition $definition,
-        private readonly ContextBuilderFactoryInterface $contextBuilderFactory,
-        private readonly HttpClientInterface $httpClient,
-        private readonly HydratorInterface $hydrator,
+        private EntityDefinition $definition,
+        private ContextBuilderFactoryInterface $contextBuilderFactory,
+        private HttpClientInterface $httpClient,
+        private HydratorInterface $hydrator,
     ) {
     }
 

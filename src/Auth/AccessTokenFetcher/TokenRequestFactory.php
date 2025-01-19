@@ -8,11 +8,11 @@ use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 
-final class TokenRequestFactory implements TokenRequestFactoryInterface
+final readonly class TokenRequestFactory implements TokenRequestFactoryInterface
 {
     public function __construct(
-        private readonly StreamFactoryInterface $streamFactory,
-        private readonly RequestFactoryInterface $requestFactory,
+        private StreamFactoryInterface $streamFactory,
+        private RequestFactoryInterface $requestFactory,
     ) {
     }
 

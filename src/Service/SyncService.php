@@ -8,12 +8,12 @@ use Vin\ShopwareSdk\Service\Api\ApiServiceInterface;
 use Vin\ShopwareSdk\Http\Struct\ApiResponse;
 use Vin\ShopwareSdk\Service\Struct\SyncPayload;
 
-final class SyncService implements SyncServiceInterface
+final readonly class SyncService implements SyncServiceInterface
 {
     private const SYNC_ENDPOINT = '/api/_action/sync';
 
     public function __construct(
-        private readonly ApiServiceInterface $apiService,
+        private ApiServiceInterface $apiService,
     ) {
     }
 

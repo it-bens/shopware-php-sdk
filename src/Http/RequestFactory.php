@@ -10,11 +10,11 @@ use Psr\Http\Message\StreamFactoryInterface;
 use Vin\ShopwareSdk\Data\Context;
 use Vin\ShopwareSdk\Http\Struct\MediaType;
 
-final class RequestFactory implements RequestFactoryInterface
+final readonly class RequestFactory implements RequestFactoryInterface
 {
     public function __construct(
-        private readonly StreamFactoryInterface $streamFactory,
-        private readonly PsrRequestFactoryInterface $requestFactory
+        private StreamFactoryInterface $streamFactory,
+        private PsrRequestFactoryInterface $requestFactory
     ) {
     }
 

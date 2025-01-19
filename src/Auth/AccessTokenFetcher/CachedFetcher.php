@@ -12,12 +12,12 @@ use Vin\ShopwareSdk\Auth\GrantType;
 use Vin\ShopwareSdk\Data\AccessToken;
 use Vin\ShopwareSdk\Exception\AuthorizationFailedException;
 
-final class CachedFetcher implements AccessTokenFetcher
+final readonly class CachedFetcher implements AccessTokenFetcher
 {
     public function __construct(
-        private readonly AccessTokenFetcher $accessTokenFetcher,
-        private readonly CacheInterface $cache,
-        private readonly ClockInterface $clock
+        private AccessTokenFetcher $accessTokenFetcher,
+        private CacheInterface $cache,
+        private ClockInterface $clock
     ) {
     }
 

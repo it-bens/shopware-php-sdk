@@ -8,14 +8,14 @@ use Vin\ShopwareSdk\Data\Mail\Mail;
 use Vin\ShopwareSdk\Service\Api\ApiServiceInterface;
 use Vin\ShopwareSdk\Http\Struct\ApiResponse;
 
-final class MailSendService implements MailSendServiceInterface
+final readonly class MailSendService implements MailSendServiceInterface
 {
     private const BUILD_PATH = '/api/_action/mail-template/build';
 
     private const SEND_PATH = '/api/_action/mail-template/send';
 
     public function __construct(
-        private readonly ApiServiceInterface $apiService,
+        private ApiServiceInterface $apiService,
     ) {
     }
 

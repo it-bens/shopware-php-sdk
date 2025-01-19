@@ -9,12 +9,12 @@ use Vin\ShopwareSdk\Http\Struct\ApiResponse;
 use Vin\ShopwareSdk\Service\Struct\Config;
 use Vin\ShopwareSdk\Service\Struct\ConfigCollection;
 
-final class UserConfigService implements UserConfigServiceInterface
+final readonly class UserConfigService implements UserConfigServiceInterface
 {
     private const USER_CONFIG_ENDPOINT = '/api/_info/config-me';
 
     public function __construct(
-        private readonly ApiServiceInterface $apiService,
+        private ApiServiceInterface $apiService,
     ) {
     }
 

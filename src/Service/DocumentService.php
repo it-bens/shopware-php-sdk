@@ -8,7 +8,7 @@ use Vin\ShopwareSdk\Http\Struct\ApiResponse;
 use Vin\ShopwareSdk\Service\Api\ApiServiceInterface;
 use Vin\ShopwareSdk\Service\Struct\DocumentGenerateOperationCollection;
 
-final class DocumentService implements DocumentServiceInterface
+final readonly class DocumentService implements DocumentServiceInterface
 {
     private const CREATE_ENDPOINT = '/api/_action/order/document/%s/create';
 
@@ -19,7 +19,7 @@ final class DocumentService implements DocumentServiceInterface
     private const UPLOAD_ENDPOINT = '/api/_action/document/%s/upload';
 
     public function __construct(
-        private readonly ApiServiceInterface $apiService,
+        private ApiServiceInterface $apiService,
     ) {
     }
 

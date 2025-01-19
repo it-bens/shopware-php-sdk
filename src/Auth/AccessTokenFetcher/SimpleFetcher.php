@@ -13,15 +13,15 @@ use Vin\ShopwareSdk\Exception\AuthorizationFailedException;
 use Vin\ShopwareSdk\Exception\ShopwareResponseException;
 use Vin\ShopwareSdk\Http\ResponseParserInterface;
 
-final class SimpleFetcher implements AccessTokenFetcher
+final readonly class SimpleFetcher implements AccessTokenFetcher
 {
     private const OAUTH_TOKEN_ENDPOINT = '/api/oauth/token';
 
     public function __construct(
-        private readonly string $shopUrl,
-        private readonly TokenRequestFactoryInterface $tokenRequestFactory,
-        private readonly ResponseParserInterface $responseParser,
-        private readonly ClientInterface $psr18HttpClient,
+        private string $shopUrl,
+        private TokenRequestFactoryInterface $tokenRequestFactory,
+        private ResponseParserInterface $responseParser,
+        private ClientInterface $psr18HttpClient,
     ) {
     }
 

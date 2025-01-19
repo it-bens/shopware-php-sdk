@@ -8,7 +8,7 @@ use Vin\ShopwareSdk\Data\Entity\Entity;
 use Vin\ShopwareSdk\Definition\DefinitionProviderInterface;
 use Vin\ShopwareSdk\Service\Api\ApiServiceInterface;
 
-final class UserService implements UserServiceInterface
+final readonly class UserService implements UserServiceInterface
 {
     private const USER_ROLE_ENDPOINT = '/api/acl-role';
 
@@ -19,8 +19,8 @@ final class UserService implements UserServiceInterface
     private const USER_PING_ENDPOINT = '/api/_info/ping';
 
     public function __construct(
-        private readonly ApiServiceInterface $apiService,
-        private readonly DefinitionProviderInterface $definitionProvider,
+        private ApiServiceInterface $apiService,
+        private DefinitionProviderInterface $definitionProvider,
     ) {
     }
 

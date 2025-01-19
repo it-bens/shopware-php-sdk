@@ -20,21 +20,25 @@ class StateMachineDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'state_machine';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return StateMachineEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return StateMachineCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('state_machine', new PropertyCollection([

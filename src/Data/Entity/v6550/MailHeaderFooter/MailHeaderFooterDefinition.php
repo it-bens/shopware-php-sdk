@@ -20,21 +20,25 @@ class MailHeaderFooterDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'mail_header_footer';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return MailHeaderFooterEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return MailHeaderFooterCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('mail_header_footer', new PropertyCollection([

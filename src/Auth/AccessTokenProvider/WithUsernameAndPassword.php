@@ -22,6 +22,7 @@ final readonly class WithUsernameAndPassword implements AccessTokenProvider
         $this->grantType = new PasswordGrantType($username, $password);
     }
 
+    #[\Override]
     public function getAccessToken(): AccessToken
     {
         return $this->accessTokenFetcher->fetchAccessToken($this->grantType);

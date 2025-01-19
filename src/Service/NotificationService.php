@@ -11,15 +11,16 @@ use Vin\ShopwareSdk\Service\Struct\NotificationCollection;
 
 final readonly class NotificationService implements NotificationServiceInterface
 {
-    private const NOTIFICATION_MESSAGE_ENDPOINT = '/api/notification/message';
+    private const string NOTIFICATION_MESSAGE_ENDPOINT = '/api/notification/message';
 
-    private const NOTIFICATION_ENDPOINT = '/api/notification';
+    private const string NOTIFICATION_ENDPOINT = '/api/notification';
 
     public function __construct(
         private ApiServiceInterface $apiService,
     ) {
     }
 
+    #[\Override]
     public function fetchNotifications(?string $latestTimestamp = null, ?int $limit = 5, array $additionalParams = [], array $additionalHeaders = []): NotificationCollection
     {
         $params = [
@@ -38,6 +39,7 @@ final readonly class NotificationService implements NotificationServiceInterface
         return $collection;
     }
 
+    #[\Override]
     public function sendNotification(Notification $notification, array $additionalHeaders = []): ApiResponse
     {
         return $this->apiService->post(self::NOTIFICATION_ENDPOINT, data: $notification->parse(), additionalHeaders: $additionalHeaders);

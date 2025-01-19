@@ -14,6 +14,7 @@ final readonly class AttributeHydrator implements AttributeHydratorInterface
     ) {
     }
 
+    #[\Override]
     public function hydrateAttributes(Entity $entity, string $entityName, array $attributes): void
     {
         $entitySchema = $this->schemaProvider->getSchema($entityName);

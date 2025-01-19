@@ -20,21 +20,25 @@ class ProductOptionDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'product_option';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return ProductOptionEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return ProductOptionCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('product_option', new PropertyCollection([

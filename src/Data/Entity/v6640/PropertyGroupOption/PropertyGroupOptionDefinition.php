@@ -20,21 +20,25 @@ class PropertyGroupOptionDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'property_group_option';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return PropertyGroupOptionEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return PropertyGroupOptionCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('property_group_option', new PropertyCollection([

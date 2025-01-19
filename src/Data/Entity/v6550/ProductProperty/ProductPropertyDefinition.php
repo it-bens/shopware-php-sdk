@@ -20,21 +20,25 @@ class ProductPropertyDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'product_property';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return ProductPropertyEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return ProductPropertyCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('product_property', new PropertyCollection([

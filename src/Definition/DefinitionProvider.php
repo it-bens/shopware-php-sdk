@@ -24,6 +24,7 @@ final readonly class DefinitionProvider implements DefinitionProviderInterface
         }
     }
 
+    #[\Override]
     public function getDefinition(string $entityName): EntityDefinition
     {
         return $this->definitionCollection->get($entityName) ?? throw new DefinitionNotFoundException($entityName);

@@ -29,6 +29,7 @@ class DocumentGenerateOperation implements ParseAware
     /**
      * @return DocumentGenerateOperationData
      */
+    #[\Override]
     public function parse(): array
     {
         return [

@@ -20,21 +20,25 @@ class AppScriptConditionTranslationDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'app_script_condition_translation';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return AppScriptConditionTranslationEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return AppScriptConditionTranslationCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('app_script_condition_translation', new PropertyCollection([

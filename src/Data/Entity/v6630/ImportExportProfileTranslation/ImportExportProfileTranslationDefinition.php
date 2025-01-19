@@ -20,21 +20,25 @@ class ImportExportProfileTranslationDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'import_export_profile_translation';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return ImportExportProfileTranslationEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return ImportExportProfileTranslationCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('import_export_profile_translation', new PropertyCollection([

@@ -20,21 +20,25 @@ class PromotionDiscountRuleDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'promotion_discount_rule';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return PromotionDiscountRuleEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return PromotionDiscountRuleCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('promotion_discount_rule', new PropertyCollection([

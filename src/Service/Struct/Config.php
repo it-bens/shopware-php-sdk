@@ -14,6 +14,7 @@ class Config implements ParseAware
     ) {
     }
 
+    #[\Override]
     public function parse(): array
     {
         return [

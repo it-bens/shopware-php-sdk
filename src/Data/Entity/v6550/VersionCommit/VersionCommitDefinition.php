@@ -20,21 +20,25 @@ class VersionCommitDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'version_commit';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return VersionCommitEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return VersionCommitCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('version_commit', new PropertyCollection([

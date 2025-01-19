@@ -10,19 +10,20 @@ use Vin\ShopwareSdk\Service\Struct\DocumentGenerateOperationCollection;
 
 final readonly class DocumentService implements DocumentServiceInterface
 {
-    private const CREATE_ENDPOINT = '/api/_action/order/document/%s/create';
+    private const string CREATE_ENDPOINT = '/api/_action/order/document/%s/create';
 
-    private const DOWNLOAD_ENDPOINT = '/api/_action/document/%s/%s';
+    private const string DOWNLOAD_ENDPOINT = '/api/_action/document/%s/%s';
 
-    private const DOWNLOADS_ENDPOINT = '/api/_action/order/document/download';
+    private const string DOWNLOADS_ENDPOINT = '/api/_action/order/document/download';
 
-    private const UPLOAD_ENDPOINT = '/api/_action/document/%s/upload';
+    private const string UPLOAD_ENDPOINT = '/api/_action/document/%s/upload';
 
     public function __construct(
         private ApiServiceInterface $apiService,
     ) {
     }
 
+    #[\Override]
     public function createDocument(string $documentTypeName, DocumentGenerateOperationCollection $operations): ApiResponse
     {
         $endpoint = sprintf(self::CREATE_ENDPOINT, $documentTypeName);
@@ -30,6 +31,7 @@ final readonly class DocumentService implements DocumentServiceInterface
         return $this->apiService->post($endpoint, data: $operations->parse());
     }
 
+    #[\Override]
     public function downloadDocument(string $documentId, string $deepLinkCode, bool $forceDownload = false): ApiResponse
     {
         $endpoint = sprintf(self::DOWNLOAD_ENDPOINT, $documentId, $deepLinkCode);
@@ -40,6 +42,7 @@ final readonly class DocumentService implements DocumentServiceInterface
         return $this->apiService->get($endpoint, $params);
     }
 
+    #[\Override]
     public function downloadDocuments(array $documentIds, bool $forceDownload = false): ApiResponse
     {
         $data = [
@@ -52,6 +55,7 @@ final readonly class DocumentService implements DocumentServiceInterface
         return $this->apiService->post(self::DOWNLOADS_ENDPOINT, $params, $data);
     }
 
+    #[\Override]
     public function uploadDocumentById(string $documentId, $data, ?string $fileName = null): ApiResponse
     {
         $endpoint = sprintf(self::UPLOAD_ENDPOINT, $documentId);
@@ -60,6 +64,7 @@ final readonly class DocumentService implements DocumentServiceInterface
         return $this->apiService->postMediaFile($endpoint, $params, $data);
     }
 
+    #[\Override]
     public function uploadDocumentFromUrl(string $documentId, string $url, ?string $fileName = null): ApiResponse
     {
         $data = [

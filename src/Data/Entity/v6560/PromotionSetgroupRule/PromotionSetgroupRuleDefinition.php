@@ -20,21 +20,25 @@ class PromotionSetgroupRuleDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'promotion_setgroup_rule';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return PromotionSetgroupRuleEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return PromotionSetgroupRuleCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('promotion_setgroup_rule', new PropertyCollection([

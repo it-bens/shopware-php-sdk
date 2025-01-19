@@ -24,6 +24,7 @@ final class RepositoryProvider implements RepositoryProviderInterface
     ) {
     }
 
+    #[\Override]
     public function getRepository(string $entityName): RepositoryInterface
     {
         if (array_key_exists($entityName, $this->repositories) === false) {

@@ -20,21 +20,25 @@ class DocumentBaseConfigSalesChannelDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'document_base_config_sales_channel';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return DocumentBaseConfigSalesChannelEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return DocumentBaseConfigSalesChannelCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('document_base_config_sales_channel', new PropertyCollection([

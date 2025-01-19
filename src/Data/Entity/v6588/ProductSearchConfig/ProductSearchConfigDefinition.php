@@ -20,21 +20,25 @@ class ProductSearchConfigDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'product_search_config';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return ProductSearchConfigEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return ProductSearchConfigCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('product_search_config', new PropertyCollection([

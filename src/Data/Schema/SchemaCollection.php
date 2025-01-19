@@ -23,6 +23,7 @@ class SchemaCollection extends Collection
         }
     }
 
+    #[\Override]
     protected function getExpectedClass(): string
     {
         return Schema::class;

@@ -20,6 +20,7 @@ class NotificationCollection extends Collection
         return $this->latestTimestamp;
     }
 
+    #[\Override]
     protected function getExpectedClass(): ?string
     {
         return Notification::class;

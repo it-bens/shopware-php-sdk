@@ -20,21 +20,25 @@ class MailHeaderFooterTranslationDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'mail_header_footer_translation';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return MailHeaderFooterTranslationEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return MailHeaderFooterTranslationCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('mail_header_footer_translation', new PropertyCollection([

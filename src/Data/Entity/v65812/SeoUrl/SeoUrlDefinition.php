@@ -20,21 +20,25 @@ class SeoUrlDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'seo_url';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return SeoUrlEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return SeoUrlCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('seo_url', new PropertyCollection([

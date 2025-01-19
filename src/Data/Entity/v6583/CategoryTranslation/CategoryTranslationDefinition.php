@@ -20,21 +20,25 @@ class CategoryTranslationDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'category_translation';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return CategoryTranslationEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return CategoryTranslationCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('category_translation', new PropertyCollection([

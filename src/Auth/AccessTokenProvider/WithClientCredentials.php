@@ -22,6 +22,7 @@ final readonly class WithClientCredentials implements AccessTokenProvider
         $this->grantType = new ClientCredentialsGrantType($clientId, $clientSecret);
     }
 
+    #[\Override]
     public function getAccessToken(): AccessToken
     {
         return $this->accessTokenFetcher->fetchAccessToken($this->grantType);

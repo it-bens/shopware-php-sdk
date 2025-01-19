@@ -20,21 +20,25 @@ class ThemeSalesChannelDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'theme_sales_channel';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return ThemeSalesChannelEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return ThemeSalesChannelCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('theme_sales_channel', new PropertyCollection([

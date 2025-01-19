@@ -16,6 +16,7 @@ final readonly class TokenRequestFactory implements TokenRequestFactoryInterface
     ) {
     }
 
+    #[\Override]
     public function createRequest(string $uri, array $data): RequestInterface
     {
         /** @var string $data */

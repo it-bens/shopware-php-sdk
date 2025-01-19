@@ -20,21 +20,25 @@ class CustomerGroupDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'customer_group';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return CustomerGroupEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return CustomerGroupCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('customer_group', new PropertyCollection([

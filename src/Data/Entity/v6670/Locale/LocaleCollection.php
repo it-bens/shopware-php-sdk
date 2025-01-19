@@ -21,6 +21,7 @@ use Vin\ShopwareSdk\Data\Entity\EntityCollection;
  */
 class LocaleCollection extends EntityCollection
 {
+    #[\Override]
     public function getExpectedClass(): string
     {
         return LocaleEntity::class;

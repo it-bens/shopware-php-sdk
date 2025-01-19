@@ -12,6 +12,7 @@ use Vin\ShopwareSdk\Hydrate\Service\AttributeHydratorInterface;
 
 final class EntityResultToManyRelationship extends EntityResultRelationship
 {
+    #[\Override]
     public function hydrateRelationship(
         Entity $entity,
         callable $propertyGetter,

@@ -20,21 +20,25 @@ class CurrencyDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'currency';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return CurrencyEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return CurrencyCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('currency', new PropertyCollection([

@@ -15,7 +15,7 @@ use Vin\ShopwareSdk\Http\ResponseParserInterface;
 
 final readonly class SimpleFetcher implements AccessTokenFetcher
 {
-    private const OAUTH_TOKEN_ENDPOINT = '/api/oauth/token';
+    private const string OAUTH_TOKEN_ENDPOINT = '/api/oauth/token';
 
     public function __construct(
         private string $shopUrl,
@@ -28,6 +28,7 @@ final readonly class SimpleFetcher implements AccessTokenFetcher
     /**
      * @throws AuthorizationFailedException
      */
+    #[\Override]
     public function fetchAccessToken(GrantType $grantType): AccessToken
     {
         $uri = $this->shopUrl . self::OAUTH_TOKEN_ENDPOINT;

@@ -20,21 +20,25 @@ class CustomerGroupRegistrationSalesChannelsDefinition implements EntityDefiniti
 {
     public const ENTITY_NAME = 'customer_group_registration_sales_channels';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return CustomerGroupRegistrationSalesChannelsEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return CustomerGroupRegistrationSalesChannelsCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('customer_group_registration_sales_channels', new PropertyCollection([

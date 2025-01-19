@@ -10,15 +10,16 @@ use Vin\ShopwareSdk\Http\Struct\ApiResponse;
 
 final readonly class MailSendService implements MailSendServiceInterface
 {
-    private const BUILD_PATH = '/api/_action/mail-template/build';
+    private const string BUILD_PATH = '/api/_action/mail-template/build';
 
-    private const SEND_PATH = '/api/_action/mail-template/send';
+    private const string SEND_PATH = '/api/_action/mail-template/send';
 
     public function __construct(
         private ApiServiceInterface $apiService,
     ) {
     }
 
+    #[\Override]
     public function build(string $content, array $templateData, array $additionalHeaders = []): ApiResponse
     {
         $data = [
@@ -33,6 +34,7 @@ final readonly class MailSendService implements MailSendServiceInterface
         return $this->apiService->post(self::BUILD_PATH, data: $data, additionalHeaders: $additionalHeaders);
     }
 
+    #[\Override]
     public function send(Mail $mail, array $additionalHeaders = []): ApiResponse
     {
         $data = array_filter($mail->jsonSerialize());

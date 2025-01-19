@@ -20,21 +20,25 @@ class PromotionSalesChannelDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'promotion_sales_channel';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return PromotionSalesChannelEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return PromotionSalesChannelCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('promotion_sales_channel', new PropertyCollection([

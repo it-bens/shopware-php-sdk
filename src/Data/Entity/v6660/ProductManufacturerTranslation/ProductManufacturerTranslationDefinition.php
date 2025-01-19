@@ -20,21 +20,25 @@ class ProductManufacturerTranslationDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'product_manufacturer_translation';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return ProductManufacturerTranslationEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return ProductManufacturerTranslationCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('product_manufacturer_translation', new PropertyCollection([

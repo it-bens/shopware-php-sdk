@@ -21,6 +21,7 @@ use Vin\ShopwareSdk\Data\Entity\EntityCollection;
  */
 class TaxRuleCollection extends EntityCollection
 {
+    #[\Override]
     public function getExpectedClass(): string
     {
         return TaxRuleEntity::class;

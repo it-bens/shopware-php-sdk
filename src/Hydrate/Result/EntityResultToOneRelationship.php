@@ -15,6 +15,7 @@ final class EntityResultToOneRelationship extends EntityResultRelationship
      * @param callable(Entity, string): mixed $propertyGetter
      * @param callable(Entity, string, mixed): void $propertySetter
      */
+    #[\Override]
     public function hydrateRelationship(
         Entity $entity,
         callable $propertyGetter,

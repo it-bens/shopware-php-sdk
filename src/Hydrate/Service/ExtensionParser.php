@@ -8,6 +8,7 @@ use Vin\ShopwareSdk\Hydrate\Result\EntityExtensionResult;
 
 final class ExtensionParser implements ExtensionParserInterface
 {
+    #[\Override]
     public function parseExtensions(array $datasets): array
     {
         $extensions = [];

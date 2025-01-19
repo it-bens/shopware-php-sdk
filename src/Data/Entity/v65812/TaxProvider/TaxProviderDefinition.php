@@ -20,21 +20,25 @@ class TaxProviderDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'tax_provider';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return TaxProviderEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return TaxProviderCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('tax_provider', new PropertyCollection([

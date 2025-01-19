@@ -20,21 +20,25 @@ class CustomEntityDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'custom_entity';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return CustomEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return CustomEntityCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('custom_entity', new PropertyCollection([

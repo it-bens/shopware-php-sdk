@@ -22,6 +22,7 @@ class ConfigCollection extends Collection
     /**
      * @param Config $element
      */
+    #[\Override]
     public function add($element): void
     {
         $this->set($element->getKey(), $element);
@@ -44,11 +45,13 @@ class ConfigCollection extends Collection
     /**
      * @param Config $element
      */
+    #[\Override]
     public function set($key, $element): void
     {
         throw new \RuntimeException('Configs have to be added without a key. Use `add` method instead.');
     }
 
+    #[\Override]
     protected function getExpectedClass(): ?string
     {
         return Config::class;

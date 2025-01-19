@@ -67,11 +67,13 @@ class EntityCollection extends Collection
         }
     }
 
+    #[\Override]
     public function filterInstance(string $class): static
     {
         return static::filter(static fn ($item) => $item instanceof $class);
     }
 
+    #[\Override]
     public function getExpectedClass(): string
     {
         return Entity::class;

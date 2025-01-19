@@ -20,21 +20,25 @@ class PaymentMethodDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'payment_method';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return PaymentMethodEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return PaymentMethodCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('payment_method', new PropertyCollection([

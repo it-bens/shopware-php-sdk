@@ -14,6 +14,7 @@ final readonly class MockAccessTokenProvider implements AccessTokenProvider
     ) {
     }
 
+    #[\Override]
     public function getAccessToken(): AccessToken
     {
         return $this->accessToken;

@@ -20,21 +20,25 @@ class IntegrationRoleDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'integration_role';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return IntegrationRoleEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return IntegrationRoleCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('integration_role', new PropertyCollection([

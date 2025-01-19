@@ -20,21 +20,25 @@ class CustomerWishlistProductDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'customer_wishlist_product';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return CustomerWishlistProductEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return CustomerWishlistProductCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('customer_wishlist_product', new PropertyCollection([

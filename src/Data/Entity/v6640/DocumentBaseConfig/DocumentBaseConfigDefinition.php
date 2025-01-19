@@ -20,21 +20,25 @@ class DocumentBaseConfigDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'document_base_config';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return DocumentBaseConfigEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return DocumentBaseConfigCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('document_base_config', new PropertyCollection([

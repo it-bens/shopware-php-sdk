@@ -20,21 +20,25 @@ class ProductSortingTranslationDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'product_sorting_translation';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return ProductSortingTranslationEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return ProductSortingTranslationCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('product_sorting_translation', new PropertyCollection([

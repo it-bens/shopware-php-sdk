@@ -300,6 +300,7 @@ class Criteria implements ParseAware
         return new NotFilter($operator, $queries);
     }
 
+    #[\Override]
     public function parse(): array
     {
         $params = [];

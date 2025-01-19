@@ -18,6 +18,7 @@ class FilterAggregation extends Aggregation
     ) {
     }
 
+    #[\Override]
     public function parse(): array
     {
         return [

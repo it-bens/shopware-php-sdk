@@ -20,21 +20,25 @@ class MediaDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'media';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return MediaEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return MediaCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('media', new PropertyCollection([

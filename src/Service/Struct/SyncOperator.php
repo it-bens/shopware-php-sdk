@@ -46,6 +46,7 @@ class SyncOperator extends Struct implements ParseAware
         $this->payload = $payload;
     }
 
+    #[\Override]
     public function parse(): array
     {
         return [

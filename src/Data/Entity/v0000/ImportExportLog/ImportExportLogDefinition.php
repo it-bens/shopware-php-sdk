@@ -20,21 +20,25 @@ class ImportExportLogDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'import_export_log';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return ImportExportLogEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return ImportExportLogCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('import_export_log', new PropertyCollection([

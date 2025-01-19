@@ -20,21 +20,25 @@ class RuleDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'rule';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return RuleEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return RuleCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('rule', new PropertyCollection([

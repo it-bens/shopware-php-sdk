@@ -20,21 +20,25 @@ class NewsletterRecipientDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'newsletter_recipient';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return NewsletterRecipientEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return NewsletterRecipientCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('newsletter_recipient', new PropertyCollection([

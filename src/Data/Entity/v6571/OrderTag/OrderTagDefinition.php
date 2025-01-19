@@ -20,21 +20,25 @@ class OrderTagDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'order_tag';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return OrderTagEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return OrderTagCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('order_tag', new PropertyCollection([

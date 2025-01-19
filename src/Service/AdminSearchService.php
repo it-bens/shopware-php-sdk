@@ -15,7 +15,7 @@ use Vin\ShopwareSdk\Service\Api\ApiServiceInterface;
 
 final readonly class AdminSearchService implements AdminSearchServiceInterface
 {
-    private const ADMIN_SEARCH_ENDPOINT = '/api/_admin/search';
+    private const string ADMIN_SEARCH_ENDPOINT = '/api/_admin/search';
 
     public function __construct(
         private ApiServiceInterface $apiService,
@@ -23,6 +23,7 @@ final readonly class AdminSearchService implements AdminSearchServiceInterface
     ) {
     }
 
+    #[\Override]
     public function search(CriteriaCollection $criteriaCollection, array $additionalHeaders = []): EntitySearchResultCollection
     {
         $apiResponse = $this->apiService->post(self::ADMIN_SEARCH_ENDPOINT, data: $criteriaCollection->parse(), additionalHeaders: $additionalHeaders);

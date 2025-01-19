@@ -32,6 +32,7 @@ final readonly class EntityRepository implements RepositoryInterface
     ) {
     }
 
+    #[\Override]
     public function clone(string $id, ?CloneBehaviour $cloneBehaviour = null): string
     {
         $data = [];
@@ -51,6 +52,7 @@ final readonly class EntityRepository implements RepositoryInterface
         return $response->getContents()['id'];
     }
 
+    #[\Override]
     public function create(array $data): void
     {
         $context = $this->buildContext();
@@ -63,6 +65,7 @@ final readonly class EntityRepository implements RepositoryInterface
         );
     }
 
+    #[\Override]
     public function createNew(array $data): Entity
     {
         $entityClass = $this->getDefinition()
@@ -78,6 +81,7 @@ final readonly class EntityRepository implements RepositoryInterface
         return $entity;
     }
 
+    #[\Override]
     public function createVersion(string $id, ?string $versionId = null, ?string $versionName = null): VersionResponse
     {
         $data = [];
@@ -100,6 +104,7 @@ final readonly class EntityRepository implements RepositoryInterface
         return new VersionResponse($response->getContents());
     }
 
+    #[\Override]
     public function delete(string $id): void
     {
         $context = $this->buildContext();
@@ -111,6 +116,7 @@ final readonly class EntityRepository implements RepositoryInterface
         );
     }
 
+    #[\Override]
     public function deleteVersion(string $id, string $versionId): void
     {
         $context = $this->buildContext();
@@ -123,6 +129,7 @@ final readonly class EntityRepository implements RepositoryInterface
         );
     }
 
+    #[\Override]
     public function get(string $id, Criteria $criteria): ?Entity
     {
         $criteria->setIds([$id]);
@@ -131,11 +138,13 @@ final readonly class EntityRepository implements RepositoryInterface
             ->get($id);
     }
 
+    #[\Override]
     public function getDefinition(): EntityDefinition
     {
         return $this->definition;
     }
 
+    #[\Override]
     public function mergeVersion(string $versionId): void
     {
         $context = $this->buildContext([
@@ -150,6 +159,7 @@ final readonly class EntityRepository implements RepositoryInterface
         );
     }
 
+    #[\Override]
     public function search(Criteria $criteria): EntitySearchResult
     {
         $context = $this->buildContext();
@@ -168,6 +178,7 @@ final readonly class EntityRepository implements RepositoryInterface
         return new EntitySearchResult($this->definition->getEntityName(), $meta, $entities, $aggregations, $criteria, $context);
     }
 
+    #[\Override]
     public function searchIds(Criteria $criteria): IdSearchResult
     {
         $context = $this->buildContext();
@@ -186,6 +197,7 @@ final readonly class EntityRepository implements RepositoryInterface
      * @throws AuthorizationFailedException
      * @throws ShopwareResponseException
      */
+    #[\Override]
     public function update(string $id, array $data): void
     {
         if (empty($data['id'])) {

@@ -20,21 +20,25 @@ class IntegrationDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'integration';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return IntegrationEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return IntegrationCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('integration', new PropertyCollection([

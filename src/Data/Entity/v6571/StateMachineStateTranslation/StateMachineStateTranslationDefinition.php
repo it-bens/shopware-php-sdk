@@ -20,21 +20,25 @@ class StateMachineStateTranslationDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'state_machine_state_translation';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return StateMachineStateTranslationEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return StateMachineStateTranslationCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('state_machine_state_translation', new PropertyCollection([

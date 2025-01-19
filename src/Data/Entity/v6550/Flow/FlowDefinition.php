@@ -20,21 +20,25 @@ class FlowDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'flow';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return FlowEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return FlowCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('flow', new PropertyCollection([

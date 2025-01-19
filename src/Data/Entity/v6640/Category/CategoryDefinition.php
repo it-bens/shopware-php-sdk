@@ -20,21 +20,25 @@ class CategoryDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'category';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return CategoryEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return CategoryCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('category', new PropertyCollection([

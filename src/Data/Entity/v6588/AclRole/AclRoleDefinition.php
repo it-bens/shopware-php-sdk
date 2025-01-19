@@ -20,21 +20,25 @@ class AclRoleDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'acl_role';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return AclRoleEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return AclRoleCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('acl_role', new PropertyCollection([

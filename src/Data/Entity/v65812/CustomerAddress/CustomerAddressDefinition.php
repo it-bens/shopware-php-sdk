@@ -20,21 +20,25 @@ class CustomerAddressDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'customer_address';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return CustomerAddressEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return CustomerAddressCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('customer_address', new PropertyCollection([

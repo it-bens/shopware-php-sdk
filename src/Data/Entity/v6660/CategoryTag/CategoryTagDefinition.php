@@ -20,21 +20,25 @@ class CategoryTagDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'category_tag';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return CategoryTagEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return CategoryTagCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('category_tag', new PropertyCollection([

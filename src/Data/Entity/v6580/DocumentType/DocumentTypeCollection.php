@@ -21,6 +21,7 @@ use Vin\ShopwareSdk\Data\Entity\EntityCollection;
  */
 class DocumentTypeCollection extends EntityCollection
 {
+    #[\Override]
     public function getExpectedClass(): string
     {
         return DocumentTypeEntity::class;

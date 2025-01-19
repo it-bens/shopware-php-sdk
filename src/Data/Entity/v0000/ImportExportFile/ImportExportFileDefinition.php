@@ -20,21 +20,25 @@ class ImportExportFileDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'import_export_file';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return ImportExportFileEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return ImportExportFileCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('import_export_file', new PropertyCollection([

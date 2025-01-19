@@ -20,21 +20,25 @@ class SeoUrlTemplateDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'seo_url_template';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return SeoUrlTemplateEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return SeoUrlTemplateCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('seo_url_template', new PropertyCollection([

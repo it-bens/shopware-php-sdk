@@ -50,6 +50,7 @@ class Notification extends Struct implements ParseAware
         return new self($status, $message, $adminOnly, $requiredPrivileges);
     }
 
+    #[\Override]
     public function parse(): array
     {
         return [

@@ -20,6 +20,7 @@ final readonly class HttpClient implements HttpClientInterface
     ) {
     }
 
+    #[\Override]
     public function delete(string $path, MediaType $contentTypeHeader, MediaType $acceptHeader, Context $context): ApiResponse
     {
         $request = $this->requestFactory->createRequest('DELETE', $path, $contentTypeHeader, $acceptHeader, $context);
@@ -38,6 +39,7 @@ final readonly class HttpClient implements HttpClientInterface
         );
     }
 
+    #[\Override]
     public function get(string $path, MediaType $contentTypeHeader, MediaType $acceptHeader, Context $context): ApiResponse
     {
         $request = $this->requestFactory->createRequest('GET', $path, $contentTypeHeader, $acceptHeader, $context);
@@ -56,6 +58,7 @@ final readonly class HttpClient implements HttpClientInterface
         );
     }
 
+    #[\Override]
     public function patch(string $path, MediaType $contentTypeHeader, MediaType $acceptHeader, array $data, Context $context): ApiResponse
     {
         $request = $this->requestFactory->createRequestWithData('PATCH', $path, $contentTypeHeader, $acceptHeader, $data, $context);
@@ -74,6 +77,7 @@ final readonly class HttpClient implements HttpClientInterface
         );
     }
 
+    #[\Override]
     public function post(string $path, MediaType $contentTypeHeader, MediaType $acceptHeader, ?array $data, Context $context): ApiResponse
     {
         $request = $this->requestFactory->createRequestWithData('POST', $path, $contentTypeHeader, $acceptHeader, $data ?? [], $context);
@@ -92,6 +96,7 @@ final readonly class HttpClient implements HttpClientInterface
         );
     }
 
+    #[\Override]
     public function postGenericData(string $path, MediaType $contentTypeHeader, MediaType $acceptHeader, $data, Context $context): ApiResponse
     {
         $request = $this->requestFactory->createRequestWithGenericData('POST', $path, $contentTypeHeader, $acceptHeader, $data, $context);

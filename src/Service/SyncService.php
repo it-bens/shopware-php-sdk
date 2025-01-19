@@ -10,13 +10,14 @@ use Vin\ShopwareSdk\Service\Struct\SyncPayload;
 
 final readonly class SyncService implements SyncServiceInterface
 {
-    private const SYNC_ENDPOINT = '/api/_action/sync';
+    private const string SYNC_ENDPOINT = '/api/_action/sync';
 
     public function __construct(
         private ApiServiceInterface $apiService,
     ) {
     }
 
+    #[\Override]
     public function sync(SyncPayload $payload, array $additionalHeaders = []): ApiResponse
     {
         return $this->apiService->post(self::SYNC_ENDPOINT, data: $payload->parse(), additionalHeaders: $additionalHeaders);

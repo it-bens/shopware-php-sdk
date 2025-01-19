@@ -20,21 +20,25 @@ class CmsSectionDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'cms_section';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return CmsSectionEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return CmsSectionCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('cms_section', new PropertyCollection([

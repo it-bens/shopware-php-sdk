@@ -20,21 +20,25 @@ class NumberRangeSalesChannelDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'number_range_sales_channel';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return NumberRangeSalesChannelEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return NumberRangeSalesChannelCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('number_range_sales_channel', new PropertyCollection([

@@ -11,19 +11,19 @@ use Vin\ShopwareSdk\Http\Struct\ApiResponse;
 
 final class InfoService implements InfoServiceInterface
 {
-    private const SCHEMA_PATH = '/api/_info/entity-schema.json';
+    private const string SCHEMA_PATH = '/api/_info/entity-schema.json';
 
-    private const EVENTS_PATH = '/api/_info/events.json';
+    private const string EVENTS_PATH = '/api/_info/events.json';
 
-    private const CONFIG_PATH = '/api/_info/config';
+    private const string CONFIG_PATH = '/api/_info/config';
 
-    private const VERSION_PATH = '/api/_info/version';
+    private const string VERSION_PATH = '/api/_info/version';
 
-    private const INFO_PATH = '/api/_info/openapi3.json';
+    private const string INFO_PATH = '/api/_info/openapi3.json';
 
-    private const OPEN_API_SCHEMA = '/api/_info/open-api-schema.json';
+    private const string OPEN_API_SCHEMA = '/api/_info/open-api-schema.json';
 
-    private const SCHEMA_FILE_PATH = __DIR__ . '/../Resources/entity-schema_0.0.0.0.json';
+    private const string SCHEMA_FILE_PATH = __DIR__ . '/../Resources/entity-schema_0.0.0.0.json';
 
     private ?SchemaCollection $schema = null;
 
@@ -34,31 +34,37 @@ final class InfoService implements InfoServiceInterface
     ) {
     }
 
+    #[\Override]
     public function fetchRawSchema(): ApiResponse
     {
         return $this->apiService->get(self::SCHEMA_PATH);
     }
 
+    #[\Override]
     public function getConfig(): ApiResponse
     {
         return $this->apiService->get(self::CONFIG_PATH);
     }
 
+    #[\Override]
     public function getEvents(): ApiResponse
     {
         return $this->apiService->get(self::EVENTS_PATH);
     }
 
+    #[\Override]
     public function getInfo(): ApiResponse
     {
         return $this->apiService->get(self::INFO_PATH);
     }
 
+    #[\Override]
     public function getOpenApiSchema(): ApiResponse
     {
         return $this->apiService->get(self::OPEN_API_SCHEMA);
     }
 
+    #[\Override]
     public function getSchema(string $entity): ?Schema
     {
         if (array_key_exists($entity, $this->cache)) {
@@ -83,6 +89,7 @@ final class InfoService implements InfoServiceInterface
         return $this->cache[$entity] = $this->schema->get($entity);
     }
 
+    #[\Override]
     public function getShopwareVersion(): string
     {
         $apiResponse = $this->apiService->get(self::VERSION_PATH);
@@ -90,6 +97,7 @@ final class InfoService implements InfoServiceInterface
         return $apiResponse->getContents()['version'];
     }
 
+    #[\Override]
     public function parseSchema(array $schema): SchemaCollection
     {
         $schemaCollection = [];
@@ -101,6 +109,7 @@ final class InfoService implements InfoServiceInterface
         return new SchemaCollection($schemaCollection);
     }
 
+    #[\Override]
     public function refreshSchema(bool $persist = true): SchemaCollection
     {
         $this->cache = [];

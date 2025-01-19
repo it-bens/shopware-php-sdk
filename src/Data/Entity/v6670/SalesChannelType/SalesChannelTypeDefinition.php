@@ -20,21 +20,25 @@ class SalesChannelTypeDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'sales_channel_type';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return SalesChannelTypeEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return SalesChannelTypeCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('sales_channel_type', new PropertyCollection([

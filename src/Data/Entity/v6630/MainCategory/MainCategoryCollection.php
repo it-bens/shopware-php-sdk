@@ -21,6 +21,7 @@ use Vin\ShopwareSdk\Data\Entity\EntityCollection;
  */
 class MainCategoryCollection extends EntityCollection
 {
+    #[\Override]
     public function getExpectedClass(): string
     {
         return MainCategoryEntity::class;

@@ -20,21 +20,25 @@ class AppShippingMethodDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'app_shipping_method';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return AppShippingMethodEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return AppShippingMethodCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('app_shipping_method', new PropertyCollection([

@@ -8,9 +8,9 @@ use Vin\ShopwareSdk\Data\Struct;
 
 class Property extends Struct
 {
-    private const SCALAR_TYPES = ['uuid', 'int', 'text', 'password', 'float', 'string', 'blob', 'boolean', 'date'];
+    private const array SCALAR_TYPES = ['uuid', 'int', 'text', 'password', 'float', 'string', 'blob', 'boolean', 'date'];
 
-    private const JSON_TYPES = ['json_list', 'json_object'];
+    private const array JSON_TYPES = ['json_list', 'json_object'];
 
     public ?string $relation;
 

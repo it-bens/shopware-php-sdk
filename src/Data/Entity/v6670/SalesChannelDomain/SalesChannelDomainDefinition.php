@@ -20,21 +20,25 @@ class SalesChannelDomainDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'sales_channel_domain';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return SalesChannelDomainEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return SalesChannelDomainCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('sales_channel_domain', new PropertyCollection([

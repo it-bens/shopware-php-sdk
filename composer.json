@@ -32,7 +32,7 @@
         "dms/phpunit-arraysubset-asserts": "^0.5.0",
         "guzzlehttp/guzzle": "^7.9",
         "kubawerlos/php-cs-fixer-custom-fixers": "^3.22",
-        "phpstan/phpstan": "^1.12",
+        "phpstan/phpstan": "^2.0",
         "phpunit/phpunit": "*",
         "rector/rector": "^1.2",
         "squizlabs/php_codesniffer": "^3.10",

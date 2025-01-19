@@ -60,6 +60,7 @@ final readonly class RequestFactory implements RequestFactoryInterface
         }
 
         /** @var string $encodedBody */
+        /** @phpstan-ignore-next-line */
         $encodedBody = json_encode($data);
         $body = $this->streamFactory->createStream($encodedBody);
 

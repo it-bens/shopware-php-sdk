@@ -7,11 +7,6 @@ parameters:
         - src
         - tests
     tmpDir: /tmp/phpstan
-        
-    excludePaths:
-        - src/Service/WebhookAuthenticator.php
-
-    excludes_analyse:
 
     ignoreErrors:
         -

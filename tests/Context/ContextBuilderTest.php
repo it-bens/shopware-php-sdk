@@ -162,8 +162,8 @@ final class ContextBuilderTest extends TestCase
         $this->assertSame($expectedLanguageId, $contextBuilder->languageId);
         $this->assertSame($expectedCurrencyId, $contextBuilder->currencyId);
         $this->assertSame($expectedVersionId, $contextBuilder->versionId);
-        $this->assertEquals($expectedCompatibility, $contextBuilder->compatibility);
-        $this->assertEquals($expectedInheritance, $contextBuilder->inheritance);
+        $this->assertSame($expectedCompatibility, $contextBuilder->compatibility);
+        $this->assertSame($expectedInheritance, $contextBuilder->inheritance);
         $this->assertEquals($expectedAdditionalHeaders, $contextBuilder->additionalHeaders);
     }
 

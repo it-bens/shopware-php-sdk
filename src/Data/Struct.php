@@ -31,7 +31,7 @@ class Struct
 
     public function assign(array $options): self
     {
-        if (array_key_exists('id', $options) && property_exists($this, 'id')) {
+        if (array_key_exists('id', $options)) {
             $this->id = $options['id'];
 
             unset($options['id']);

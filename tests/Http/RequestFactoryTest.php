@@ -142,6 +142,7 @@ final class RequestFactoryTest extends TestCase
 
         $streamFactory = $this->createMock(StreamFactoryInterface::class);
         /** @var string $encodedData */
+        /** @phpstan-ignore-next-line */
         $encodedData = json_encode($data);
         $this->addCreateStreamMethodToStreamFactory($streamFactory, $encodedData, $stream);
 

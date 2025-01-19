@@ -76,6 +76,7 @@ final readonly class RequestFactory implements RequestFactoryInterface
 
             return $request->withBody($body);
         }
+
         if (is_resource($data)) {
             $body = $this->streamFactory->createStreamFromResource($data);
 

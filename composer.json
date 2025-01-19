@@ -29,6 +29,8 @@
         "psr/simple-cache": "^3.0"
     },
     "require-dev": {
+        "captainhook/captainhook": "^5.24",
+        "captainhook/plugin-composer": "^5.3",
         "dms/phpunit-arraysubset-asserts": "^0.5.0",
         "guzzlehttp/guzzle": "^7.9",
         "kubawerlos/php-cs-fixer-custom-fixers": "^3.22",
@@ -44,7 +46,10 @@
         "symplify/easy-coding-standard": "^12.1"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "captainhook/plugin-composer": true
+        }
     },
     "autoload": {
         "psr-4": {

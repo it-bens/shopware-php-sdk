@@ -20,21 +20,25 @@ class LocaleDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'locale';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return LocaleEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return LocaleCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('locale', new PropertyCollection([

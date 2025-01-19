@@ -9,17 +9,18 @@ use Vin\ShopwareSdk\Http\Struct\ApiResponse;
 
 final readonly class MediaService implements MediaServiceInterface
 {
-    private const PROVIDE_NAME_ENDPOINT = '/api/_action/media/provide-name';
+    private const string PROVIDE_NAME_ENDPOINT = '/api/_action/media/provide-name';
 
-    private const RENAME_ENDPOINT = '/api/_action/media/%s/rename';
+    private const string RENAME_ENDPOINT = '/api/_action/media/%s/rename';
 
-    private const UPLOAD_ENDPOINT = '/api/_action/media/%s/upload';
+    private const string UPLOAD_ENDPOINT = '/api/_action/media/%s/upload';
 
     public function __construct(
         private ApiServiceInterface $apiService,
     ) {
     }
 
+    #[\Override]
     public function provideName(string $fileName, string $extension, ?string $mediaId = null): string
     {
         $params = array_filter([
@@ -33,6 +34,7 @@ final readonly class MediaService implements MediaServiceInterface
         return $apiResponse->getContents()['fileName'];
     }
 
+    #[\Override]
     public function renameMedia(string $mediaId, string $fileName): ApiResponse
     {
         $endpoint = sprintf(self::RENAME_ENDPOINT, $mediaId);
@@ -43,6 +45,7 @@ final readonly class MediaService implements MediaServiceInterface
         return $this->apiService->post($endpoint, data: $data);
     }
 
+    #[\Override]
     public function uploadMediaById(string $mediaId, $data, string $extension, ?string $fileName = null): ApiResponse
     {
         $endpoint = sprintf(self::UPLOAD_ENDPOINT, $mediaId);
@@ -51,6 +54,7 @@ final readonly class MediaService implements MediaServiceInterface
         return $this->apiService->postMediaFile($endpoint, $params, $data);
     }
 
+    #[\Override]
     public function uploadMediaFromUrl(string $mediaId, string $url, string $extension, ?string $fileName = null): ApiResponse
     {
         $data = [

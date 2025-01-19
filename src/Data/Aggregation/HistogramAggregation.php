@@ -36,6 +36,7 @@ class HistogramAggregation extends Aggregation
     ) {
     }
 
+    #[\Override]
     public function parse(): array
     {
         return array_filter(

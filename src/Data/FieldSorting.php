@@ -17,6 +17,7 @@ class FieldSorting implements ParseAware
     ) {
     }
 
+    #[\Override]
     public function parse(): array
     {
         return [

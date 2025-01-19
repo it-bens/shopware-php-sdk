@@ -22,6 +22,7 @@ final readonly class ApiService implements ApiServiceInterface
     ) {
     }
 
+    #[\Override]
     public function delete(
         string $endpoint,
         array $params = [],
@@ -35,6 +36,7 @@ final readonly class ApiService implements ApiServiceInterface
         return $this->httpClient->delete($path, $contentTypeHeader, $acceptHeader, $context);
     }
 
+    #[\Override]
     public function get(
         string $endpoint,
         array $params = [],
@@ -48,6 +50,7 @@ final readonly class ApiService implements ApiServiceInterface
         return $this->httpClient->get($path, $contentTypeHeader, $acceptHeader, $context);
     }
 
+    #[\Override]
     public function patch(
         string $endpoint,
         array $params = [],
@@ -62,6 +65,7 @@ final readonly class ApiService implements ApiServiceInterface
         return $this->httpClient->patch($path, $contentTypeHeader, $acceptHeader, $data ?? [], $context);
     }
 
+    #[\Override]
     public function post(
         string $endpoint,
         array $params = [],
@@ -76,6 +80,7 @@ final readonly class ApiService implements ApiServiceInterface
         return $this->httpClient->post($path, $contentTypeHeader, $acceptHeader, $data ?? [], $context);
     }
 
+    #[\Override]
     public function postMediaFile(string $endpoint, array $params, $data): ApiResponse
     {
         $path = $this->buildPath($endpoint, $params);

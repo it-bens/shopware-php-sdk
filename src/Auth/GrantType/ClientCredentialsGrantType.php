@@ -18,6 +18,7 @@ class ClientCredentialsGrantType extends GrantType
         parent::__construct(self::CLIENT_CREDENTIALS, $clientId);
     }
 
+    #[\Override]
     public function buildFormData(): array
     {
         return [

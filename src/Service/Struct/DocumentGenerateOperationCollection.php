@@ -20,6 +20,7 @@ class DocumentGenerateOperationCollection extends Collection
     /**
      * @param DocumentGenerateOperation $element
      */
+    #[\Override]
     public function add($element): void
     {
         $this->set($element->orderId, $element);
@@ -42,11 +43,13 @@ class DocumentGenerateOperationCollection extends Collection
     /**
      * @param DocumentGenerateOperation $element
      */
+    #[\Override]
     public function set($key, $element): void
     {
         throw new \RuntimeException('Document generate operations have to be added without a key. Use `add` method instead.');
     }
 
+    #[\Override]
     protected function getExpectedClass(): ?string
     {
         return DocumentGenerateOperation::class;

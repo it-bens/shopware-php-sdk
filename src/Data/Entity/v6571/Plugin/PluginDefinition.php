@@ -20,21 +20,25 @@ class PluginDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'plugin';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return PluginEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return PluginCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('plugin', new PropertyCollection([

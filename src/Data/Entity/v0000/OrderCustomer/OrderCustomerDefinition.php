@@ -20,21 +20,25 @@ class OrderCustomerDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'order_customer';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return OrderCustomerEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return OrderCustomerCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('order_customer', new PropertyCollection([

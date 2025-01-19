@@ -20,21 +20,25 @@ class CountryDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'country';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return CountryEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return CountryCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('country', new PropertyCollection([

@@ -20,21 +20,25 @@ class MediaThumbnailSizeDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'media_thumbnail_size';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return MediaThumbnailSizeEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return MediaThumbnailSizeCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('media_thumbnail_size', new PropertyCollection([

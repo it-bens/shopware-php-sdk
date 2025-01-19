@@ -20,21 +20,25 @@ class RuleConditionDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'rule_condition';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return RuleConditionEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return RuleConditionCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('rule_condition', new PropertyCollection([

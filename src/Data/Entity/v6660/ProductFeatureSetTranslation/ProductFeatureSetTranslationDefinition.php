@@ -20,21 +20,25 @@ class ProductFeatureSetTranslationDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'product_feature_set_translation';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return ProductFeatureSetTranslationEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return ProductFeatureSetTranslationCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('product_feature_set_translation', new PropertyCollection([

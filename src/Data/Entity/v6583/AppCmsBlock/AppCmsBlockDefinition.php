@@ -20,21 +20,25 @@ class AppCmsBlockDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'app_cms_block';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return AppCmsBlockEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return AppCmsBlockCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('app_cms_block', new PropertyCollection([

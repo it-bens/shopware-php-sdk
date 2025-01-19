@@ -20,21 +20,25 @@ class ProductExportDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'product_export';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return ProductExportEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return ProductExportCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('product_export', new PropertyCollection([

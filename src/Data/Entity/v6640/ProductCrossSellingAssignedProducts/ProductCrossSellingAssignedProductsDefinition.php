@@ -20,21 +20,25 @@ class ProductCrossSellingAssignedProductsDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'product_cross_selling_assigned_products';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return ProductCrossSellingAssignedProductsEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return ProductCrossSellingAssignedProductsCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('product_cross_selling_assigned_products', new PropertyCollection([

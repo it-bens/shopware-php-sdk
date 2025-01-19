@@ -20,21 +20,25 @@ class CmsPageDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'cms_page';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return CmsPageEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return CmsPageCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('cms_page', new PropertyCollection([

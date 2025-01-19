@@ -21,6 +21,7 @@ use Vin\ShopwareSdk\Data\Entity\EntityCollection;
  */
 class SeoUrlCollection extends EntityCollection
 {
+    #[\Override]
     public function getExpectedClass(): string
     {
         return SeoUrlEntity::class;

@@ -20,21 +20,25 @@ class LocaleTranslationDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'locale_translation';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return LocaleTranslationEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return LocaleTranslationCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('locale_translation', new PropertyCollection([

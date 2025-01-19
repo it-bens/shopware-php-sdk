@@ -18,6 +18,7 @@ final readonly class RequestFactory implements RequestFactoryInterface
     ) {
     }
 
+    #[\Override]
     public function createRequest(string $method, string $endpoint, MediaType $contentTypeHeader, MediaType $acceptHeader, Context $context): RequestInterface
     {
         $url = $context->apiEndpoint . $endpoint;
@@ -50,6 +51,7 @@ final readonly class RequestFactory implements RequestFactoryInterface
         return $request;
     }
 
+    #[\Override]
     public function createRequestWithData(string $method, string $endpoint, MediaType $contentTypeHeader, MediaType $acceptHeader, array $data, Context $context): RequestInterface
     {
         $request = $this->createRequest($method, $endpoint, $contentTypeHeader, $acceptHeader, $context);
@@ -64,6 +66,7 @@ final readonly class RequestFactory implements RequestFactoryInterface
         return $request->withBody($body);
     }
 
+    #[\Override]
     public function createRequestWithGenericData(string $method, string $endpoint, MediaType $contentTypeHeader, MediaType $acceptHeader, $data, Context $context): RequestInterface
     {
         $request = $this->createRequest($method, $endpoint, $contentTypeHeader, $acceptHeader, $context);

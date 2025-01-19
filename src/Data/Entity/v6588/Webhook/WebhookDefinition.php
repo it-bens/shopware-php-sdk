@@ -20,21 +20,25 @@ class WebhookDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'webhook';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return WebhookEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return WebhookCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('webhook', new PropertyCollection([

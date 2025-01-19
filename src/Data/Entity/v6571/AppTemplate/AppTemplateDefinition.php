@@ -20,21 +20,25 @@ class AppTemplateDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'app_template';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return AppTemplateEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return AppTemplateCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('app_template', new PropertyCollection([

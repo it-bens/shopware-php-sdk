@@ -18,6 +18,7 @@ final readonly class SchemaProvider implements SchemaProviderInterface
         $this->schemaCollection = new SchemaCollection();
     }
 
+    #[\Override]
     public function getSchema(string $entityName): Schema
     {
         $schema = $this->schemaCollection->get($entityName);

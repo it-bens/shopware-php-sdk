@@ -21,6 +21,7 @@ use Vin\ShopwareSdk\Data\Entity\EntityCollection;
  */
 class AppTranslationCollection extends EntityCollection
 {
+    #[\Override]
     public function getExpectedClass(): string
     {
         return AppTranslationEntity::class;

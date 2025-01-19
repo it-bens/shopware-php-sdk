@@ -20,27 +20,31 @@ class ProductVisibilityDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'product_visibility';
 
-    final public const VISIBILITY_LINK = 10;
+    final public const int VISIBILITY_LINK = 10;
 
-    final public const VISIBILITY_SEARCH = 20;
+    final public const int VISIBILITY_SEARCH = 20;
 
-    final public const VISIBILITY_ALL = 30;
+    final public const int VISIBILITY_ALL = 30;
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return ProductVisibilityEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return ProductVisibilityCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('product_visibility', new PropertyCollection([

@@ -20,21 +20,25 @@ class MediaFolderDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'media_folder';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return MediaFolderEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return MediaFolderCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('media_folder', new PropertyCollection([

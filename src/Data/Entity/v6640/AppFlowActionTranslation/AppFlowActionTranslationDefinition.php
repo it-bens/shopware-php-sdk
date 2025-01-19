@@ -20,21 +20,25 @@ class AppFlowActionTranslationDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'app_flow_action_translation';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return AppFlowActionTranslationEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return AppFlowActionTranslationCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('app_flow_action_translation', new PropertyCollection([

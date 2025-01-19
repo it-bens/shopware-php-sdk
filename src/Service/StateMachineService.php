@@ -14,6 +14,7 @@ final readonly class StateMachineService implements StateMachineServiceInterface
     ) {
     }
 
+    #[\Override]
     public function getState(string $entity, string $entityId, array $data = [], array $additionalHeaders = []): ApiResponse
     {
         $endpoint = sprintf('/api/_action/state-machine/%s/%s/state', $entity, $entityId);
@@ -25,6 +26,7 @@ final readonly class StateMachineService implements StateMachineServiceInterface
         return $this->apiService->get($endpoint, params: $params, additionalHeaders: $additionalHeaders);
     }
 
+    #[\Override]
     public function transitionState(string $entity, string $entityId, string $actionName, array $data = [], array $additionalHeaders = []): void
     {
         $path = sprintf('/api/_action/state-machine/%s/%s/state/%s', $entity, $entityId, $actionName);

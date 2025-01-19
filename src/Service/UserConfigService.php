@@ -11,13 +11,14 @@ use Vin\ShopwareSdk\Service\Struct\ConfigCollection;
 
 final readonly class UserConfigService implements UserConfigServiceInterface
 {
-    private const USER_CONFIG_ENDPOINT = '/api/_info/config-me';
+    private const string USER_CONFIG_ENDPOINT = '/api/_info/config-me';
 
     public function __construct(
         private ApiServiceInterface $apiService,
     ) {
     }
 
+    #[\Override]
     public function getConfigMe(array $keys, array $additionalHeaders = []): ConfigCollection
     {
         $params = [
@@ -34,6 +35,7 @@ final readonly class UserConfigService implements UserConfigServiceInterface
         return $collection;
     }
 
+    #[\Override]
     public function saveConfigMe(ConfigCollection $configs, array $additionalHeaders = []): ApiResponse
     {
         return $this->apiService->post(self::USER_CONFIG_ENDPOINT, data: $configs->parse(), additionalHeaders: $additionalHeaders);

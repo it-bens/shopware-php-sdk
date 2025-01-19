@@ -20,21 +20,25 @@ class DocumentTypeTranslationDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'document_type_translation';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return DocumentTypeTranslationEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return DocumentTypeTranslationCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('document_type_translation', new PropertyCollection([

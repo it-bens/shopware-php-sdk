@@ -20,21 +20,25 @@ class OrderTransactionDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'order_transaction';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return OrderTransactionEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return OrderTransactionCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('order_transaction', new PropertyCollection([

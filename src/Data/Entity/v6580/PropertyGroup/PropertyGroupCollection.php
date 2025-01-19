@@ -21,6 +21,7 @@ use Vin\ShopwareSdk\Data\Entity\EntityCollection;
  */
 class PropertyGroupCollection extends EntityCollection
 {
+    #[\Override]
     public function getExpectedClass(): string
     {
         return PropertyGroupEntity::class;

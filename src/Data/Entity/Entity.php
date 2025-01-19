@@ -11,7 +11,7 @@ class Entity extends Struct
 {
     use EntityCustomFieldsTrait;
 
-    private const NON_STRUCT_PROPERTY_TYPES = ['string', 'array', 'object', 'resource', 'bool', 'int', 'float', 'double'];
+    private const array NON_STRUCT_PROPERTY_TYPES = ['string', 'array', 'object', 'resource', 'bool', 'int', 'float', 'double'];
 
     public string $_uniqueIdentifier;
 

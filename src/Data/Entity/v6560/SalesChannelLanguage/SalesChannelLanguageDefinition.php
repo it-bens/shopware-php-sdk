@@ -20,21 +20,25 @@ class SalesChannelLanguageDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'sales_channel_language';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return SalesChannelLanguageEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return SalesChannelLanguageCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('sales_channel_language', new PropertyCollection([

@@ -20,21 +20,25 @@ class OrderDeliveryPositionDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'order_delivery_position';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return OrderDeliveryPositionEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return OrderDeliveryPositionCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('order_delivery_position', new PropertyCollection([

@@ -20,21 +20,25 @@ class CurrencyCountryRoundingDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'currency_country_rounding';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return CurrencyCountryRoundingEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return CurrencyCountryRoundingCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('currency_country_rounding', new PropertyCollection([

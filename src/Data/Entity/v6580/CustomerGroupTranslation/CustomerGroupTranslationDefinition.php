@@ -20,21 +20,25 @@ class CustomerGroupTranslationDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'customer_group_translation';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return CustomerGroupTranslationEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return CustomerGroupTranslationCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('customer_group_translation', new PropertyCollection([

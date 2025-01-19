@@ -20,21 +20,25 @@ class PromotionPersonaRuleDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'promotion_persona_rule';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return PromotionPersonaRuleEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return PromotionPersonaRuleCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('promotion_persona_rule', new PropertyCollection([

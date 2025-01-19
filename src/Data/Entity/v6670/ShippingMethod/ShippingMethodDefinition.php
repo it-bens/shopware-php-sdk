@@ -20,21 +20,25 @@ class ShippingMethodDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'shipping_method';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return ShippingMethodEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return ShippingMethodCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('shipping_method', new PropertyCollection([

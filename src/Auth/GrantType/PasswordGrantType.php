@@ -25,6 +25,7 @@ class PasswordGrantType extends GrantType
         parent::__construct(self::PASSWORD, self::ADMINISTRATION_CLIENT_ID);
     }
 
+    #[\Override]
     public function buildFormData(): array
     {
         return [

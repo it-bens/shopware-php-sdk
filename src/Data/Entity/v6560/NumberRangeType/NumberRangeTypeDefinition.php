@@ -20,21 +20,25 @@ class NumberRangeTypeDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'number_range_type';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return NumberRangeTypeEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return NumberRangeTypeCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('number_range_type', new PropertyCollection([

@@ -12,6 +12,7 @@ class EqualsAnyFilter extends Filter
     ) {
     }
 
+    #[\Override]
     public function parse(): array
     {
         return [

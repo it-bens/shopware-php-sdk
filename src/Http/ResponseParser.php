@@ -9,6 +9,7 @@ use Vin\ShopwareSdk\Exception\ShopwareResponseException;
 
 final class ResponseParser implements ResponseParserInterface
 {
+    #[\Override]
     public function checkResponseStatusCode(ResponseInterface $response): void
     {
         if ($response->getStatusCode() >= 400 && $response->getStatusCode() < 600) {
@@ -19,6 +20,7 @@ final class ResponseParser implements ResponseParserInterface
         }
     }
 
+    #[\Override]
     public function getDecodedResponseContent(ResponseInterface $response): array
     {
         $responseContent = $this->getResponseContent($response);
@@ -38,6 +40,7 @@ final class ResponseParser implements ResponseParserInterface
         return $decodedResponseContent;
     }
 
+    #[\Override]
     public function getResponseContent(ResponseInterface $response): string
     {
         $this->checkResponseStatusCode($response);

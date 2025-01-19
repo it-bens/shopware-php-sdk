@@ -20,21 +20,25 @@ class DocumentTypeDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'document_type';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return DocumentTypeEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return DocumentTypeCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('document_type', new PropertyCollection([

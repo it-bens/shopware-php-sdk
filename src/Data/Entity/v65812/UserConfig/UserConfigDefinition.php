@@ -20,21 +20,25 @@ class UserConfigDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'user_config';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return UserConfigEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return UserConfigCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('user_config', new PropertyCollection([

@@ -20,21 +20,25 @@ class CustomFieldSetRelationDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'custom_field_set_relation';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return CustomFieldSetRelationEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return CustomFieldSetRelationCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('custom_field_set_relation', new PropertyCollection([

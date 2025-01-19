@@ -20,21 +20,25 @@ class TaxRuleDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'tax_rule';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return TaxRuleEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return TaxRuleCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('tax_rule', new PropertyCollection([

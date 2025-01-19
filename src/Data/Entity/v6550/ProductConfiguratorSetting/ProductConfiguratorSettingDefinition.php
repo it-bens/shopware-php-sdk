@@ -20,21 +20,25 @@ class ProductConfiguratorSettingDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'product_configurator_setting';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return ProductConfiguratorSettingEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return ProductConfiguratorSettingCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('product_configurator_setting', new PropertyCollection([

@@ -20,21 +20,25 @@ class PropertyGroupTranslationDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'property_group_translation';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return PropertyGroupTranslationEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return PropertyGroupTranslationCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('property_group_translation', new PropertyCollection([

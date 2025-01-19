@@ -20,21 +20,25 @@ class OrderTransactionCaptureRefundPositionDefinition implements EntityDefinitio
 {
     public const ENTITY_NAME = 'order_transaction_capture_refund_position';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return OrderTransactionCaptureRefundPositionEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return OrderTransactionCaptureRefundPositionCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('order_transaction_capture_refund_position', new PropertyCollection([

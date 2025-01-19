@@ -20,21 +20,25 @@ class NumberRangeTranslationDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'number_range_translation';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return NumberRangeTranslationEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return NumberRangeTranslationCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('number_range_translation', new PropertyCollection([

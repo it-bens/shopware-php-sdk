@@ -20,21 +20,25 @@ class SalesChannelTranslationDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'sales_channel_translation';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return SalesChannelTranslationEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return SalesChannelTranslationCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('sales_channel_translation', new PropertyCollection([

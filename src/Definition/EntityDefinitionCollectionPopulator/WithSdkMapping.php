@@ -10,6 +10,7 @@ use Vin\ShopwareSdk\Definition\DefinitionCollectionPopulator;
 
 final class WithSdkMapping implements DefinitionCollectionPopulator
 {
+    #[\Override]
     public static function getEntityNames(string $shopwareVersion): array
     {
         $mapping = self::loadEntityMapping($shopwareVersion);
@@ -17,11 +18,13 @@ final class WithSdkMapping implements DefinitionCollectionPopulator
         return array_keys($mapping);
     }
 
+    #[\Override]
     public static function priority(): int
     {
         return 1000;
     }
 
+    #[\Override]
     public function populateDefinitionCollection(DefinitionCollection $definitionCollection, string $shopwareVersion): void
     {
         $mapping = self::loadEntityMapping($shopwareVersion);

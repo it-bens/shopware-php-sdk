@@ -20,21 +20,25 @@ class SalesChannelCurrencyDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'sales_channel_currency';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return SalesChannelCurrencyEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return SalesChannelCurrencyCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('sales_channel_currency', new PropertyCollection([

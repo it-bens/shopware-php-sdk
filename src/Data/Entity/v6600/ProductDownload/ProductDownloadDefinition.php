@@ -20,21 +20,25 @@ class ProductDownloadDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'product_download';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return ProductDownloadEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return ProductDownloadCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('product_download', new PropertyCollection([

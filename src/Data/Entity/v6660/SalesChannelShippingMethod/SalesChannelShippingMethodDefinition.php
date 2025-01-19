@@ -20,21 +20,25 @@ class SalesChannelShippingMethodDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'sales_channel_shipping_method';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return SalesChannelShippingMethodEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return SalesChannelShippingMethodCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('sales_channel_shipping_method', new PropertyCollection([

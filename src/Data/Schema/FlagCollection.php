@@ -23,6 +23,7 @@ class FlagCollection extends Collection
         }
     }
 
+    #[\Override]
     protected function getExpectedClass(): ?string
     {
         return Flag::class;

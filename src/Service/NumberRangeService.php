@@ -14,6 +14,7 @@ final readonly class NumberRangeService implements NumberRangeServiceInterface
     ) {
     }
 
+    #[\Override]
     public function reserve(string $type, ?string $salesChannelId, bool $preview, array $additionalHeaders = []): ApiResponse
     {
         $endpoint = sprintf('/api/_action/number-range/reserve/%s/%s', $type, $salesChannelId ?? '');
@@ -24,6 +25,7 @@ final readonly class NumberRangeService implements NumberRangeServiceInterface
         return $this->apiService->get($endpoint, $params, additionalHeaders: $additionalHeaders);
     }
 
+    #[\Override]
     public function previewPattern(string $type, ?string $pattern, array $additionalHeaders = []): ApiResponse
     {
         $endpoint = sprintf('/api/_action/number-range/preview-pattern/%s', $type);

@@ -20,21 +20,25 @@ class RuleTagDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'rule_tag';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return RuleTagEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return RuleTagCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('rule_tag', new PropertyCollection([

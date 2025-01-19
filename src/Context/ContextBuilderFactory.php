@@ -14,6 +14,7 @@ final readonly class ContextBuilderFactory implements ContextBuilderFactoryInter
     ) {
     }
 
+    #[\Override]
     public function createContextBuilder(): ContextBuilder
     {
         return new ContextBuilder($this->shopUrl, $this->accessTokenProvider);

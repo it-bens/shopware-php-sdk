@@ -24,6 +24,7 @@ class EntityHydratorTest extends TestCase
 
     private EntityHydrator $entityHydrator;
 
+    #[\Override]
     protected function setUp(): void
     {
         [

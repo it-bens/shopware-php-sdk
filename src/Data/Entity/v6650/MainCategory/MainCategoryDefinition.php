@@ -20,21 +20,25 @@ class MainCategoryDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'main_category';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return MainCategoryEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return MainCategoryCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('main_category', new PropertyCollection([

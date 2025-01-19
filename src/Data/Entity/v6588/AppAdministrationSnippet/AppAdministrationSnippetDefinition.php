@@ -20,21 +20,25 @@ class AppAdministrationSnippetDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'app_administration_snippet';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return AppAdministrationSnippetEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return AppAdministrationSnippetCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('app_administration_snippet', new PropertyCollection([

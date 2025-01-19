@@ -20,21 +20,25 @@ class LanguageDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'language';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return LanguageEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return LanguageCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('language', new PropertyCollection([

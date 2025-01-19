@@ -23,11 +23,13 @@ class EntitySearchResultCollection extends Collection
     /**
      * @param mixed|null $element
      */
+    #[\Override]
     public function add($element): void
     {
         throw new \RuntimeException('EntitySearchResults have to be added with an entity name. Use `set` method instead.');
     }
 
+    #[\Override]
     public function getExpectedClass(): string
     {
         return EntitySearchResult::class;
@@ -37,6 +39,7 @@ class EntitySearchResultCollection extends Collection
      * @param string $key
      * @param EntitySearchResult $element
      */
+    #[\Override]
     public function set($key, $element): void
     {
         if (is_string($key)) {

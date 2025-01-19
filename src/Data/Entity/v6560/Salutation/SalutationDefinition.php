@@ -20,21 +20,25 @@ class SalutationDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'salutation';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return SalutationEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return SalutationCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('salutation', new PropertyCollection([

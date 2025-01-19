@@ -20,21 +20,25 @@ class ScriptDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'script';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return ScriptEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return ScriptCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('script', new PropertyCollection([

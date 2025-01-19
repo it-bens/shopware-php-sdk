@@ -20,21 +20,25 @@ class MailTemplateTypeTranslationDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'mail_template_type_translation';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return MailTemplateTypeTranslationEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return MailTemplateTypeTranslationCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('mail_template_type_translation', new PropertyCollection([

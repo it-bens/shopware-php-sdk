@@ -20,21 +20,25 @@ class CmsSlotDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'cms_slot';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return CmsSlotEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return CmsSlotCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('cms_slot', new PropertyCollection([

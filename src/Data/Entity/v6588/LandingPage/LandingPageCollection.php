@@ -21,6 +21,7 @@ use Vin\ShopwareSdk\Data\Entity\EntityCollection;
  */
 class LandingPageCollection extends EntityCollection
 {
+    #[\Override]
     public function getExpectedClass(): string
     {
         return LandingPageEntity::class;

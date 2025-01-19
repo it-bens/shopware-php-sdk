@@ -25,6 +25,7 @@ final readonly class CachedFetcher implements AccessTokenFetcher
      * @throws InvalidArgumentException
      * @throws AuthorizationFailedException
      */
+    #[\Override]
     public function fetchAccessToken(GrantType $grantType): AccessToken
     {
         $accessToken = $this->cache->get('admin-api-oauth-access-token');

@@ -20,21 +20,25 @@ class LandingPageTranslationDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'landing_page_translation';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return LandingPageTranslationEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return LandingPageTranslationCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('landing_page_translation', new PropertyCollection([

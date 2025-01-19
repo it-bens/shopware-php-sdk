@@ -20,21 +20,25 @@ class WebhookEventLogDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'webhook_event_log';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return WebhookEventLogEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return WebhookEventLogCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('webhook_event_log', new PropertyCollection([

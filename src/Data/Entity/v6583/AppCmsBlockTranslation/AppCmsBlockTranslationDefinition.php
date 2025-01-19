@@ -20,21 +20,25 @@ class AppCmsBlockTranslationDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'app_cms_block_translation';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return AppCmsBlockTranslationEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return AppCmsBlockTranslationCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('app_cms_block_translation', new PropertyCollection([

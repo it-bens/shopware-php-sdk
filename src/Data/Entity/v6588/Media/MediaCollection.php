@@ -21,6 +21,7 @@ use Vin\ShopwareSdk\Data\Entity\EntityCollection;
  */
 class MediaCollection extends EntityCollection
 {
+    #[\Override]
     public function getExpectedClass(): string
     {
         return MediaEntity::class;

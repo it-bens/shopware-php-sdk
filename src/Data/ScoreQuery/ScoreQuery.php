@@ -30,6 +30,7 @@ class ScoreQuery extends Filter
         return $this->scoreField;
     }
 
+    #[\Override]
     public function parse(): array
     {
         return array_filter([

@@ -61,6 +61,7 @@ abstract class Collection extends Struct implements \IteratorAggregate, \Countab
         $this->elements = [];
     }
 
+    #[\Override]
     public function count(): int
     {
         return \count($this->elements);
@@ -132,6 +133,7 @@ abstract class Collection extends Struct implements \IteratorAggregate, \Countab
         return $this->elements;
     }
 
+    #[\Override]
     public function jsonSerialize(): array
     {
         return array_values(array_map(fn (Struct $element) => $element->jsonSerialize(), $this->elements));
@@ -158,6 +160,7 @@ abstract class Collection extends Struct implements \IteratorAggregate, \Countab
         unset($this->elements[$key]);
     }
 
+    #[\Override]
     public function getIterator(): \Generator
     {
         yield from $this->elements;

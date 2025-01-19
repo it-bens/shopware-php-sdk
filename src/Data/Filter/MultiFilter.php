@@ -21,6 +21,7 @@ class MultiFilter extends Filter
     ) {
     }
 
+    #[\Override]
     public function parse(): array
     {
         return [

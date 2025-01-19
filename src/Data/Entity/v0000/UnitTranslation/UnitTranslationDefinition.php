@@ -20,21 +20,25 @@ class UnitTranslationDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'unit_translation';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return UnitTranslationEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return UnitTranslationCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('unit_translation', new PropertyCollection([

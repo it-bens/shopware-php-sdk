@@ -20,21 +20,25 @@ class DeliveryTimeTranslationDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'delivery_time_translation';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return DeliveryTimeTranslationEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return DeliveryTimeTranslationCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('delivery_time_translation', new PropertyCollection([

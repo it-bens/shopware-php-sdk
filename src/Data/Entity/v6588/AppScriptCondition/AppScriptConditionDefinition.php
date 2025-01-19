@@ -20,21 +20,25 @@ class AppScriptConditionDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'app_script_condition';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return AppScriptConditionEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return AppScriptConditionCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('app_script_condition', new PropertyCollection([

@@ -20,21 +20,25 @@ class PropertyGroupDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'property_group';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return PropertyGroupEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return PropertyGroupCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('property_group', new PropertyCollection([

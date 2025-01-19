@@ -20,21 +20,25 @@ class SnippetSetDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'snippet_set';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return SnippetSetEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return SnippetSetCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('snippet_set', new PropertyCollection([

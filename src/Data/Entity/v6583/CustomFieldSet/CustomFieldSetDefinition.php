@@ -20,21 +20,25 @@ class CustomFieldSetDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'custom_field_set';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return CustomFieldSetEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return CustomFieldSetCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('custom_field_set', new PropertyCollection([

@@ -12,6 +12,7 @@ class ContainsFilter extends Filter
     ) {
     }
 
+    #[\Override]
     public function parse(): array
     {
         return [

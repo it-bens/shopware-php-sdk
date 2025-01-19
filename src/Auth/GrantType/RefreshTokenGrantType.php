@@ -24,6 +24,7 @@ class RefreshTokenGrantType extends GrantType
     /**
      * @return RefreshTokenGrantData
      */
+    #[\Override]
     public function buildFormData(): array
     {
         return [

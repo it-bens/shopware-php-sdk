@@ -9,6 +9,7 @@ use Vin\ShopwareSdk\Hydrate\Result\EntityResultToOneRelationship;
 
 final class RelationshipsParser implements RelationshipsParserInterface
 {
+    #[\Override]
     public function parseRelationships(array $datasets): array
     {
         $relationships = [];

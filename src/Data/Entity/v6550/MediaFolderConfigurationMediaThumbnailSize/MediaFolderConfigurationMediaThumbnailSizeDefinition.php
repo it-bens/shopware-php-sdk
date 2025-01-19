@@ -20,21 +20,25 @@ class MediaFolderConfigurationMediaThumbnailSizeDefinition implements EntityDefi
 {
     public const ENTITY_NAME = 'media_folder_configuration_media_thumbnail_size';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return MediaFolderConfigurationMediaThumbnailSizeEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return MediaFolderConfigurationMediaThumbnailSizeCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('media_folder_configuration_media_thumbnail_size', new PropertyCollection([

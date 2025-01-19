@@ -12,6 +12,7 @@ class CountAggregation extends Aggregation
     ) {
     }
 
+    #[\Override]
     public function parse(): array
     {
         return [

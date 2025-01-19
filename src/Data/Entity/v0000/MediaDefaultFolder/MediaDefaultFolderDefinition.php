@@ -20,21 +20,25 @@ class MediaDefaultFolderDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'media_default_folder';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return MediaDefaultFolderEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return MediaDefaultFolderCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('media_default_folder', new PropertyCollection([

@@ -20,21 +20,25 @@ class ProductVisibilityDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'product_visibility';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return ProductVisibilityEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return ProductVisibilityCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('product_visibility', new PropertyCollection([

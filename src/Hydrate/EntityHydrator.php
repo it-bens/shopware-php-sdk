@@ -24,6 +24,7 @@ class EntityHydrator implements HydratorInterface
     /**
      * @param array<string, mixed> $response
      */
+    #[\Override]
     public function hydrateSearchResult(array $response, ?string $entityName = null): EntityCollection
     {
         $collectionClass = EntityCollection::class;

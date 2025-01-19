@@ -11,21 +11,22 @@ use Vin\ShopwareSdk\Service\Struct\ConfigCollection;
 
 final readonly class SystemConfigService implements SystemConfigServiceInterface
 {
-    public const SYSTEM_CONFIG_CHECK_ENDPOINT = '/api/_action/system-config/check';
+    public const string SYSTEM_CONFIG_CHECK_ENDPOINT = '/api/_action/system-config/check';
 
-    public const SYSTEM_CONFIG_GET_ENDPOINT = '/api/_action/system-config/schema';
+    public const string SYSTEM_CONFIG_GET_ENDPOINT = '/api/_action/system-config/schema';
 
-    public const SYSTEM_CONFIG_GET_VALUES_ENDPOINT = '/api/_action/system-config';
+    public const string SYSTEM_CONFIG_GET_VALUES_ENDPOINT = '/api/_action/system-config';
 
-    public const SYSTEM_CONFIG_SAVE_ENDPOINT = '/api/_action/system-config';
+    public const string SYSTEM_CONFIG_SAVE_ENDPOINT = '/api/_action/system-config';
 
-    public const SYSTEM_CONFIG_SAVE_BATCH_ENDPOINT = '/api/_action/system-config/batch';
+    public const string SYSTEM_CONFIG_SAVE_BATCH_ENDPOINT = '/api/_action/system-config/batch';
 
     public function __construct(
         private ApiServiceInterface $apiService,
     ) {
     }
 
+    #[\Override]
     public function batchSave(ConfigCollection $configs, ?string $salesChannelId = null, array $additionalParams = [], array $additionalHeaders = []): ApiResponse
     {
         $data = [
@@ -35,6 +36,7 @@ final readonly class SystemConfigService implements SystemConfigServiceInterface
         return $this->apiService->post(self::SYSTEM_CONFIG_SAVE_BATCH_ENDPOINT, data: $data, additionalHeaders: $additionalHeaders);
     }
 
+    #[\Override]
     public function checkConfiguration(string $domain, array $additionalHeaders = []): ApiResponse
     {
         $params = [
@@ -44,6 +46,7 @@ final readonly class SystemConfigService implements SystemConfigServiceInterface
         return $this->apiService->get(self::SYSTEM_CONFIG_CHECK_ENDPOINT, $params, additionalHeaders: $additionalHeaders);
     }
 
+    #[\Override]
     public function getConfiguration(string $domain, array $additionalHeaders = []): ApiResponse
     {
         $params = [
@@ -53,6 +56,7 @@ final readonly class SystemConfigService implements SystemConfigServiceInterface
         return $this->apiService->get(self::SYSTEM_CONFIG_GET_ENDPOINT, $params, additionalHeaders: $additionalHeaders);
     }
 
+    #[\Override]
     public function getConfigurationValues(string $domain, ?string $salesChannelId = null, array $additionalHeaders = []): ApiResponse
     {
         $params = [
@@ -64,6 +68,7 @@ final readonly class SystemConfigService implements SystemConfigServiceInterface
         return $this->apiService->get(self::SYSTEM_CONFIG_GET_VALUES_ENDPOINT, $params, additionalHeaders: $additionalHeaders);
     }
 
+    #[\Override]
     public function save(Config $configuration, ?string $salesChannelId = null, array $additionalParams = [], array $additionalHeaders = []): ApiResponse
     {
         $params = [

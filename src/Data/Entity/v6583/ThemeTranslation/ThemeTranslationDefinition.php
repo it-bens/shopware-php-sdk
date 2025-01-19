@@ -20,21 +20,25 @@ class ThemeTranslationDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'theme_translation';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return ThemeTranslationEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return ThemeTranslationCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('theme_translation', new PropertyCollection([

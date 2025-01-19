@@ -20,21 +20,25 @@ class AppActionButtonDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'app_action_button';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return AppActionButtonEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return AppActionButtonCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('app_action_button', new PropertyCollection([

@@ -20,21 +20,25 @@ class SalesChannelAnalyticsDefinition implements EntityDefinition
 {
     public const ENTITY_NAME = 'sales_channel_analytics';
 
+    #[\Override]
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
     }
 
+    #[\Override]
     public function getEntityClass(): string
     {
         return SalesChannelAnalyticsEntity::class;
     }
 
+    #[\Override]
     public function getEntityCollection(): string
     {
         return SalesChannelAnalyticsCollection::class;
     }
 
+    #[\Override]
     public function getSchema(): Schema
     {
         return new Schema('sales_channel_analytics', new PropertyCollection([

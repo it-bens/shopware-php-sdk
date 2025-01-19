@@ -23,6 +23,7 @@ class PropertyCollection extends Collection
         }
     }
 
+    #[\Override]
     protected function getExpectedClass(): ?string
     {
         return Property::class;

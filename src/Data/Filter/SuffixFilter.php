@@ -12,6 +12,7 @@ class SuffixFilter extends Filter
     ) {
     }
 
+    #[\Override]
     public function parse(): array
     {
         return [

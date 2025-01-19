@@ -27,12 +27,6 @@ class CriteriaCollection extends Collection
         throw new \RuntimeException('Criteria have to be added with an entity name. Use `set` method instead.');
     }
 
-    #[\Override]
-    public function getExpectedClass(): string
-    {
-        return Criteria::class;
-    }
-
     /**
      * @return array<string, array<string, mixed>>
      */
@@ -59,5 +53,11 @@ class CriteriaCollection extends Collection
         }
 
         parent::set($key, $element);
+    }
+
+    #[\Override]
+    protected function getExpectedClass(): string
+    {
+        return Criteria::class;
     }
 }

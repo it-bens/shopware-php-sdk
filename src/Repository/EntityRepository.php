@@ -36,7 +36,7 @@ final readonly class EntityRepository implements RepositoryInterface
     public function clone(string $id, ?CloneBehaviour $cloneBehaviour = null): string
     {
         $data = [];
-        if ($cloneBehaviour) {
+        if ($cloneBehaviour instanceof CloneBehaviour) {
             $data = $cloneBehaviour->jsonSerialize();
         }
 
@@ -88,6 +88,7 @@ final readonly class EntityRepository implements RepositoryInterface
         if (is_string($versionId)) {
             $data['versionId'] = $versionId;
         }
+
         if (is_string($versionName)) {
             $data['versionName'] = $versionName;
         }
@@ -203,6 +204,7 @@ final readonly class EntityRepository implements RepositoryInterface
         if (empty($data['id'])) {
             throw new \InvalidArgumentException('Id is not provided for update payload');
         }
+
         $id = $data['id'];
 
         $context = $this->buildContext();

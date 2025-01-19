@@ -15,7 +15,7 @@ class FlagCollection extends Collection
 {
     public function __construct(iterable $elements = [])
     {
-        $elements = $elements instanceof \Traversable ? iterator_to_array($elements) : (array) $elements;
+        $elements = $elements instanceof \Traversable ? iterator_to_array($elements) : $elements;
 
         /** @var Flag $element */
         foreach ($elements as $element) {

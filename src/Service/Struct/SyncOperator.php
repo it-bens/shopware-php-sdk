@@ -23,6 +23,7 @@ class SyncOperator extends Struct implements ParseAware
         if ($action !== self::UPSERT_OPERATOR && $action !== self::DELETE_OPERATOR) {
             throw new \InvalidArgumentException('Action ' . $action . ' is not allowed, allowed types: upsert, delete');
         }
+
         $this->action = $action;
     }
 

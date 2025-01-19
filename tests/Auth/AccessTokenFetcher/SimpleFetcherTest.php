@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Vin\ShopwareSdkTest\Auth\AccessTokenFetcher;
 
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
@@ -125,9 +126,9 @@ final class SimpleFetcherTest extends TestCase
 
         $requestFactory->expects($this->once())
             ->method('createRequest')
-            ->willReturnCallback(function (string $uri, array $data) use ($expectedUri, $expectedData, $request) {
-                $this->assertEquals($expectedUri, $uri);
-                $this->assertEquals($expectedData, json_encode($data));
+            ->willReturnCallback(function (string $uri, array $data) use ($expectedUri, $expectedData, $request): MockObject {
+                $this->assertSame($expectedUri, $uri);
+                $this->assertSame($expectedData, json_encode($data));
 
                 return $request;
             });
@@ -138,7 +139,7 @@ final class SimpleFetcherTest extends TestCase
 
         $clientInterface->expects($this->once())
             ->method('sendRequest')
-            ->willReturnCallback(function ($passedRequest) use ($request, $response) {
+            ->willReturnCallback(function ($passedRequest) use ($request, $response): MockObject {
                 $this->assertEquals($request, $passedRequest);
 
                 return $response;
@@ -146,9 +147,9 @@ final class SimpleFetcherTest extends TestCase
 
         $accessToken = $accessTokenFetcher->fetchAccessToken($grantType);
         $this->assertInstanceOf(AccessToken::class, $accessToken);
-        $this->assertEquals($expectedTokenType, $accessToken->tokenType);
-        $this->assertEquals($expectedAccessToken, $accessToken->accessToken);
-        $this->assertEquals($expectedExpiresIn, $accessToken->expiresIn);
+        $this->assertSame($expectedTokenType, $accessToken->tokenType);
+        $this->assertSame($expectedAccessToken, $accessToken->accessToken);
+        $this->assertSame($expectedExpiresIn, $accessToken->expiresIn);
         $this->assertEquals($expectedRefreshToken, $accessToken->refreshToken);
     }
 }

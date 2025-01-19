@@ -103,7 +103,7 @@ final class EntityResultTest extends TestCase
         $entityResultCache = new EntityResultCache();
         self::populateEntityResultCache($entityResultCache, $jsonData['included']);
 
-        $productManufacturer = $jsonData['included'][array_search($data['attributes']['manufacturerId'], array_column($jsonData['included'], 'id'))] ?? null;
+        $productManufacturer = $jsonData['included'][array_search($data['attributes']['manufacturerId'], array_column($jsonData['included'], 'id'), true)] ?? null;
 
         yield [
             $entityResult,
@@ -130,10 +130,10 @@ final class EntityResultTest extends TestCase
     ): void {
         /** @phpstan-ignore-next-line */
         $entityResult = EntityResult::fromData($data);
-        $this->assertEquals($expectedId, $entityResult->id);
+        $this->assertSame($expectedId, $entityResult->id);
         $this->assertEquals($expectedAttributes, $entityResult->attributes);
         $this->assertEquals($expectedRelationships, $entityResult->relationships);
-        $this->assertEquals($expectedEntityName, $entityResult->entityName);
+        $this->assertSame($expectedEntityName, $entityResult->entityName);
     }
 
     #[DataProvider('getEntityProvider')]
@@ -148,8 +148,8 @@ final class EntityResultTest extends TestCase
         $entity = $entityResult->getEntity($attributeHydrator, $definitionProvider);
 
         $this->assertInstanceOf(Entity::class, $entity);
-        $this->assertEquals($expectedId, $entity->id);
-        $this->assertEquals($expectedProductNumber, $entity->productNumber);
+        $this->assertSame($expectedId, $entity->id);
+        $this->assertSame($expectedProductNumber, $entity->productNumber);
         $this->assertNull($entity->manufacturer);
     }
 
@@ -178,7 +178,7 @@ final class EntityResultTest extends TestCase
         $this->assertInstanceOf(ProductMediaCollection::class, $entity->getExtension('additionalMedia'));
         /** @var ProductMediaCollection $additionalMedia */
         $additionalMedia = $entity->getExtension('additionalMedia');
-        $this->assertEquals(1, $additionalMedia->count());
+        $this->assertCount(1, $additionalMedia);
     }
 
     #[DataProvider('hydrateRelationshipsProvider')]

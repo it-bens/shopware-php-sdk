@@ -73,7 +73,7 @@ class IdSearchResult
 
     public function firstId(): ?string
     {
-        if (empty($this->ids)) {
+        if ($this->ids === []) {
             return null;
         }
 
@@ -82,17 +82,17 @@ class IdSearchResult
 
     private function transformData(array $data): array
     {
-        if (empty($data)) {
+        if ($data === []) {
             return [];
         }
 
         if (is_string($data[0])) {
-            return array_map(fn ($id) => [
+            return array_map(fn ($id): array => [
                 'id' => $id,
             ], $data);
         }
 
-        return array_map(function ($value) {
+        return array_map(function ($value): array {
             $transformed = [];
 
             foreach ($value as $key => $item) {

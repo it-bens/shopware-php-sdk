@@ -34,6 +34,7 @@ abstract class GrantType
         if (! \in_array($grantType, self::ALLOWED_GRANTS)) {
             throw new \InvalidArgumentException('Grant type ' . $grantType . ' is not supported', 400);
         }
+
         $this->grantType = $grantType;
     }
 

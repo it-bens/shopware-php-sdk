@@ -46,7 +46,7 @@ class HistogramAggregation extends Aggregation
                 'field' => $this->field,
                 'interval' => $this->interval,
                 'format' => $this->format,
-                'aggregation' => $this->aggregation ? $this->aggregation->parse() : null,
+                'aggregation' => $this->aggregation instanceof Aggregation ? $this->aggregation->parse() : null,
             ]
         );
     }

@@ -120,6 +120,6 @@ final class ResponseParserTest extends TestCase
     public function testGetDecodedResponseContentWithBlankResponseContent(ResponseParser $responseParser, ResponseInterface $response): void
     {
         $decodedContent = $responseParser->getDecodedResponseContent($response);
-        $this->assertEquals([], $decodedContent);
+        $this->assertSame([], $decodedContent);
     }
 }

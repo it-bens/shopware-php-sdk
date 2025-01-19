@@ -146,7 +146,7 @@ final class ContextBuilderTest extends TestCase
             $contextBuilder = $contextBuilder->withVersionId($versionId);
         }
 
-        if (is_array($additionalHeaders) && $addAdditionalHeadersOneByOne === true) {
+        if (is_array($additionalHeaders) && $addAdditionalHeadersOneByOne) {
             foreach ($additionalHeaders as $header => $value) {
                 $contextBuilder = $contextBuilder->withAdditionalHeader($header, $value);
             }
@@ -159,9 +159,9 @@ final class ContextBuilderTest extends TestCase
         $contextBuilder = $contextBuilder->build();
         $this->assertInstanceOf(Context::class, $contextBuilder);
         $this->assertEquals($expectedToken, $contextBuilder->accessToken);
-        $this->assertEquals($expectedLanguageId, $contextBuilder->languageId);
-        $this->assertEquals($expectedCurrencyId, $contextBuilder->currencyId);
-        $this->assertEquals($expectedVersionId, $contextBuilder->versionId);
+        $this->assertSame($expectedLanguageId, $contextBuilder->languageId);
+        $this->assertSame($expectedCurrencyId, $contextBuilder->currencyId);
+        $this->assertSame($expectedVersionId, $contextBuilder->versionId);
         $this->assertEquals($expectedCompatibility, $contextBuilder->compatibility);
         $this->assertEquals($expectedInheritance, $contextBuilder->inheritance);
         $this->assertEquals($expectedAdditionalHeaders, $contextBuilder->additionalHeaders);

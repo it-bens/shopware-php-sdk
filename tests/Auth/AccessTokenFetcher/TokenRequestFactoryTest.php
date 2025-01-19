@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Vin\ShopwareSdkTest\Auth\AccessTokenFetcher;
 
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
@@ -41,7 +42,7 @@ final class TokenRequestFactoryTest extends TestCase
         $withHeaderMethodCall = 0;
         $request->expects($this->exactly(2))
             ->method('withHeader')
-            ->willReturnCallback(function (string $name, $value) use (&$withHeaderMethodCall, $request) {
+            ->willReturnCallback(function (string $name, $value) use (&$withHeaderMethodCall, $request): MockObject {
                 $passedHeaders = [[
                     'Accept' => 'application/json',
                 ], [
@@ -56,7 +57,7 @@ final class TokenRequestFactoryTest extends TestCase
             });
         $request->expects($this->exactly(1))
             ->method('withBody')
-            ->willReturnCallback(function ($body) use ($formData, $request) {
+            ->willReturnCallback(function ($body) use ($formData, $request): MockObject {
                 $this->assertEquals(json_encode($formData), (string) $body);
 
                 return $request;
@@ -64,7 +65,7 @@ final class TokenRequestFactoryTest extends TestCase
 
         $streamFactory->expects($this->once())
             ->method('createStream')
-            ->willReturnCallback(function (string $body) {
+            ->willReturnCallback(function (string $body): MockObject {
                 $stream = $this->createMock(StreamInterface::class);
                 $stream->expects($this->once())
                     ->method('__toString')

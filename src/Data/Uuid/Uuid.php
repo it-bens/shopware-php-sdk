@@ -51,6 +51,7 @@ class Uuid
         if (mb_strlen($bytes, '8bit') !== 16) {
             throw new InvalidUuidLengthException(mb_strlen($bytes, '8bit'), bin2hex($bytes));
         }
+
         $uuid = bin2hex($bytes);
 
         if (! self::isValid($uuid)) {
@@ -94,32 +95,23 @@ class Uuid
 
     public static function isValid(string $id): bool
     {
-        if (! preg_match('/' . self::VALID_PATTERN . '/', $id)) {
-            return false;
-        }
-
-        return true;
+        return (bool) preg_match('/' . self::VALID_PATTERN . '/', $id);
     }
 
     private static function applyVersion(string $timeHi, int $version): int
     {
         $timeHi = hexdec($timeHi) & 0x0fff;
         $timeHi &= ~(0xf000);
-        $timeHi |= $version << 12;
 
-        return $timeHi;
+        return $timeHi | $version << 12;
     }
 
-    /**
-     * @param int|float $clockSeqHi
-     */
-    private static function applyVariant($clockSeqHi): int
+    private static function applyVariant(float|int $clockSeqHi): int
     {
         // Set the variant to RFC 4122
         $clockSeqHi &= 0x3f;
         $clockSeqHi &= ~(0xc0);
-        $clockSeqHi |= 0x80;
 
-        return $clockSeqHi;
+        return $clockSeqHi | 0x80;
     }
 }

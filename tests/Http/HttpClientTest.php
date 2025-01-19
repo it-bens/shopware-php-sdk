@@ -91,8 +91,8 @@ final class HttpClientTest extends TestCase
         $returnedResponse = $httpClient->$serviceMethodName($path, $contentTypeHeader, $acceptHeader, $context);
         $this->assertInstanceOf(ApiResponse::class, $returnedResponse);
         $this->assertEquals($data, $returnedResponse->getContents());
-        $this->assertEquals([], $returnedResponse->getHeaders());
-        $this->assertEquals($statusCode, $returnedResponse->getStatusCode());
+        $this->assertSame([], $returnedResponse->getHeaders());
+        $this->assertSame($statusCode, $returnedResponse->getStatusCode());
     }
 
     #[DataProvider('deleteAndGetProvider')]
@@ -137,8 +137,8 @@ final class HttpClientTest extends TestCase
         $returnedResponse = $httpClient->$serviceMethodName($path, $contentTypeHeader, $acceptHeader, $requestData, $context);
         $this->assertInstanceOf(ApiResponse::class, $returnedResponse);
         $this->assertEquals($responseData, $returnedResponse->getContents());
-        $this->assertEquals([], $returnedResponse->getHeaders());
-        $this->assertEquals(200, $returnedResponse->getStatusCode());
+        $this->assertSame([], $returnedResponse->getHeaders());
+        $this->assertSame(200, $returnedResponse->getStatusCode());
     }
 
     #[DataProvider('patchAndPostProvider')]
@@ -182,8 +182,8 @@ final class HttpClientTest extends TestCase
         $returnedResponse = $httpClient->postGenericData($path, $contentTypeHeader, $acceptHeader, $requestData, $context);
         $this->assertInstanceOf(ApiResponse::class, $returnedResponse);
         $this->assertEquals($responseData, $returnedResponse->getContents());
-        $this->assertEquals([], $returnedResponse->getHeaders());
-        $this->assertEquals(200, $returnedResponse->getStatusCode());
+        $this->assertSame([], $returnedResponse->getHeaders());
+        $this->assertSame(200, $returnedResponse->getStatusCode());
     }
 
     #[DataProvider('postGenericDataProvider')]
@@ -229,9 +229,9 @@ final class HttpClientTest extends TestCase
     ): void {
         $requestFactory->expects($this->once())
             ->method('createRequest')
-            ->willReturnCallback(function ($passedMethod, $passedPath, $passedContentTypeHeader, $passedAcceptHeader, $passedContext) use ($method, $path, $contentTypeHeader, $acceptHeader, $context, $request) {
-                $this->assertEquals($method, $passedMethod);
-                $this->assertEquals($path, $passedPath);
+            ->willReturnCallback(function ($passedMethod, $passedPath, $passedContentTypeHeader, $passedAcceptHeader, $passedContext) use ($method, $path, $contentTypeHeader, $acceptHeader, $context, $request): RequestInterface {
+                $this->assertSame($method, $passedMethod);
+                $this->assertSame($path, $passedPath);
                 $this->assertEquals($contentTypeHeader, $passedContentTypeHeader);
                 $this->assertEquals($acceptHeader, $passedAcceptHeader);
                 $this->assertEquals($context, $passedContext);
@@ -252,9 +252,9 @@ final class HttpClientTest extends TestCase
     ): void {
         $requestFactory->expects($this->once())
             ->method('createRequestWithData')
-            ->willReturnCallback(function ($passedMethod, $passedPath, $passedContentTypeHeader, $passedAcceptHeader, $passedData, $passedContext) use ($method, $path, $contentTypeHeader, $acceptHeader, $data, $context, $request) {
-                $this->assertEquals($method, $passedMethod);
-                $this->assertEquals($path, $passedPath);
+            ->willReturnCallback(function ($passedMethod, $passedPath, $passedContentTypeHeader, $passedAcceptHeader, $passedData, $passedContext) use ($method, $path, $contentTypeHeader, $acceptHeader, $data, $context, $request): RequestInterface {
+                $this->assertSame($method, $passedMethod);
+                $this->assertSame($path, $passedPath);
                 $this->assertEquals($contentTypeHeader, $passedContentTypeHeader);
                 $this->assertEquals($acceptHeader, $passedAcceptHeader);
                 $this->assertEquals($data, $passedData);
@@ -276,12 +276,12 @@ final class HttpClientTest extends TestCase
     ): void {
         $requestFactory->expects($this->once())
             ->method('createRequestWithGenericData')
-            ->willReturnCallback(function ($passedMethod, $passedPath, $passedContentTypeHeader, $passedAcceptHeader, $passedData, $passedContext) use ($method, $path, $contentTypeHeader, $acceptHeader, $data, $context, $request) {
-                $this->assertEquals($method, $passedMethod);
-                $this->assertEquals($path, $passedPath);
+            ->willReturnCallback(function ($passedMethod, $passedPath, $passedContentTypeHeader, $passedAcceptHeader, $passedData, $passedContext) use ($method, $path, $contentTypeHeader, $acceptHeader, $data, $context, $request): RequestInterface {
+                $this->assertSame($method, $passedMethod);
+                $this->assertSame($path, $passedPath);
                 $this->assertEquals($contentTypeHeader, $passedContentTypeHeader);
                 $this->assertEquals($acceptHeader, $passedAcceptHeader);
-                $this->assertEquals($data, $passedData);
+                $this->assertSame($data, $passedData);
                 $this->assertEquals($context, $passedContext);
 
                 return $request;
@@ -292,7 +292,7 @@ final class HttpClientTest extends TestCase
     {
         $psrHttpClient->expects($this->once())
             ->method('sendRequest')
-            ->willReturnCallback(function ($passedRequest) use ($request, $response) {
+            ->willReturnCallback(function ($passedRequest) use ($request, $response): ResponseInterface {
                 $this->assertEquals($request, $passedRequest);
 
                 return $response;
@@ -310,7 +310,7 @@ final class HttpClientTest extends TestCase
     {
         $responseParser->expects($this->once())
             ->method('getDecodedResponseContent')
-            ->willReturnCallback(function ($passedResponse) use ($response, $data) {
+            ->willReturnCallback(function ($passedResponse) use ($response, $data): array {
                 $this->assertEquals($response, $passedResponse);
 
                 return $data;

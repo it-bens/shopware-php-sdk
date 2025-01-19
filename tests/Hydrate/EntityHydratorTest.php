@@ -41,11 +41,11 @@ class EntityHydratorTest extends TestCase
     {
         $result = $this->entityHydrator->hydrateSearchResult([]);
 
-        static::assertInstanceOf(EntityCollection::class, $result);
+        $this->assertInstanceOf(EntityCollection::class, $result);
 
         $result = $this->entityHydrator->hydrateSearchResult([], 'product');
 
-        static::assertInstanceOf(ProductCollection::class, $result);
+        $this->assertInstanceOf(ProductCollection::class, $result);
     }
 
     public function testHydrateSearchResultWithResult(): void
@@ -63,8 +63,8 @@ class EntityHydratorTest extends TestCase
             ],
         ], 'product');
 
-        static::assertInstanceOf(ProductCollection::class, $result);
-        static::assertCount(1, $result);
-        static::assertInstanceOf(ProductEntity::class, $result->get($productId));
+        $this->assertInstanceOf(ProductCollection::class, $result);
+        $this->assertCount(1, $result);
+        $this->assertInstanceOf(ProductEntity::class, $result->get($productId));
     }
 }

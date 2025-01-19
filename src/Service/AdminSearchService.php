@@ -34,7 +34,7 @@ final readonly class AdminSearchService implements AdminSearchServiceInterface
             $itemResponse = $data[$entityName] ?? [];
             $rawData = $itemResponse['data'] ?? [];
 
-            $rawData = array_map(fn ($item) => [
+            $rawData = array_map(fn ($item): array => [
                 'type' => $entityName,
                 'id' => $item['id'],
                 'attributes' => $item,

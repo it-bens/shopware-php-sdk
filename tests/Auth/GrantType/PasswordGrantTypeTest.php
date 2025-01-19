@@ -48,8 +48,8 @@ final class PasswordGrantTypeTest extends TestCase
     {
         $grantType = new PasswordGrantType($username, $password);
         $this->assertInstanceOf(PasswordGrantType::class, $grantType);
-        $this->assertEquals('administration', $grantType->clientId);
-        $this->assertEquals($username, $grantType->username);
-        $this->assertEquals($password, $grantType->password);
+        $this->assertSame('administration', $grantType->clientId);
+        $this->assertSame($username, $grantType->username);
+        $this->assertSame($password, $grantType->password);
     }
 }

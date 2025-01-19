@@ -105,7 +105,7 @@ final readonly class ApiService implements ApiServiceInterface
     private function buildPath(string $endpoint, array $params): string
     {
         $path = $endpoint;
-        if (count($params) > 0) {
+        if ($params !== []) {
             $path .= '?' . http_build_query($params);
         }
 

@@ -41,10 +41,10 @@ final class WithUsernameAndPasswordTest extends TestCase
         $accessTokenFetcher->expects($this->once())
             ->method('fetchAccessToken')
             ->with($this->isInstanceOf(PasswordGrantType::class))
-            ->willReturnCallback(function ($grantType) use ($username, $password) {
+            ->willReturnCallback(function ($grantType) use ($username, $password): AccessToken {
                 $this->assertInstanceOf(PasswordGrantType::class, $grantType);
-                $this->assertEquals($username, $grantType->username);
-                $this->assertEquals($password, $grantType->password);
+                $this->assertSame($username, $grantType->username);
+                $this->assertSame($password, $grantType->password);
 
                 return new AccessToken('ABC123');
             });

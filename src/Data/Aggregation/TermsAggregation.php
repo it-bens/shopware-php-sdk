@@ -32,8 +32,8 @@ class TermsAggregation extends Aggregation
                 'name' => $this->name,
                 'field' => $this->field,
                 'limit' => $this->limit,
-                'sort' => $this->sort ? $this->sort->parse() : null,
-                'aggregation' => $this->aggregation ? $this->aggregation->parse() : null,
+                'sort' => $this->sort instanceof FieldSorting ? $this->sort->parse() : null,
+                'aggregation' => $this->aggregation instanceof Aggregation ? $this->aggregation->parse() : null,
             ]
         );
     }

@@ -24,7 +24,7 @@ class FilterAggregation extends Aggregation
         return [
             'type' => self::TYPE_FILTER,
             'name' => $this->name,
-            'filter' => array_map(fn (Filter $filter) => $filter->parse(), $this->filter),
+            'filter' => array_map(fn (Filter $filter): array => $filter->parse(), $this->filter),
             'aggregation' => $this->aggregation->parse(),
         ];
     }

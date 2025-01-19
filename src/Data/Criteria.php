@@ -305,7 +305,7 @@ class Criteria implements ParseAware
     {
         $params = [];
 
-        if (! empty($this->ids)) {
+        if ($this->ids !== []) {
             $params['ids'] = \implode('|', $this->ids);
         }
 
@@ -319,7 +319,7 @@ class Criteria implements ParseAware
             $params['term'] = $this->term;
         }
 
-        if (! empty($this->queries)) {
+        if ($this->queries !== []) {
             $params['query'] = [];
 
             foreach ($this->queries as $query) {
@@ -327,7 +327,7 @@ class Criteria implements ParseAware
             }
         }
 
-        if (! empty($this->filters)) {
+        if ($this->filters !== []) {
             $params['filter'] = [];
 
             foreach ($this->filters as $filter) {
@@ -335,7 +335,7 @@ class Criteria implements ParseAware
             }
         }
 
-        if (! empty($this->postFilter)) {
+        if ($this->postFilter !== []) {
             $params['post-filter'] = [];
 
             foreach ($this->postFilter as $postFilter) {
@@ -343,7 +343,7 @@ class Criteria implements ParseAware
             }
         }
 
-        if (! empty($this->sortings)) {
+        if ($this->sortings !== []) {
             $params['sort'] = [];
 
             foreach ($this->sortings as $sorting) {
@@ -351,22 +351,22 @@ class Criteria implements ParseAware
             }
         }
 
-        if (! empty($this->aggregations)) {
+        if ($this->aggregations !== []) {
             $params['aggregations'] = [];
             foreach ($this->aggregations as $aggregation) {
                 $params['aggregations'][] = $aggregation->parse();
             }
         }
 
-        if (! empty($this->groupFields)) {
+        if ($this->groupFields !== []) {
             $params['groupFields'] = $this->groupFields;
         }
 
-        if (! empty($this->grouping)) {
+        if ($this->grouping !== []) {
             $params['grouping'] = $this->grouping;
         }
 
-        if (! empty($this->associations)) {
+        if ($this->associations !== []) {
             $params['associations'] = [];
 
             foreach ($this->associations as $association) {
@@ -374,11 +374,11 @@ class Criteria implements ParseAware
             }
         }
 
-        if (! empty($this->includes)) {
+        if ($this->includes !== []) {
             $params['includes'] = $this->includes;
         }
 
-        if (! empty($this->fields)) {
+        if ($this->fields !== []) {
             $params['fields'] = $this->fields;
         }
 
@@ -558,7 +558,7 @@ class Criteria implements ParseAware
 
     public function removeField(string $field): self
     {
-        if (($key = array_search($field, $this->fields)) !== false) {
+        if (($key = array_search($field, $this->fields, true)) !== false) {
             unset($this->fields[$key]);
         }
 

@@ -6,6 +6,8 @@ namespace Vin\ShopwareSdk\Data;
 
 class Struct
 {
+    public string $id;
+
     /**
      * @var Struct[]
      */
@@ -16,8 +18,8 @@ class Struct
         try {
             $self = (new \ReflectionClass(static::class))
                 ->newInstanceWithoutConstructor();
-        } catch (\ReflectionException $exception) {
-            throw new \InvalidArgumentException($exception->getMessage());
+        } catch (\ReflectionException $reflectionException) {
+            throw new \InvalidArgumentException($reflectionException->getMessage(), $reflectionException->getCode(), $reflectionException);
         }
 
         foreach (get_object_vars($object) as $property => $value) {
@@ -92,7 +94,7 @@ class Struct
     {
         $extension = $this->getExtension($name);
 
-        return $extension !== null && $extension::class === $type;
+        return $extension instanceof \Vin\ShopwareSdk\Data\Struct && $extension::class === $type;
     }
 
     public function getExtensions(): array

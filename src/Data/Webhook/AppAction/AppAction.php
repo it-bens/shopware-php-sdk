@@ -42,8 +42,9 @@ class AppAction extends Struct
 
     public static function createFromPayload(array $payload, ?array $headers = []): self
     {
-        $source = $action = $meta = null;
-
+        $source = null;
+        $action = null;
+        $meta = null;
         if ($rawSource = $payload['source']) {
             $source = new Source($rawSource['url'], $rawSource['shopId'], (string) $rawSource['appVersion']);
         }

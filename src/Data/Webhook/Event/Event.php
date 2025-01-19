@@ -42,16 +42,14 @@ class Event extends Struct
 
     public static function createFromPayload(array $payload, ?array $headers = []): self
     {
-        $source = $data = null;
-
+        $source = null;
+        $data = null;
         if ($rawSource = $payload['source']) {
             $source = new Source($rawSource['url'], $rawSource['shopId'], (string) $rawSource['appVersion']);
         }
 
-        if ($rawData = $payload['data']) {
-            if (! empty($rawData['payload'])) {
-                $data = new EventData($rawData['event'], $rawData['payload']);
-            }
+        if (($rawData = $payload['data']) && ! empty($rawData['payload'])) {
+            $data = new EventData($rawData['event'], $rawData['payload']);
         }
 
         return new self($source, $data, (int) ($payload['timestamp'] ?? 0), $headers ?? []);

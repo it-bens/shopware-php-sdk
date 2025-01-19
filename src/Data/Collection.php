@@ -10,7 +10,7 @@ abstract class Collection extends Struct implements \IteratorAggregate, \Countab
 
     public function __construct(iterable $elements = [])
     {
-        $elements = $elements instanceof \Traversable ? iterator_to_array($elements) : (array) $elements;
+        $elements = $elements instanceof \Traversable ? iterator_to_array($elements) : $elements;
 
         foreach ($elements as $key => $element) {
             $this->set($key, $element);
@@ -109,7 +109,7 @@ abstract class Collection extends Struct implements \IteratorAggregate, \Countab
      */
     public function filterInstance(string $class)
     {
-        return $this->filter(static fn ($item) => $item instanceof $class);
+        return $this->filter(static fn ($item): bool => $item instanceof $class);
     }
 
     /**
@@ -136,7 +136,7 @@ abstract class Collection extends Struct implements \IteratorAggregate, \Countab
     #[\Override]
     public function jsonSerialize(): array
     {
-        return array_values(array_map(fn (Struct $element) => $element->jsonSerialize(), $this->elements));
+        return array_values(array_map(fn (Struct $element): array => $element->jsonSerialize(), $this->elements));
     }
 
     public function first(): ?Struct

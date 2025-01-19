@@ -43,8 +43,8 @@ final readonly class SimpleFetcher implements AccessTokenFetcher
 
         try {
             $tokenData = $this->responseParser->getDecodedResponseContent($response);
-        } catch (ShopwareResponseException $exception) {
-            throw new AuthorizationFailedException($exception->getMessage(), $exception->getCode(), $exception);
+        } catch (ShopwareResponseException $shopwareResponseException) {
+            throw new AuthorizationFailedException($shopwareResponseException->getMessage(), $shopwareResponseException->getCode(), $shopwareResponseException);
         }
 
         if (array_key_exists('access_token', $tokenData) === false || is_string($tokenData['access_token']) === false) {

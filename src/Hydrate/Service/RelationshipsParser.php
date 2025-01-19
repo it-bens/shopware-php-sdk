@@ -22,6 +22,7 @@ final class RelationshipsParser implements RelationshipsParserInterface
             if (array_key_exists('data', $relationship) === false) {
                 continue;
             }
+
             if (is_array($relationship['data']) === false) {
                 continue;
             }

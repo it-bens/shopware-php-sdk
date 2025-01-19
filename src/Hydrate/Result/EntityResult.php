@@ -71,6 +71,7 @@ final class EntityResult
 
         $this->entity = new $entityClass();
         $this->entity->internalSetEntityName($this->entityName);
+
         $this->entity->id = $this->id;
         $attributeHydrator->hydrateAttributes($this->entity, $this->entityName, $this->attributes);
     }

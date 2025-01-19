@@ -16,9 +16,11 @@ final class ExtensionParser implements ExtensionParserInterface
             if ($propertyName !== 'extensions') {
                 continue;
             }
+
             if (array_key_exists('data', $extensionData) === false) {
                 continue;
             }
+
             if (is_array($extensionData['data']) === false) {
                 continue;
             }

@@ -43,7 +43,7 @@
         "symfony/var-dumper": "^7.0",
         "symplify/coding-standard": "^12.0",
         "symplify/config-transformer": "^12.3",
-        "symplify/easy-coding-standard": "^12.1"
+        "symplify/easy-coding-standard": "^13.0"
     },
     "config": {
         "sort-packages": true,
